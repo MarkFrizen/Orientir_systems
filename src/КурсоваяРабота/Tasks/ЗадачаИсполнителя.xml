@@ -328,7 +328,7 @@
 					<LinkByType/>
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 					<Indexing>DontIndex</Indexing>
-					<AddressingDimension>Исполнитель</AddressingDimension>
+					<AddressingDimension>InformationRegister.АдресацияЗадач.Dimension.Исполнитель</AddressingDimension>
 					<FullTextSearch>Use</FullTextSearch>
 					<DataHistory>Use</DataHistory>
 				</Properties>

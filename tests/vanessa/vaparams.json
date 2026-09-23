@@ -1,0 +1,14 @@
+﻿{
+  "КаталогФич": "D:\\Projects\\1C_prj\\7 семестр\\Kursovaya\\tests\\vanessa\\features",
+  "ВыполнитьСценарии": true,
+  "ЗавершитьРаботуСистемы": true,
+  "ОстановкаПриВозникновенииОшибки": false,
+  "ДелатьЛогВыполненияСценариевВТекстовыйФайл": true,
+  "ИмяФайлаЛогВыполненияСценариев": "D:\\Projects\\1C_prj\\7 семестр\\Kursovaya\\build\\vanessa\\results\\log.txt",
+  "ДелатьОтчетВФорматеjUnit": true,
+  "ДелатьОтчетВФорматеАллюр": false,
+  "КаталогOutputjUnit": "D:\\Projects\\1C_prj\\7 семестр\\Kursovaya\\build\\vanessa\\results\\junit",
+  "ВыгружатьСтатусВыполненияСценариевВФайл": true,
+  "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "D:\\Projects\\1C_prj\\7 семестр\\Kursovaya\\build\\vanessa\\results\\status.log",
+  "СписокТеговИсключение": []
+}

@@ -257,6 +257,7 @@
 			<Subsystem>ОператорСопровождения</Subsystem>
 			<Subsystem>РуководительНаправления</Subsystem>
 			<Subsystem>Сервис</Subsystem>
+			<Role>Администратор</Role>
 			<Constant>ПорогСогласованияРуководителем</Constant>
 			<Catalog>СтраныМира</Catalog>
 			<Catalog>Валюты</Catalog>
