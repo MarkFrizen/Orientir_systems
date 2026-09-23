@@ -1,0 +1,8 @@
+.v8-project.json
+build/
+base/
+db/
+*.epf
+*.erf
+*.log
+.opencode
