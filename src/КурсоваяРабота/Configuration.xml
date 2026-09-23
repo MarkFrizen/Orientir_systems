@@ -250,6 +250,13 @@
 		</Properties>
 		<ChildObjects>
 			<Language>Русский</Language>
+			<Subsystem>АдминистраторИС</Subsystem>
+			<Subsystem>ГидНаМаршруте</Subsystem>
+			<Subsystem>КоординаторЛогистики</Subsystem>
+			<Subsystem>МенеджерПоПретензиям</Subsystem>
+			<Subsystem>ОператорСопровождения</Subsystem>
+			<Subsystem>РуководительНаправления</Subsystem>
+			<Subsystem>Сервис</Subsystem>
 			<Constant>ПорогСогласованияРуководителем</Constant>
 			<Catalog>СтраныМира</Catalog>
 			<Catalog>Валюты</Catalog>

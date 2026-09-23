@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Subsystem uuid="fbc06e15-aa4d-4bb4-8c07-85256af6408e">
+		<Properties>
+			<Name>Сервис</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сервис</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>true</IncludeInCommandInterface>
+			<UseOneCommand>false</UseOneCommand>
+			<Explanation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Служебные объекты и настройки</v8:content>
+				</v8:item>
+			</Explanation>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ПорогСогласованияРуководителем</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ДополнительныеРеквизитыТуриста</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ДополнительныеРеквизитыУслуг</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Task.ЗадачаИсполнителя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.АдресацияЗадач</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыЗаявок</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыПоставщиков</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыУслуг</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыЗаказа</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.РезультатыСверки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ИсточникиПодтверждения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ТипыСобытийМаршрута</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыМаршрута</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыЗапроса</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.УровниКритичности</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.УровниТяжести</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыИнцидента</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.СтатусыПретензии</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыКомпенсаций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыИнтеграций</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.ВидыОперацийKPI</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.Должности</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>
