@@ -1,7 +1,14 @@
 .v8-project.json
 build/
 base/
-db/
+db/**/*.cfl
+db/**/*.1CL
+db/**/*.lck
+db/**/1Cv8tmp.1CD
+db/**/1Cv8snc.1CD
+db/**/1Cv8.cgr
+db/**/1Cv8JobScheduler/
+db/**/1Cv8Log/
 *.epf
 *.erf
 *.log
