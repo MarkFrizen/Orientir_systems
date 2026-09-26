@@ -13,3 +13,4 @@ db/**/1Cv8Log/
 *.erf
 *.log
 .opencode
+.env
