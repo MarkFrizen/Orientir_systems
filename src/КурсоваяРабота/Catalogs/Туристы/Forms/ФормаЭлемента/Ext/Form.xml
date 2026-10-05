@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Туристы</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКодНаименование" id="3">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Наименование" id="5">
+							<DataPath>Объект.Description</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Код" id="8">
+							<DataPath>Объект.Code</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ФИО" id="11">
+					<DataPath>Объект.ФИО</DataPath>
+					<ContextMenu name="ФИОКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="13"/>
+				</InputField>
+				<InputField name="ДатаРождения" id="14">
+					<DataPath>Объект.ДатаРождения</DataPath>
+					<ContextMenu name="ДатаРожденияКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ДатаРожденияРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="СерияПаспорта" id="17">
+					<DataPath>Объект.СерияПаспорта</DataPath>
+					<ContextMenu name="СерияПаспортаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СерияПаспортаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="НомерПаспорта" id="20">
+					<DataPath>Объект.НомерПаспорта</DataPath>
+					<ContextMenu name="НомерПаспортаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="НомерПаспортаРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="Телефон" id="23">
+					<DataPath>Объект.Телефон</DataPath>
+					<ContextMenu name="ТелефонКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="Email" id="26">
+					<DataPath>Объект.Email</DataPath>
+					<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="Гражданство" id="29">
+					<DataPath>Объект.Гражданство</DataPath>
+					<ContextMenu name="ГражданствоКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ГражданствоРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="ПредпочтенияПитания" id="32">
+					<DataPath>Объект.ПредпочтенияПитания</DataPath>
+					<ContextMenu name="ПредпочтенияПитанияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ПредпочтенияПитанияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="МедицинскиеОсобенности" id="35">
+					<DataPath>Объект.МедицинскиеОсобенности</DataPath>
+					<ContextMenu name="МедицинскиеОсобенностиКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="МедицинскиеОсобенностиРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="Менеджер" id="38">
+					<DataPath>Объект.Менеджер</DataPath>
+					<ContextMenu name="МенеджерКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="43">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Туристы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

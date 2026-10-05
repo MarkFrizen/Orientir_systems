@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Туры маршруты</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКодНаименование" id="3">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<InputField name="Наименование" id="5">
+							<DataPath>Объект.Description</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+						</InputField>
+						<InputField name="Код" id="8">
+							<DataPath>Объект.Code</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Родитель" id="11">
+					<DataPath>Объект.Parent</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Входит в группу</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="РодительКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="13"/>
+				</InputField>
+				<InputField name="Страна" id="14">
+					<DataPath>Объект.Страна</DataPath>
+					<ContextMenu name="СтранаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СтранаРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="Курорт" id="17">
+					<DataPath>Объект.Курорт</DataPath>
+					<ContextMenu name="КурортКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="КурортРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ПродолжительностьДней" id="20">
+					<DataPath>Объект.ПродолжительностьДней</DataPath>
+					<ContextMenu name="ПродолжительностьДнейКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ПродолжительностьДнейРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="СтандартныйНаборУслуг" id="23">
+			<DataPath>Объект.СтандартныйНаборУслуг</DataPath>
+			<ContextMenu name="СтандартныйНаборУслугКонтекстноеМеню" id="24"/>
+			<AutoCommandBar name="СтандартныйНаборУслугКоманднаяПанель" id="25"/>
+			<ExtendedTooltip name="СтандартныйНаборУслугРасширеннаяПодсказка" id="26"/>
+			<SearchStringAddition name="СтандартныйНаборУслугСтрокаПоиска" id="27">
+				<AdditionSource>
+					<Item>СтандартныйНаборУслуг</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтандартныйНаборУслугСтрокаПоискаКонтекстноеМеню" id="28"/>
+				<ExtendedTooltip name="СтандартныйНаборУслугСтрокаПоискаРасширеннаяПодсказка" id="29"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СтандартныйНаборУслугСостояниеПросмотра" id="30">
+				<AdditionSource>
+					<Item>СтандартныйНаборУслуг</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СтандартныйНаборУслугСостояниеПросмотраКонтекстноеМеню" id="31"/>
+				<ExtendedTooltip name="СтандартныйНаборУслугСостояниеПросмотраРасширеннаяПодсказка" id="32"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СтандартныйНаборУслугУправлениеПоиском" id="33">
+				<AdditionSource>
+					<Item>СтандартныйНаборУслуг</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СтандартныйНаборУслугУправлениеПоискомКонтекстноеМеню" id="34"/>
+				<ExtendedTooltip name="СтандартныйНаборУслугУправлениеПоискомРасширеннаяПодсказка" id="35"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СтандартныйНаборУслугНомерСтроки" id="36">
+					<DataPath>Объект.СтандартныйНаборУслуг.LineNumber</DataPath>
+					<ContextMenu name="СтандартныйНаборУслугНомерСтрокиКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="СтандартныйНаборУслугНомерСтрокиРасширеннаяПодсказка" id="38"/>
+				</LabelField>
+				<InputField name="СтандартныйНаборУслугУслуга" id="39">
+					<DataPath>Объект.СтандартныйНаборУслуг.Услуга</DataPath>
+					<ContextMenu name="СтандартныйНаборУслугУслугаКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="СтандартныйНаборУслугУслугаРасширеннаяПодсказка" id="41"/>
+				</InputField>
+				<InputField name="СтандартныйНаборУслугКоличество" id="42">
+					<DataPath>Объект.СтандартныйНаборУслуг.Количество</DataPath>
+					<ContextMenu name="СтандартныйНаборУслугКоличествоКонтекстноеМеню" id="43"/>
+					<ExtendedTooltip name="СтандартныйНаборУслугКоличествоРасширеннаяПодсказка" id="44"/>
+				</InputField>
+				<InputField name="СтандартныйНаборУслугПоставщик" id="45">
+					<DataPath>Объект.СтандартныйНаборУслуг.Поставщик</DataPath>
+					<ContextMenu name="СтандартныйНаборУслугПоставщикКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="СтандартныйНаборУслугПоставщикРасширеннаяПодсказка" id="47"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="48">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="49"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="50">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ТурыМаршруты</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

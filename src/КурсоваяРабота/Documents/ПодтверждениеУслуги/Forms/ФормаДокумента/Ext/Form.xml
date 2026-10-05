@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Подтверждение услуги</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="1">
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ГруппаОсновное" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка" id="5">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапкаЛево" id="7">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="8"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНомерДата" id="9">
+											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="10"/>
+											<ChildItems>
+												<InputField name="Номер" id="11">
+													<DataPath>Объект.Number</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Width>9</Width>
+													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
+													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+												</InputField>
+												<InputField name="Дата" id="14">
+													<DataPath>Объект.Date</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>от</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="ЗаказПоставщику" id="17">
+											<DataPath>Объект.ЗаказПоставщику</DataPath>
+											<ContextMenu name="ЗаказПоставщикуКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="ЗаказПоставщикуРасширеннаяПодсказка" id="19"/>
+										</InputField>
+										<InputField name="Поставщик" id="20">
+											<DataPath>Объект.Поставщик</DataPath>
+											<ContextMenu name="ПоставщикКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="22"/>
+										</InputField>
+										<InputField name="ВходящийНомер" id="23">
+											<DataPath>Объект.ВходящийНомер</DataPath>
+											<ContextMenu name="ВходящийНомерКонтекстноеМеню" id="24"/>
+											<ExtendedTooltip name="ВходящийНомерРасширеннаяПодсказка" id="25"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаШапкаПраво" id="26">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="27"/>
+									<ChildItems>
+										<InputField name="РезультатСверки" id="28">
+											<DataPath>Объект.РезультатСверки</DataPath>
+											<ContextMenu name="РезультатСверкиКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="РезультатСверкиРасширеннаяПодсказка" id="30"/>
+										</InputField>
+										<InputField name="Источник" id="31">
+											<DataPath>Объект.Источник</DataPath>
+											<ContextMenu name="ИсточникКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ИсточникРасширеннаяПодсказка" id="33"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаПодтверждённыеУслуги" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подтверждённые услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаПодтверждённыеУслугиРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<Table name="ПодтверждённыеУслуги" id="36">
+							<DataPath>Объект.ПодтверждённыеУслуги</DataPath>
+							<ContextMenu name="ПодтверждённыеУслугиКонтекстноеМеню" id="37"/>
+							<AutoCommandBar name="ПодтверждённыеУслугиКоманднаяПанель" id="38"/>
+							<ExtendedTooltip name="ПодтверждённыеУслугиРасширеннаяПодсказка" id="39"/>
+							<SearchStringAddition name="ПодтверждённыеУслугиСтрокаПоиска" id="40">
+								<AdditionSource>
+									<Item>ПодтверждённыеУслуги</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодтверждённыеУслугиСтрокаПоискаКонтекстноеМеню" id="41"/>
+								<ExtendedTooltip name="ПодтверждённыеУслугиСтрокаПоискаРасширеннаяПодсказка" id="42"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПодтверждённыеУслугиСостояниеПросмотра" id="43">
+								<AdditionSource>
+									<Item>ПодтверждённыеУслуги</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодтверждённыеУслугиСостояниеПросмотраКонтекстноеМеню" id="44"/>
+								<ExtendedTooltip name="ПодтверждённыеУслугиСостояниеПросмотраРасширеннаяПодсказка" id="45"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПодтверждённыеУслугиУправлениеПоиском" id="46">
+								<AdditionSource>
+									<Item>ПодтверждённыеУслуги</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПодтверждённыеУслугиУправлениеПоискомКонтекстноеМеню" id="47"/>
+								<ExtendedTooltip name="ПодтверждённыеУслугиУправлениеПоискомРасширеннаяПодсказка" id="48"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПодтверждённыеУслугиНомерСтроки" id="49">
+									<DataPath>Объект.ПодтверждённыеУслуги.LineNumber</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиНомерСтрокиКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиНомерСтрокиРасширеннаяПодсказка" id="51"/>
+								</LabelField>
+								<InputField name="ПодтверждённыеУслугиУслуга" id="52">
+									<DataPath>Объект.ПодтверждённыеУслуги.Услуга</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиУслугаКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиУслугаРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиОбъект" id="55">
+									<DataPath>Объект.ПодтверждённыеУслуги.Объект</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиОбъектКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиОбъектРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиДатаНачала" id="58">
+									<DataPath>Объект.ПодтверждённыеУслуги.ДатаНачала</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиДатаНачалаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиДатаНачалаРасширеннаяПодсказка" id="60"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиДатаОкончания" id="61">
+									<DataPath>Объект.ПодтверждённыеУслуги.ДатаОкончания</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиДатаОкончанияКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиДатаОкончанияРасширеннаяПодсказка" id="63"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиКоличество" id="64">
+									<DataPath>Объект.ПодтверждённыеУслуги.Количество</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиКоличествоКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиКоличествоРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиТипНомераФакт" id="67">
+									<DataPath>Объект.ПодтверждённыеУслуги.ТипНомераФакт</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиТипНомераФактКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиТипНомераФактРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиТипПитанияФакт" id="70">
+									<DataPath>Объект.ПодтверждённыеУслуги.ТипПитанияФакт</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиТипПитанияФактКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиТипПитанияФактРасширеннаяПодсказка" id="72"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиЦена" id="73">
+									<DataPath>Объект.ПодтверждённыеУслуги.Цена</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиЦенаКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиЦенаРасширеннаяПодсказка" id="75"/>
+								</InputField>
+								<InputField name="ПодтверждённыеУслугиСумма" id="76">
+									<DataPath>Объект.ПодтверждённыеУслуги.Сумма</DataPath>
+									<ContextMenu name="ПодтверждённыеУслугиСуммаКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="ПодтверждённыеУслугиСуммаРасширеннаяПодсказка" id="78"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="80"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПараметры" id="81">
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="82"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПараметрыЛево" id="83">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="84"/>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПараметрыПраво" id="85">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="86"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="87">
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="88"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="89">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПодтверждениеУслуги</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

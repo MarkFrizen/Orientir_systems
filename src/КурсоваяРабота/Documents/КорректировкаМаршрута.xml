@@ -49,8 +49,8 @@
 			<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
-			<DefaultObjectForm/>
-			<DefaultListForm/>
+			<DefaultObjectForm>Document.КорректировкаМаршрута.Form.ФормаДокумента</DefaultObjectForm>
+			<DefaultListForm>Document.КорректировкаМаршрута.Form.ФормаСписка</DefaultListForm>
 			<DefaultChoiceForm/>
 			<AuxiliaryObjectForm/>
 			<AuxiliaryListForm/>
@@ -240,6 +240,8 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
+			<Form>ФормаДокумента</Form>
+			<Form>ФормаСписка</Form>
 			<TabularSection uuid="fe95a476-5e58-4776-8ca9-faa76e9fb266">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.КорректировкаМаршрута.Изменения" category="TabularSection">

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Объекты гостеприимства</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Владелец" id="3">
+					<DataPath>Объект.Owner</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ВладелецКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<UsualGroup name="ГруппаКодНаименование" id="6">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="7"/>
+					<ChildItems>
+						<InputField name="Наименование" id="8">
+							<DataPath>Объект.Description</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="10"/>
+						</InputField>
+						<InputField name="Код" id="11">
+							<DataPath>Объект.Code</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="13"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Адрес" id="14">
+					<DataPath>Объект.Адрес</DataPath>
+					<ContextMenu name="АдресКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="Категория" id="17">
+					<DataPath>Объект.Категория</DataPath>
+					<ContextMenu name="КатегорияКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="КатегорияРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="Координаты" id="20">
+					<DataPath>Объект.Координаты</DataPath>
+					<ContextMenu name="КоординатыКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КоординатыРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ЧасоваяЗона" id="23">
+					<DataPath>Объект.ЧасоваяЗона</DataPath>
+					<ContextMenu name="ЧасоваяЗонаКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ЧасоваяЗонаРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ТелефонРесепшн" id="26">
+					<DataPath>Объект.ТелефонРесепшн</DataPath>
+					<ContextMenu name="ТелефонРесепшнКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТелефонРесепшнРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="EmailРесепшн" id="29">
+					<DataPath>Объект.EmailРесепшн</DataPath>
+					<ContextMenu name="EmailРесепшнКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="EmailРесепшнРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="Рейтинг" id="32">
+					<DataPath>Объект.Рейтинг</DataPath>
+					<ContextMenu name="РейтингКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="РейтингРасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="35">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="36"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="37">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ОбъектыГостеприимства</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

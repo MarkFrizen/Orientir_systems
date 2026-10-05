@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Договоры споставщиками</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<InputField name="Владелец" id="3">
+					<DataPath>Объект.Owner</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="ВладелецКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="5"/>
+				</InputField>
+				<UsualGroup name="ГруппаКодНаименование" id="6">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="7"/>
+					<ChildItems>
+						<InputField name="Наименование" id="8">
+							<DataPath>Объект.Description</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="10"/>
+						</InputField>
+						<InputField name="Код" id="11">
+							<DataPath>Объект.Code</DataPath>
+							<ContextMenu name="КодКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="13"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Номер" id="14">
+					<DataPath>Объект.Номер</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="Дата" id="17">
+					<DataPath>Объект.Дата</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="19"/>
+				</InputField>
+				<InputField name="ДатаНачала" id="20">
+					<DataPath>Объект.ДатаНачала</DataPath>
+					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ДатаОкончания" id="23">
+					<DataPath>Объект.ДатаОкончания</DataPath>
+					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="ВалютаРасчётов" id="26">
+					<DataPath>Объект.ВалютаРасчётов</DataPath>
+					<ContextMenu name="ВалютаРасчётовКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ВалютаРасчётовРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="ПроцентШтрафа" id="29">
+					<DataPath>Объект.ПроцентШтрафа</DataPath>
+					<ContextMenu name="ПроцентШтрафаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПроцентШтрафаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="МаксимальнаяКомпенсация" id="32">
+					<DataPath>Объект.МаксимальнаяКомпенсация</DataPath>
+					<ContextMenu name="МаксимальнаяКомпенсацияКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="МаксимальнаяКомпенсацияРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="УсловияLateCheckIn" id="35">
+					<DataPath>Объект.УсловияLateCheckIn</DataPath>
+					<ContextMenu name="УсловияLateCheckInКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="УсловияLateCheckInРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="УсловияОтмены" id="38">
+					<DataPath>Объект.УсловияОтмены</DataPath>
+					<ContextMenu name="УсловияОтменыКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="УсловияОтменыРасширеннаяПодсказка" id="40"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="43">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ДоговорыСПоставщиками</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

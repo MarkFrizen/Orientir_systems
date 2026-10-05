@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Заявка туриста на маршруте</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="1">
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ГруппаОсновное" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка" id="5">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапкаЛево" id="7">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="8"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНомерДата" id="9">
+											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="10"/>
+											<ChildItems>
+												<InputField name="Номер" id="11">
+													<DataPath>Объект.Number</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Width>9</Width>
+													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
+													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+												</InputField>
+												<InputField name="Дата" id="14">
+													<DataPath>Объект.Date</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>от</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="МаршрутныйЛист" id="17">
+											<DataPath>Объект.МаршрутныйЛист</DataPath>
+											<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19"/>
+										</InputField>
+										<InputField name="Турист" id="20">
+											<DataPath>Объект.Турист</DataPath>
+											<ContextMenu name="ТуристКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ТуристРасширеннаяПодсказка" id="22"/>
+										</InputField>
+										<InputField name="ТипЗапроса" id="23">
+											<DataPath>Объект.ТипЗапроса</DataPath>
+											<ContextMenu name="ТипЗапросаКонтекстноеМеню" id="24"/>
+											<ExtendedTooltip name="ТипЗапросаРасширеннаяПодсказка" id="25"/>
+										</InputField>
+										<InputField name="ТекстЗапроса" id="26">
+											<DataPath>Объект.ТекстЗапроса</DataPath>
+											<ContextMenu name="ТекстЗапросаКонтекстноеМеню" id="27"/>
+											<ExtendedTooltip name="ТекстЗапросаРасширеннаяПодсказка" id="28"/>
+										</InputField>
+										<InputField name="КлассификацияИИ" id="29">
+											<DataPath>Объект.КлассификацияИИ</DataPath>
+											<ContextMenu name="КлассификацияИИКонтекстноеМеню" id="30"/>
+											<ExtendedTooltip name="КлассификацияИИРасширеннаяПодсказка" id="31"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаШапкаПраво" id="32">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="33"/>
+									<ChildItems>
+										<InputField name="СрокSLA" id="34">
+											<DataPath>Объект.СрокSLA</DataPath>
+											<ContextMenu name="СрокSLAКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="СрокSLAРасширеннаяПодсказка" id="36"/>
+										</InputField>
+										<InputField name="Статус" id="37">
+											<DataPath>Объект.Статус</DataPath>
+											<ContextMenu name="СтатусКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="39"/>
+										</InputField>
+										<InputField name="Инициатор" id="40">
+											<DataPath>Объект.Инициатор</DataPath>
+											<ContextMenu name="ИнициаторКонтекстноеМеню" id="41"/>
+											<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="42"/>
+										</InputField>
+										<InputField name="Ответственный" id="43">
+											<DataPath>Объект.Ответственный</DataPath>
+											<ContextMenu name="ОтветственныйКонтекстноеМеню" id="44"/>
+											<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="45"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаИсторияОбработки" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>История обработки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаИсторияОбработкиРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<Table name="ИсторияОбработки" id="48">
+							<DataPath>Объект.ИсторияОбработки</DataPath>
+							<ContextMenu name="ИсторияОбработкиКонтекстноеМеню" id="49"/>
+							<AutoCommandBar name="ИсторияОбработкиКоманднаяПанель" id="50"/>
+							<ExtendedTooltip name="ИсторияОбработкиРасширеннаяПодсказка" id="51"/>
+							<SearchStringAddition name="ИсторияОбработкиСтрокаПоиска" id="52">
+								<AdditionSource>
+									<Item>ИсторияОбработки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсторияОбработкиСтрокаПоискаКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="ИсторияОбработкиСтрокаПоискаРасширеннаяПодсказка" id="54"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ИсторияОбработкиСостояниеПросмотра" id="55">
+								<AdditionSource>
+									<Item>ИсторияОбработки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсторияОбработкиСостояниеПросмотраКонтекстноеМеню" id="56"/>
+								<ExtendedTooltip name="ИсторияОбработкиСостояниеПросмотраРасширеннаяПодсказка" id="57"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ИсторияОбработкиУправлениеПоиском" id="58">
+								<AdditionSource>
+									<Item>ИсторияОбработки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ИсторияОбработкиУправлениеПоискомКонтекстноеМеню" id="59"/>
+								<ExtendedTooltip name="ИсторияОбработкиУправлениеПоискомРасширеннаяПодсказка" id="60"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ИсторияОбработкиНомерСтроки" id="61">
+									<DataPath>Объект.ИсторияОбработки.LineNumber</DataPath>
+									<ContextMenu name="ИсторияОбработкиНомерСтрокиКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ИсторияОбработкиНомерСтрокиРасширеннаяПодсказка" id="63"/>
+								</LabelField>
+								<InputField name="ИсторияОбработкиДатаВремя" id="64">
+									<DataPath>Объект.ИсторияОбработки.ДатаВремя</DataPath>
+									<ContextMenu name="ИсторияОбработкиДатаВремяКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ИсторияОбработкиДатаВремяРасширеннаяПодсказка" id="66"/>
+								</InputField>
+								<InputField name="ИсторияОбработкиСотрудник" id="67">
+									<DataPath>Объект.ИсторияОбработки.Сотрудник</DataPath>
+									<ContextMenu name="ИсторияОбработкиСотрудникКонтекстноеМеню" id="68"/>
+									<ExtendedTooltip name="ИсторияОбработкиСотрудникРасширеннаяПодсказка" id="69"/>
+								</InputField>
+								<InputField name="ИсторияОбработкиДействие" id="70">
+									<DataPath>Объект.ИсторияОбработки.Действие</DataPath>
+									<ContextMenu name="ИсторияОбработкиДействиеКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="ИсторияОбработкиДействиеРасширеннаяПодсказка" id="72"/>
+								</InputField>
+								<InputField name="ИсторияОбработкиКомментарий" id="73">
+									<DataPath>Объект.ИсторияОбработки.Комментарий</DataPath>
+									<ContextMenu name="ИсторияОбработкиКомментарийКонтекстноеМеню" id="74"/>
+									<ExtendedTooltip name="ИсторияОбработкиКомментарийРасширеннаяПодсказка" id="75"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="76">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="77"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПараметры" id="78">
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="79"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПараметрыЛево" id="80">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="81"/>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПараметрыПраво" id="82">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="83"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="84">
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="85"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="86">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЗаявкаТуристаНаМаршруте</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

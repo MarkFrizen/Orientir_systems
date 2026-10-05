@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Акт окомпенсации</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="1">
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ГруппаОсновное" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка" id="5">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапкаЛево" id="7">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="8"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНомерДата" id="9">
+											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="10"/>
+											<ChildItems>
+												<InputField name="Номер" id="11">
+													<DataPath>Объект.Number</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Width>9</Width>
+													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
+													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+												</InputField>
+												<InputField name="Дата" id="14">
+													<DataPath>Объект.Date</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>от</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="Претензия" id="17">
+											<DataPath>Объект.Претензия</DataPath>
+											<ContextMenu name="ПретензияКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="ПретензияРасширеннаяПодсказка" id="19"/>
+										</InputField>
+										<InputField name="Инцидент" id="20">
+											<DataPath>Объект.Инцидент</DataPath>
+											<ContextMenu name="ИнцидентКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ИнцидентРасширеннаяПодсказка" id="22"/>
+										</InputField>
+										<InputField name="СуммаКомпенсацииТуристу" id="23">
+											<DataPath>Объект.СуммаКомпенсацииТуристу</DataPath>
+											<ContextMenu name="СуммаКомпенсацииТуристуКонтекстноеМеню" id="24"/>
+											<ExtendedTooltip name="СуммаКомпенсацииТуристуРасширеннаяПодсказка" id="25"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаШапкаПраво" id="26">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="27"/>
+									<ChildItems>
+										<InputField name="СуммаВзысканияСПоставщика" id="28">
+											<DataPath>Объект.СуммаВзысканияСПоставщика</DataPath>
+											<ContextMenu name="СуммаВзысканияСПоставщикаКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="СуммаВзысканияСПоставщикаРасширеннаяПодсказка" id="30"/>
+										</InputField>
+										<InputField name="Валюта" id="31">
+											<DataPath>Объект.Валюта</DataPath>
+											<ContextMenu name="ВалютаКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="33"/>
+										</InputField>
+										<InputField name="ДатаАкта" id="34">
+											<DataPath>Объект.ДатаАкта</DataPath>
+											<ContextMenu name="ДатаАктаКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="ДатаАктаРасширеннаяПодсказка" id="36"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСтруктураКомпенсации" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Структура компенсации</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаСтруктураКомпенсацииРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<Table name="СтруктураКомпенсации" id="39">
+							<DataPath>Объект.СтруктураКомпенсации</DataPath>
+							<ContextMenu name="СтруктураКомпенсацииКонтекстноеМеню" id="40"/>
+							<AutoCommandBar name="СтруктураКомпенсацииКоманднаяПанель" id="41"/>
+							<ExtendedTooltip name="СтруктураКомпенсацииРасширеннаяПодсказка" id="42"/>
+							<SearchStringAddition name="СтруктураКомпенсацииСтрокаПоиска" id="43">
+								<AdditionSource>
+									<Item>СтруктураКомпенсации</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтруктураКомпенсацииСтрокаПоискаКонтекстноеМеню" id="44"/>
+								<ExtendedTooltip name="СтруктураКомпенсацииСтрокаПоискаРасширеннаяПодсказка" id="45"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтруктураКомпенсацииСостояниеПросмотра" id="46">
+								<AdditionSource>
+									<Item>СтруктураКомпенсации</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтруктураКомпенсацииСостояниеПросмотраКонтекстноеМеню" id="47"/>
+								<ExtendedTooltip name="СтруктураКомпенсацииСостояниеПросмотраРасширеннаяПодсказка" id="48"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтруктураКомпенсацииУправлениеПоиском" id="49">
+								<AdditionSource>
+									<Item>СтруктураКомпенсации</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтруктураКомпенсацииУправлениеПоискомКонтекстноеМеню" id="50"/>
+								<ExtendedTooltip name="СтруктураКомпенсацииУправлениеПоискомРасширеннаяПодсказка" id="51"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СтруктураКомпенсацииНомерСтроки" id="52">
+									<DataPath>Объект.СтруктураКомпенсации.LineNumber</DataPath>
+									<ContextMenu name="СтруктураКомпенсацииНомерСтрокиКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="СтруктураКомпенсацииНомерСтрокиРасширеннаяПодсказка" id="54"/>
+								</LabelField>
+								<InputField name="СтруктураКомпенсацииВидКомпенсации" id="55">
+									<DataPath>Объект.СтруктураКомпенсации.ВидКомпенсации</DataPath>
+									<ContextMenu name="СтруктураКомпенсацииВидКомпенсацииКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="СтруктураКомпенсацииВидКомпенсацииРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="СтруктураКомпенсацииСумма" id="58">
+									<DataPath>Объект.СтруктураКомпенсации.Сумма</DataPath>
+									<ContextMenu name="СтруктураКомпенсацииСуммаКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="СтруктураКомпенсацииСуммаРасширеннаяПодсказка" id="60"/>
+								</InputField>
+								<InputField name="СтруктураКомпенсацииОписание" id="61">
+									<DataPath>Объект.СтруктураКомпенсации.Описание</DataPath>
+									<ContextMenu name="СтруктураКомпенсацииОписаниеКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="СтруктураКомпенсацииОписаниеРасширеннаяПодсказка" id="63"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПараметры" id="66">
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="67"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПараметрыЛево" id="68">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="69"/>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПараметрыПраво" id="70">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="71"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="72">
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="73"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="74">
+			<Type>
+				<v8:Type>cfg:DocumentObject.АктОКомпенсации</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Событие маршрута</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛево" id="3">
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНомерДата" id="5">
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<InputField name="Номер" id="7">
+									<DataPath>Объект.Number</DataPath>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Width>9</Width>
+									<ContextMenu name="НомерКонтекстноеМеню" id="8"/>
+									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9"/>
+								</InputField>
+								<InputField name="Дата" id="10">
+									<DataPath>Объект.Date</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>от</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="МаршрутныйЛист" id="13">
+							<DataPath>Объект.МаршрутныйЛист</DataPath>
+							<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="14"/>
+							<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="15"/>
+						</InputField>
+						<InputField name="ДатаВремяUTC" id="16">
+							<DataPath>Объект.ДатаВремяUTC</DataPath>
+							<ContextMenu name="ДатаВремяUTCКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="ДатаВремяUTCРасширеннаяПодсказка" id="18"/>
+						</InputField>
+						<InputField name="ЛокальноеВремя" id="19">
+							<DataPath>Объект.ЛокальноеВремя</DataPath>
+							<ContextMenu name="ЛокальноеВремяКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ЛокальноеВремяРасширеннаяПодсказка" id="21"/>
+						</InputField>
+						<InputField name="ТипСобытия" id="22">
+							<DataPath>Объект.ТипСобытия</DataPath>
+							<ContextMenu name="ТипСобытияКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="ТипСобытияРасширеннаяПодсказка" id="24"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПраво" id="25">
+					<Group>Vertical</Group>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="26"/>
+					<ChildItems>
+						<InputField name="Объект" id="27">
+							<DataPath>Объект.Объект</DataPath>
+							<ContextMenu name="ОбъектКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="ОбъектРасширеннаяПодсказка" id="29"/>
+						</InputField>
+						<InputField name="Поставщик" id="30">
+							<DataPath>Объект.Поставщик</DataPath>
+							<ContextMenu name="ПоставщикКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="32"/>
+						</InputField>
+						<InputField name="ДлительностьМинут" id="33">
+							<DataPath>Объект.ДлительностьМинут</DataPath>
+							<ContextMenu name="ДлительностьМинутКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="ДлительностьМинутРасширеннаяПодсказка" id="35"/>
+						</InputField>
+						<InputField name="БуферДоСледующегоМинут" id="36">
+							<DataPath>Объект.БуферДоСледующегоМинут</DataPath>
+							<ContextMenu name="БуферДоСледующегоМинутКонтекстноеМеню" id="37"/>
+							<ExtendedTooltip name="БуферДоСледующегоМинутРасширеннаяПодсказка" id="38"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="39">
+			<DataPath>Объект.Комментарий</DataPath>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41"/>
+		</InputField>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="42">
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="43"/>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="44">
+			<Type>
+				<v8:Type>cfg:DocumentObject.СобытиеМаршрута</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

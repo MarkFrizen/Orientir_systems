@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Корректировка маршрута</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="1">
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="ГруппаОсновное" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основное</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаШапка" id="5">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="6"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаШапкаЛево" id="7">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаЛевоРасширеннаяПодсказка" id="8"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНомерДата" id="9">
+											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="10"/>
+											<ChildItems>
+												<InputField name="Номер" id="11">
+													<DataPath>Объект.Number</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Width>9</Width>
+													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
+													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+												</InputField>
+												<InputField name="Дата" id="14">
+													<DataPath>Объект.Date</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>от</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
+													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<InputField name="МаршрутныйЛист" id="17">
+											<DataPath>Объект.МаршрутныйЛист</DataPath>
+											<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="18"/>
+											<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19"/>
+										</InputField>
+										<InputField name="Причина" id="20">
+											<DataPath>Объект.Причина</DataPath>
+											<ContextMenu name="ПричинаКонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ПричинаРасширеннаяПодсказка" id="22"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаШапкаПраво" id="23">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="24"/>
+									<ChildItems>
+										<InputField name="Инициатор" id="25">
+											<DataPath>Объект.Инициатор</DataPath>
+											<ContextMenu name="ИнициаторКонтекстноеМеню" id="26"/>
+											<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="27"/>
+										</InputField>
+										<CheckBoxField name="Согласовано" id="28">
+											<DataPath>Объект.Согласовано</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<TitleLocation>Right</TitleLocation>
+											<ContextMenu name="СогласованоКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="СогласованоРасширеннаяПодсказка" id="30"/>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаИзменения" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменения</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаИзмененияРасширеннаяПодсказка" id="32"/>
+					<ChildItems>
+						<Table name="Изменения" id="33">
+							<DataPath>Объект.Изменения</DataPath>
+							<ContextMenu name="ИзмененияКонтекстноеМеню" id="34"/>
+							<AutoCommandBar name="ИзмененияКоманднаяПанель" id="35"/>
+							<ExtendedTooltip name="ИзмененияРасширеннаяПодсказка" id="36"/>
+							<SearchStringAddition name="ИзмененияСтрокаПоиска" id="37">
+								<AdditionSource>
+									<Item>Изменения</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИзмененияСтрокаПоискаКонтекстноеМеню" id="38"/>
+								<ExtendedTooltip name="ИзмененияСтрокаПоискаРасширеннаяПодсказка" id="39"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ИзмененияСостояниеПросмотра" id="40">
+								<AdditionSource>
+									<Item>Изменения</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ИзмененияСостояниеПросмотраКонтекстноеМеню" id="41"/>
+								<ExtendedTooltip name="ИзмененияСостояниеПросмотраРасширеннаяПодсказка" id="42"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ИзмененияУправлениеПоиском" id="43">
+								<AdditionSource>
+									<Item>Изменения</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ИзмененияУправлениеПоискомКонтекстноеМеню" id="44"/>
+								<ExtendedTooltip name="ИзмененияУправлениеПоискомРасширеннаяПодсказка" id="45"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ИзмененияНомерСтроки" id="46">
+									<DataPath>Объект.Изменения.LineNumber</DataPath>
+									<ContextMenu name="ИзмененияНомерСтрокиКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="ИзмененияНомерСтрокиРасширеннаяПодсказка" id="48"/>
+								</LabelField>
+								<InputField name="ИзмененияСобытиеМаршрута" id="49">
+									<DataPath>Объект.Изменения.СобытиеМаршрута</DataPath>
+									<ContextMenu name="ИзмененияСобытиеМаршрутаКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ИзмененияСобытиеМаршрутаРасширеннаяПодсказка" id="51"/>
+								</InputField>
+								<InputField name="ИзмененияСтароеВремяUTC" id="52">
+									<DataPath>Объект.Изменения.СтароеВремяUTC</DataPath>
+									<ContextMenu name="ИзмененияСтароеВремяUTCКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ИзмененияСтароеВремяUTCРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="ИзмененияНовоеВремяUTC" id="55">
+									<DataPath>Объект.Изменения.НовоеВремяUTC</DataPath>
+									<ContextMenu name="ИзмененияНовоеВремяUTCКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="ИзмененияНовоеВремяUTCРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="ИзмененияНовыйОбъект" id="58">
+									<DataPath>Объект.Изменения.НовыйОбъект</DataPath>
+									<ContextMenu name="ИзмененияНовыйОбъектКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ИзмененияНовыйОбъектРасширеннаяПодсказка" id="60"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДополнительно" id="61">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнительно</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПараметры" id="63">
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="64"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПараметрыЛево" id="65">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="66"/>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПараметрыПраво" id="67">
+									<Group>Vertical</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="68"/>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="69">
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="70"/>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="71">
+			<Type>
+				<v8:Type>cfg:DocumentObject.КорректировкаМаршрута</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
