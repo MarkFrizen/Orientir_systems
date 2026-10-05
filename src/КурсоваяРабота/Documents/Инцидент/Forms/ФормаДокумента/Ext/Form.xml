@@ -82,12 +82,6 @@
 											<ContextMenu name="ПоставщикКонтекстноеМеню" id="30"/>
 											<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="31"/>
 										</InputField>
-										<InputField name="Описание" id="32">
-											<DataPath>Объект.Описание</DataPath>
-											<MultiLine>true</MultiLine>
-											<ContextMenu name="ОписаниеКонтекстноеМеню" id="33"/>
-											<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="34"/>
-										</InputField>
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="ГруппаШапкаПраво" id="35">
@@ -95,12 +89,6 @@
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="ГруппаШапкаПравоРасширеннаяПодсказка" id="36"/>
 									<ChildItems>
-										<InputField name="ТекстИИ" id="37">
-											<DataPath>Объект.ТекстИИ</DataPath>
-											<MultiLine>true</MultiLine>
-											<ContextMenu name="ТекстИИКонтекстноеМеню" id="38"/>
-											<ExtendedTooltip name="ТекстИИРасширеннаяПодсказка" id="39"/>
-										</InputField>
 										<InputField name="УровеньТяжести" id="40">
 											<DataPath>Объект.УровеньТяжести</DataPath>
 											<ContextMenu name="УровеньТяжестиКонтекстноеМеню" id="41"/>
@@ -128,6 +116,31 @@
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаТексты" id="90">
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаТекстыРасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<InputField name="Описание" id="32">
+									<DataPath>Объект.Описание</DataPath>
+									<MultiLine>true</MultiLine>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>5</Height>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ОписаниеКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="34"/>
+								</InputField>
+								<InputField name="ТекстИИ" id="37">
+									<DataPath>Объект.ТекстИИ</DataPath>
+									<MultiLine>true</MultiLine>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>5</Height>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ТекстИИКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="ТекстИИРасширеннаяПодсказка" id="39"/>
+								</InputField>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
