@@ -49,8 +49,8 @@
 			<SearchStringModeOnInputByString>Begin</SearchStringModeOnInputByString>
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
-			<DefaultObjectForm/>
-			<DefaultListForm/>
+			<DefaultObjectForm>Document.ЗаказПоставщику.Form.ФормаДокумента</DefaultObjectForm>
+			<DefaultListForm>Document.ЗаказПоставщику.Form.ФормаСписка</DefaultListForm>
 			<DefaultChoiceForm/>
 			<AuxiliaryObjectForm/>
 			<AuxiliaryListForm/>
@@ -360,6 +360,8 @@
 					<DataHistory>Use</DataHistory>
 				</Properties>
 			</Attribute>
+			<Form>ФормаДокумента</Form>
+			<Form>ФормаСписка</Form>
 			<TabularSection uuid="deb5c768-b996-44f4-82cd-c1994795beb5">
 				<InternalInfo>
 					<xr:GeneratedType name="DocumentTabularSection.ЗаказПоставщику.Услуги" category="TabularSection">
