@@ -6,6 +6,7 @@
 			<v8:content>Сотрудники</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -24,24 +25,52 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<InputField name="ФИО" id="11">
 					<DataPath>Объект.ФИО</DataPath>
 					<ContextMenu name="ФИОКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фамилия, имя и отчество</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Должность" id="14">
 					<DataPath>Объект.Должность</DataPath>
 					<ContextMenu name="ДолжностьКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Должность сотрудника</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -61,17 +90,38 @@
 				<InputField name="Пользователь1С" id="17">
 					<DataPath>Объект.Пользователь1С</DataPath>
 					<ContextMenu name="Пользователь1СКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="Пользователь1СРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="Пользователь1СРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Учётная запись 1С, связанная с сотрудником</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Телефон" id="20">
 					<DataPath>Объект.Телефон</DataPath>
 					<ContextMenu name="ТелефонКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="22"/>
+										<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="22">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Контактный телефон</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Email" id="23">
 					<DataPath>Объект.Email</DataPath>
 					<ContextMenu name="EmailКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="25"/>
+										<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="25">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Адрес электронной почты</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>

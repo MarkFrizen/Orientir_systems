@@ -6,6 +6,7 @@
 			<v8:content>Типы инцидентов</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -24,19 +25,40 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<InputField name="УровеньТяжести" id="11">
 					<DataPath>Объект.УровеньТяжести</DataPath>
 					<ContextMenu name="УровеньТяжестиКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="УровеньТяжестиРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="УровеньТяжестиРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Уровень тяжести, влияет на приоритет урегулирования</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -56,12 +78,26 @@
 				<InputField name="ШаблонПретензии" id="14">
 					<DataPath>Объект.ШаблонПретензии</DataPath>
 					<ContextMenu name="ШаблонПретензииКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ШаблонПретензииРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ШаблонПретензииРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Типовой текст претензии поставщику</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ТиповойПроцентКомпенсации" id="17">
 					<DataPath>Объект.ТиповойПроцентКомпенсации</DataPath>
 					<ContextMenu name="ТиповойПроцентКомпенсацииКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ТиповойПроцентКомпенсацииРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="ТиповойПроцентКомпенсацииРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Процент компенсации по умолчанию для инцидентов этого типа</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>

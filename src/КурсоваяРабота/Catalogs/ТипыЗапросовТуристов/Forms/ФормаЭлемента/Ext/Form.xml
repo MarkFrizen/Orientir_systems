@@ -6,6 +6,7 @@
 			<v8:content>Типы запросов туристов</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -24,24 +25,52 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<InputField name="SLAЧасов" id="11">
 					<DataPath>Объект.SLAЧасов</DataPath>
 					<ContextMenu name="SLAЧасовКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="SLAЧасовРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="SLAЧасовРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Норматив времени на обработку запроса данного типа, в часах</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Критичность" id="14">
 					<DataPath>Объект.Критичность</DataPath>
 					<ContextMenu name="КритичностьКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="КритичностьРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="КритичностьРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Уровень критичности запроса, влияет на порядок обработки</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -61,7 +90,14 @@
 				<InputField name="ШаблонОтвета" id="17">
 					<DataPath>Объект.ШаблонОтвета</DataPath>
 					<ContextMenu name="ШаблонОтветаКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ШаблонОтветаРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="ШаблонОтветаРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Типовой текст ответа туристу</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>

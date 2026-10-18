@@ -6,6 +6,7 @@
 			<v8:content>Номенклатура услуг</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
@@ -25,12 +26,26 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -48,17 +63,38 @@
 				<InputField name="ВидУслуги" id="14">
 					<DataPath>Объект.ВидУслуги</DataPath>
 					<ContextMenu name="ВидУслугиКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ВидУслугиРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ВидУслугиРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Вид услуги: проживание, трансфер, экскурсия и т.п.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Единица" id="17">
 					<DataPath>Объект.Единица</DataPath>
 					<ContextMenu name="ЕдиницаКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ЕдиницаРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="ЕдиницаРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Единица измерения услуги</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Валюта" id="23">
 					<DataPath>Объект.Валюта</DataPath>
 					<ContextMenu name="ВалютаКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="25"/>
+										<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="25">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта цены</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -78,7 +114,14 @@
 				<InputField name="БазоваяЦена" id="20">
 					<DataPath>Объект.БазоваяЦена</DataPath>
 					<ContextMenu name="БазоваяЦенаКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22"/>
+										<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Базовая цена услуги до наценок</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>

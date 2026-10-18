@@ -6,6 +6,7 @@
 			<v8:content>Поставщики</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
@@ -25,12 +26,26 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -48,27 +63,62 @@
 				<InputField name="ТипПоставщика" id="14">
 					<DataPath>Объект.ТипПоставщика</DataPath>
 					<ContextMenu name="ТипПоставщикаКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ТипПоставщикаРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ТипПоставщикаРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Категория поставщика: отель, перевозчик, бюро</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ИНН" id="17">
 					<DataPath>Объект.ИНН</DataPath>
 					<ContextMenu name="ИННКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ИННРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="ИННРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ИНН поставщика</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Телефон" id="26">
 					<DataPath>Объект.Телефон</DataPath>
 					<ContextMenu name="ТелефонКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="28"/>
+										<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="28">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Контактный телефон</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Email" id="29">
 					<DataPath>Объект.Email</DataPath>
 					<ContextMenu name="EmailКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="31"/>
+										<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="31">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Адрес электронной почты</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ЧасоваяЗона" id="35">
 					<DataPath>Объект.ЧасоваяЗона</DataPath>
 					<ContextMenu name="ЧасоваяЗонаКонтекстноеМеню" id="36"/>
-					<ExtendedTooltip name="ЧасоваяЗонаРасширеннаяПодсказка" id="37"/>
+										<ExtendedTooltip name="ЧасоваяЗонаРасширеннаяПодсказка" id="37">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часовая зона объекта, используется при расчёте локального времени</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -88,17 +138,38 @@
 				<InputField name="КПП" id="20">
 					<DataPath>Объект.КПП</DataPath>
 					<ContextMenu name="КППКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="КППРасширеннаяПодсказка" id="22"/>
+										<ExtendedTooltip name="КППРасширеннаяПодсказка" id="22">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>КПП поставщика</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ЮрАдрес" id="23">
 					<DataPath>Объект.ЮрАдрес</DataPath>
 					<ContextMenu name="ЮрАдресКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ЮрАдресРасширеннаяПодсказка" id="25"/>
+										<ExtendedTooltip name="ЮрАдресРасширеннаяПодсказка" id="25">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Юридический адрес поставщика</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="КонтактноеЛицо" id="32">
 					<DataPath>Объект.КонтактноеЛицо</DataPath>
 					<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="34"/>
+										<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="34">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Представитель поставщика для оперативной связи</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>

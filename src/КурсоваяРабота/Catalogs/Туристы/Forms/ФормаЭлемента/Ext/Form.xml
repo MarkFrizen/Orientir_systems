@@ -6,6 +6,7 @@
 			<v8:content>Туристы</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -24,44 +25,100 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<InputField name="ФИО" id="11">
 					<DataPath>Объект.ФИО</DataPath>
 					<ContextMenu name="ФИОКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="ФИОРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фамилия, имя и отчество</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ДатаРождения" id="14">
 					<DataPath>Объект.ДатаРождения</DataPath>
 					<ContextMenu name="ДатаРожденияКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ДатаРожденияРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ДатаРожденияРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата рождения туриста</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="СерияПаспорта" id="17">
 					<DataPath>Объект.СерияПаспорта</DataPath>
 					<ContextMenu name="СерияПаспортаКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="СерияПаспортаРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="СерияПаспортаРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Серия паспорта туриста</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="НомерПаспорта" id="20">
 					<DataPath>Объект.НомерПаспорта</DataPath>
 					<ContextMenu name="НомерПаспортаКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="НомерПаспортаРасширеннаяПодсказка" id="22"/>
+										<ExtendedTooltip name="НомерПаспортаРасширеннаяПодсказка" id="22">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер паспорта туриста</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Телефон" id="23">
 					<DataPath>Объект.Телефон</DataPath>
 					<ContextMenu name="ТелефонКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="25"/>
+										<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="25">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Контактный телефон</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Гражданство" id="29">
 					<DataPath>Объект.Гражданство</DataPath>
 					<ContextMenu name="ГражданствоКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="ГражданствоРасширеннаяПодсказка" id="31"/>
+										<ExtendedTooltip name="ГражданствоРасширеннаяПодсказка" id="31">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Страна гражданства туриста</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
@@ -81,22 +138,50 @@
 				<InputField name="Email" id="26">
 					<DataPath>Объект.Email</DataPath>
 					<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28"/>
+										<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Адрес электронной почты</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ПредпочтенияПитания" id="32">
 					<DataPath>Объект.ПредпочтенияПитания</DataPath>
 					<ContextMenu name="ПредпочтенияПитанияКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="ПредпочтенияПитанияРасширеннаяПодсказка" id="34"/>
+										<ExtendedTooltip name="ПредпочтенияПитанияРасширеннаяПодсказка" id="34">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Особые пожелания по питанию</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="МедицинскиеОсобенности" id="35">
 					<DataPath>Объект.МедицинскиеОсобенности</DataPath>
 					<ContextMenu name="МедицинскиеОсобенностиКонтекстноеМеню" id="36"/>
-					<ExtendedTooltip name="МедицинскиеОсобенностиРасширеннаяПодсказка" id="37"/>
+										<ExtendedTooltip name="МедицинскиеОсобенностиРасширеннаяПодсказка" id="37">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Медицинские ограничения, важные при организации поездки</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Менеджер" id="38">
 					<DataPath>Объект.Менеджер</DataPath>
 					<ContextMenu name="МенеджерКонтекстноеМеню" id="39"/>
-					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40"/>
+										<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сотрудник, ведущий туриста</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
