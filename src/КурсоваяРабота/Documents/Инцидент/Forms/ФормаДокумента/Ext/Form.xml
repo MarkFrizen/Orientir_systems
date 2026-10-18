@@ -379,4 +379,23 @@
 			<SavedData>true</SavedData>
 		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеТяжёлый" id="200">
+				<Field>Объект.УровеньТяжести</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Объект.УровеньТяжести = Перечисления.УровниТяжести.Тяжёлый</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#FFEB9C,ЦветТекста=#9C6500</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>
