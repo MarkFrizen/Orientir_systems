@@ -194,6 +194,21 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаКоманды" id="44">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<Button name="ОткрытьМаршрутныйЛист" id="46">
+					<CommandName>Form.Command.ОткрытьМаршрутныйЛист</CommandName>
+					<ExtendedTooltip name="ОткрытьМаршрутныйЛистРасширеннаяПодсказка" id="47"/>
+				</Button>
+				<Button name="ПересчитатьЛокальноеВремя" id="48">
+					<CommandName>Form.Command.ПересчитатьЛокальноеВремя</CommandName>
+					<ExtendedTooltip name="ПересчитатьЛокальноеВремяРасширеннаяПодсказка" id="49"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="44">
@@ -223,4 +238,11 @@
 			</Item>
 		</Items>
 	</ConditionalAppearance>
-</Form>
+<Commands>
+		<Command name="ОткрытьМаршрутныйЛист" id="1">
+			<Action>ОткрытьМаршрутныйЛист</Action>
+		</Command>
+		<Command name="ПересчитатьЛокальноеВремя" id="2">
+			<Action>ПересчитатьЛокальноеВремя</Action>
+		</Command>
+	</Commands></Form>

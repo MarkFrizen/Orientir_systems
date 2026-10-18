@@ -371,6 +371,33 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<UsualGroup name="ГруппаКоманды" id="98">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="99"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаявку" id="100">
+					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="101"/>
+				</Button>
+				<Button name="ОткрытьПоставщика" id="102">
+					<CommandName>Form.Command.ОткрытьПоставщика</CommandName>
+					<ExtendedTooltip name="ОткрытьПоставщикаРасширеннаяПодсказка" id="103"/>
+				</Button>
+				<Button name="ОткрытьДоговор" id="104">
+					<CommandName>Form.Command.ОткрытьДоговор</CommandName>
+					<ExtendedTooltip name="ОткрытьДоговорРасширеннаяПодсказка" id="105"/>
+				</Button>
+				<Button name="СоздатьПодтверждение" id="106">
+					<CommandName>Form.Command.СоздатьПодтверждение</CommandName>
+					<ExtendedTooltip name="СоздатьПодтверждениеРасширеннаяПодсказка" id="107"/>
+				</Button>
+				<Button name="ПересчитатьСуммы" id="108">
+					<CommandName>Form.Command.ПересчитатьСуммы</CommandName>
+					<ExtendedTooltip name="ПересчитатьСуммыРасширеннаяПодсказка" id="109"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="98">
@@ -415,4 +442,20 @@
 			</Item>
 		</Items>
 	</ConditionalAppearance>
-</Form>
+<Commands>
+		<Command name="ОткрытьЗаявку" id="1">
+			<Action>ОткрытьЗаявку</Action>
+		</Command>
+		<Command name="ОткрытьПоставщика" id="2">
+			<Action>ОткрытьПоставщика</Action>
+		</Command>
+		<Command name="ОткрытьДоговор" id="3">
+			<Action>ОткрытьДоговор</Action>
+		</Command>
+		<Command name="СоздатьПодтверждение" id="4">
+			<Action>СоздатьПодтверждение</Action>
+		</Command>
+		<Command name="ПересчитатьСуммы" id="5">
+			<Action>ПересчитатьСуммы</Action>
+		</Command>
+	</Commands></Form>

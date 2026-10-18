@@ -122,6 +122,21 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
+		<UsualGroup name="ГруппаКоманды" id="50">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<Button name="ПоказатьПросроченные" id="52">
+					<CommandName>Form.Command.ПоказатьПросроченные</CommandName>
+					<ExtendedTooltip name="ПоказатьПросроченныеРасширеннаяПодсказка" id="53"/>
+				</Button>
+				<Button name="СброситьОтбор" id="54">
+					<CommandName>Form.Command.СброситьОтбор</CommandName>
+					<ExtendedTooltip name="СброситьОтборРасширеннаяПодсказка" id="55"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Список" id="50">
@@ -171,4 +186,11 @@
 			</Item>
 		</Items>
 	</ConditionalAppearance>
-</Form>
+<Commands>
+		<Command name="ПоказатьПросроченные" id="1">
+			<Action>ПоказатьПросроченные</Action>
+		</Command>
+		<Command name="СброситьОтбор" id="2">
+			<Action>СброситьОтбор</Action>
+		</Command>
+	</Commands></Form>

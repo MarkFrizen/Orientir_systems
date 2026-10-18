@@ -123,6 +123,25 @@
 			<Group>Vertical</Group>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="28"/>
 		</UsualGroup>
+		<UsualGroup name="ГруппаКоманды" id="29">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаявку" id="31">
+					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="32"/>
+				</Button>
+				<Button name="ОткрытьТуриста" id="33">
+					<CommandName>Form.Command.ОткрытьТуриста</CommandName>
+					<ExtendedTooltip name="ОткрытьТуристаРасширеннаяПодсказка" id="34"/>
+				</Button>
+				<Button name="ПересчитатьТайминги" id="35">
+					<CommandName>Form.Command.ПересчитатьТайминги</CommandName>
+					<ExtendedTooltip name="ПересчитатьТаймингиРасширеннаяПодсказка" id="36"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="29">
@@ -133,4 +152,14 @@
 			<SavedData>true</SavedData>
 		</Attribute>
 	</Attributes>
-</Form>
+<Commands>
+		<Command name="ОткрытьЗаявку" id="1">
+			<Action>ОткрытьЗаявку</Action>
+		</Command>
+		<Command name="ОткрытьТуриста" id="2">
+			<Action>ОткрытьТуриста</Action>
+		</Command>
+		<Command name="ПересчитатьТайминги" id="3">
+			<Action>ПересчитатьТайминги</Action>
+		</Command>
+	</Commands></Form>

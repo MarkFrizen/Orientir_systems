@@ -275,6 +275,25 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<UsualGroup name="ГруппаКоманды" id="74">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="75"/>
+			<ChildItems>
+				<Button name="ОткрытьПретензию" id="76">
+					<CommandName>Form.Command.ОткрытьПретензию</CommandName>
+					<ExtendedTooltip name="ОткрытьПретензиюРасширеннаяПодсказка" id="77"/>
+				</Button>
+				<Button name="ОткрытьИнцидент" id="78">
+					<CommandName>Form.Command.ОткрытьИнцидент</CommandName>
+					<ExtendedTooltip name="ОткрытьИнцидентРасширеннаяПодсказка" id="79"/>
+				</Button>
+				<Button name="ПересчитатьСтруктуру" id="80">
+					<CommandName>Form.Command.ПересчитатьСтруктуру</CommandName>
+					<ExtendedTooltip name="ПересчитатьСтруктуруРасширеннаяПодсказка" id="81"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="74">
@@ -285,4 +304,14 @@
 			<SavedData>true</SavedData>
 		</Attribute>
 	</Attributes>
-</Form>
+<Commands>
+		<Command name="ОткрытьПретензию" id="1">
+			<Action>ОткрытьПретензию</Action>
+		</Command>
+		<Command name="ОткрытьИнцидент" id="2">
+			<Action>ОткрытьИнцидент</Action>
+		</Command>
+		<Command name="ПересчитатьСтруктуру" id="3">
+			<Action>ПересчитатьСтруктуру</Action>
+		</Command>
+	</Commands></Form>

@@ -265,6 +265,21 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<UsualGroup name="ГруппаКоманды" id="71">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="72"/>
+			<ChildItems>
+				<Button name="ОткрытьМаршрутныйЛист" id="73">
+					<CommandName>Form.Command.ОткрытьМаршрутныйЛист</CommandName>
+					<ExtendedTooltip name="ОткрытьМаршрутныйЛистРасширеннаяПодсказка" id="74"/>
+				</Button>
+				<Button name="ПрименитьКорректировку" id="75">
+					<CommandName>Form.Command.ПрименитьКорректировку</CommandName>
+					<ExtendedTooltip name="ПрименитьКорректировкуРасширеннаяПодсказка" id="76"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="71">
@@ -275,4 +290,11 @@
 			<SavedData>true</SavedData>
 		</Attribute>
 	</Attributes>
-</Form>
+<Commands>
+		<Command name="ОткрытьМаршрутныйЛист" id="1">
+			<Action>ОткрытьМаршрутныйЛист</Action>
+		</Command>
+		<Command name="ПрименитьКорректировку" id="2">
+			<Action>ПрименитьКорректировку</Action>
+		</Command>
+	</Commands></Form>

@@ -184,6 +184,29 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаКоманды" id="41">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<Button name="ОткрытьИнцидент" id="43">
+					<CommandName>Form.Command.ОткрытьИнцидент</CommandName>
+					<ExtendedTooltip name="ОткрытьИнцидентРасширеннаяПодсказка" id="44"/>
+				</Button>
+				<Button name="ОткрытьДоговор" id="45">
+					<CommandName>Form.Command.ОткрытьДоговор</CommandName>
+					<ExtendedTooltip name="ОткрытьДоговорРасширеннаяПодсказка" id="46"/>
+				</Button>
+				<Button name="СоздатьАкт" id="47">
+					<CommandName>Form.Command.СоздатьАкт</CommandName>
+					<ExtendedTooltip name="СоздатьАктРасширеннаяПодсказка" id="48"/>
+				</Button>
+				<Button name="РассчитатьКомпенсацию" id="49">
+					<CommandName>Form.Command.РассчитатьКомпенсацию</CommandName>
+					<ExtendedTooltip name="РассчитатьКомпенсациюРасширеннаяПодсказка" id="50"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="41">
@@ -223,4 +246,17 @@
 			</Item>
 		</Items>
 	</ConditionalAppearance>
-</Form>
+<Commands>
+		<Command name="ОткрытьИнцидент" id="1">
+			<Action>ОткрытьИнцидент</Action>
+		</Command>
+		<Command name="ОткрытьДоговор" id="2">
+			<Action>ОткрытьДоговор</Action>
+		</Command>
+		<Command name="СоздатьАкт" id="3">
+			<Action>СоздатьАкт</Action>
+		</Command>
+		<Command name="РассчитатьКомпенсацию" id="4">
+			<Action>РассчитатьКомпенсацию</Action>
+		</Command>
+	</Commands></Form>

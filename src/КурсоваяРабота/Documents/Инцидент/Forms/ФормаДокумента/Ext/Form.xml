@@ -369,6 +369,29 @@
 				</Page>
 			</ChildItems>
 		</Pages>
+		<UsualGroup name="ГруппаКоманды" id="92">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="93"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаявку" id="94">
+					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="95"/>
+				</Button>
+				<Button name="ОткрытьПоставщика" id="96">
+					<CommandName>Form.Command.ОткрытьПоставщика</CommandName>
+					<ExtendedTooltip name="ОткрытьПоставщикаРасширеннаяПодсказка" id="97"/>
+				</Button>
+				<Button name="СоздатьПретензию" id="98">
+					<CommandName>Form.Command.СоздатьПретензию</CommandName>
+					<ExtendedTooltip name="СоздатьПретензиюРасширеннаяПодсказка" id="99"/>
+				</Button>
+				<Button name="Классифицировать" id="100">
+					<CommandName>Form.Command.Классифицировать</CommandName>
+					<ExtendedTooltip name="КлассифицироватьРасширеннаяПодсказка" id="101"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="89">
@@ -398,4 +421,17 @@
 			</Item>
 		</Items>
 	</ConditionalAppearance>
-</Form>
+<Commands>
+		<Command name="ОткрытьЗаявку" id="1">
+			<Action>ОткрытьЗаявку</Action>
+		</Command>
+		<Command name="ОткрытьПоставщика" id="2">
+			<Action>ОткрытьПоставщика</Action>
+		</Command>
+		<Command name="СоздатьПретензию" id="3">
+			<Action>СоздатьПретензию</Action>
+		</Command>
+		<Command name="Классифицировать" id="4">
+			<Action>Классифицировать</Action>
+		</Command>
+	</Commands></Form>
