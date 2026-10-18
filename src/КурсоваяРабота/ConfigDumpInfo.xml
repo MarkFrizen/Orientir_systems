@@ -53,8 +53,8 @@
 			<Metadata name="Catalog.ДоговорыСПоставщиками.Attribute.УсловияLateCheckIn" id="e7beefe1-6b1a-4a11-87e7-38b7b3b7e98c"/>
 			<Metadata name="Catalog.ДоговорыСПоставщиками.Attribute.УсловияОтмены" id="fba6d490-05fe-404e-9f2c-d68c262220b8"/>
 		</Metadata>
-		<Metadata name="Catalog.ДоговорыСПоставщиками.Form.ФормаЭлемента" id="1196cc63-c260-498a-a804-81be30332f76" configVersion="195c3a1d15705842a2df993cbed7579500000000"/>
-		<Metadata name="Catalog.ДоговорыСПоставщиками.Form.ФормаЭлемента.Form" id="1196cc63-c260-498a-a804-81be30332f76.0" configVersion="c68fe968daebbb4989fe4dfc31432bbd00000000"/>
+		<Metadata name="Catalog.ДоговорыСПоставщиками.Form.ФормаЭлемента" id="1196cc63-c260-498a-a804-81be30332f76" configVersion="d6b299aa848c404097558d4735e1704100000000"/>
+		<Metadata name="Catalog.ДоговорыСПоставщиками.Form.ФормаЭлемента.Form" id="1196cc63-c260-498a-a804-81be30332f76.0" configVersion="54b0612fd39a114bbf4d1ad112d1aeee00000000"/>
 		<Metadata name="Catalog.ДоговорыСПоставщиками.ObjectModule" id="db4d5772-01c1-4a6e-9367-d26fbafaecb8.0" configVersion="76e3c2ccb0867f49bcfa39420eb7ed4500000000"/>
 		<Metadata name="Catalog.ЕдиницыИзмерения" id="d50451c4-1b4d-4dd6-a8a1-780caa9fa502" configVersion="d90565dd8a8f3b4d9acf4e2225c9fac100000000"/>
 		<Metadata name="Catalog.ЕдиницыИзмерения.Form.ФормаЭлемента" id="f01368f2-9df7-45ba-81ef-16c378cb2a2d" configVersion="0a44456f2b3f00498ff130d2ca1b6e7f00000000"/>
@@ -199,8 +199,8 @@
 		</Metadata>
 		<Metadata name="Document.АктОКомпенсации.Form.ФормаДокумента" id="6a16f380-b792-4e9f-8bc2-c9ac2574e14f" configVersion="6adbdc4c2f27854f998cc7e4a6f2137900000000"/>
 		<Metadata name="Document.АктОКомпенсации.Form.ФормаДокумента.Form" id="6a16f380-b792-4e9f-8bc2-c9ac2574e14f.0" configVersion="47184115a3552740adce5172a99691c200000000"/>
-		<Metadata name="Document.АктОКомпенсации.Form.ФормаСписка" id="4d7dbd34-4cbd-4db5-8a2a-fc45f5232dee" configVersion="be749ea2a6cf2149b351dc39a8fa376100000000"/>
-		<Metadata name="Document.АктОКомпенсации.Form.ФормаСписка.Form" id="4d7dbd34-4cbd-4db5-8a2a-fc45f5232dee.0" configVersion="14362159c60e85489931ebb7916a408c00000000"/>
+		<Metadata name="Document.АктОКомпенсации.Form.ФормаСписка" id="4d7dbd34-4cbd-4db5-8a2a-fc45f5232dee" configVersion="fe249b96cff7b74199755803dcdc510c00000000"/>
+		<Metadata name="Document.АктОКомпенсации.Form.ФормаСписка.Form" id="4d7dbd34-4cbd-4db5-8a2a-fc45f5232dee.0" configVersion="7378e126a2353046976552197d57969700000000"/>
 		<Metadata name="Document.АктОКомпенсации.ObjectModule" id="5db07376-ed65-4942-ab5f-d4fb83d7f46d.0" configVersion="f95b9498595e7e46abeddc4fffc182d900000000"/>
 		<Metadata name="Document.ЗаказПоставщику" id="a4fc9c37-066b-4559-9b39-71b6926ee185" configVersion="b7728006e881b040bd7c64e2f1a4d8f900000000">
 			<Metadata name="Document.ЗаказПоставщику.Attribute.Договор" id="2e0666e6-51fb-4963-b384-477181e2a524"/>
@@ -222,8 +222,8 @@
 			<Metadata name="Document.ЗаказПоставщику.TabularSection.Услуги" id="deb5c768-b996-44f4-82cd-c1994795beb5"/>
 			<Metadata name="Document.ЗаказПоставщику.TabularSection.Услуги.Attribute.Сумма" id="fe8010ee-1e7a-4716-9d34-f6480eb3d82a"/>
 		</Metadata>
-		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента" id="8dfba093-7655-4ac8-8af1-24814cac29c9" configVersion="8130a27029738c44880bf1d835f1360f00000000"/>
-		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента.Form" id="8dfba093-7655-4ac8-8af1-24814cac29c9.0" configVersion="5a8e444cc85c1d49b8c7b66c1037ec2800000000"/>
+		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента" id="8dfba093-7655-4ac8-8af1-24814cac29c9" configVersion="556945cae2286d46a809aab9f93cdb2000000000"/>
+		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента.Form" id="8dfba093-7655-4ac8-8af1-24814cac29c9.0" configVersion="bd92b71b1da23e4fab90145c733568f900000000"/>
 		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка" id="36fc3da0-6018-45c8-93cf-d2715bda9c77" configVersion="43ca6d95f0c3ae459a90f6500a489b1f00000000"/>
 		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка.Form" id="36fc3da0-6018-45c8-93cf-d2715bda9c77.0" configVersion="00da58f0d5fa4f48b72bbae4a0cd252b00000000"/>
 		<Metadata name="Document.ЗаказПоставщику.ObjectModule" id="a4fc9c37-066b-4559-9b39-71b6926ee185.0" configVersion="bfe138a3873aa34c9cfc1ee77e99cca500000000"/>
@@ -283,8 +283,8 @@
 		</Metadata>
 		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаДокумента" id="0ad0eafe-98c5-4ef9-9a64-a9c4546c0aa0" configVersion="e1688001272e07499e434b02b132b56e00000000"/>
 		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаДокумента.Form" id="0ad0eafe-98c5-4ef9-9a64-a9c4546c0aa0.0" configVersion="6461dc9186eb8b43b87dd2b04123c99b00000000"/>
-		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаСписка" id="3f34ae36-5862-4ad5-80d1-334c26b2b939" configVersion="c37afc8b83f21b419f9652e93cf866a400000000"/>
-		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаСписка.Form" id="3f34ae36-5862-4ad5-80d1-334c26b2b939.0" configVersion="2cf349ce2fae384882cf45ae25dd710300000000"/>
+		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаСписка" id="3f34ae36-5862-4ad5-80d1-334c26b2b939" configVersion="0865a56bc5ea4d4aae3c76ab8ec978d000000000"/>
+		<Metadata name="Document.КорректировкаМаршрута.Form.ФормаСписка.Form" id="3f34ae36-5862-4ad5-80d1-334c26b2b939.0" configVersion="26a385c647e1ae4b8a2df1d0db5228cc00000000"/>
 		<Metadata name="Document.КорректировкаМаршрута.ObjectModule" id="4776ed89-2a7e-4c0f-b9ca-7acbae76606f.0" configVersion="b1488c213a709947b8cb0251aa29fbb000000000"/>
 		<Metadata name="Document.МаршрутныйЛист" id="597171c2-c96d-4a79-9126-e9a8b7aef062" configVersion="0c193540f7741148aff2c21ecc97ee0a00000000">
 			<Metadata name="Document.МаршрутныйЛист.Attribute.Турист" id="577a24cd-c475-4ad3-aff8-ff8f4f547271"/>
@@ -314,8 +314,8 @@
 			<Metadata name="Document.ПодтверждениеУслуги.TabularSection.ПодтверждённыеУслуги.Attribute.Сумма" id="f9ec8e13-c147-4f4c-85a0-46ef0b019136"/>
 			<Metadata name="Document.ПодтверждениеУслуги.TabularSection.ПодтверждённыеУслуги.Attribute.Объект" id="ff0671d8-0813-48cd-8443-7af7e912b220"/>
 		</Metadata>
-		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаДокумента" id="b353fb53-58e9-4f1b-bbf9-13fc81b71c43" configVersion="0748f82943aeba46aad864ab98e6aaf400000000"/>
-		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаДокумента.Form" id="b353fb53-58e9-4f1b-bbf9-13fc81b71c43.0" configVersion="f05b6b1643f4cc4381ecd124bac8e83b00000000"/>
+		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаДокумента" id="b353fb53-58e9-4f1b-bbf9-13fc81b71c43" configVersion="d33393490c74c347b81b97950f098f7700000000"/>
+		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаДокумента.Form" id="b353fb53-58e9-4f1b-bbf9-13fc81b71c43.0" configVersion="32bd0f35bafa0f49b6a05f07c9250ae900000000"/>
 		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаСписка" id="13e7f9dc-7c8d-440f-afec-49ab240af87c" configVersion="b4e01f5774870243a1e9699305330de400000000"/>
 		<Metadata name="Document.ПодтверждениеУслуги.Form.ФормаСписка.Form" id="13e7f9dc-7c8d-440f-afec-49ab240af87c.0" configVersion="d5107bb7ff3ba34e8df271eeec4511e000000000"/>
 		<Metadata name="Document.ПодтверждениеУслуги.ObjectModule" id="692c4792-809a-48f1-b119-e7264b2dbc14.0" configVersion="08ebf5d760b08d45a41889c0da231ce800000000"/>
@@ -329,8 +329,8 @@
 			<Metadata name="Document.ПретензияПоставщику.Attribute.Статус" id="cc29c7cf-97fb-4e1b-a33c-02bd6efa18b3"/>
 			<Metadata name="Document.ПретензияПоставщику.Attribute.Поставщик" id="d2623b3c-65a7-42a5-a2bb-579eac8266a3"/>
 		</Metadata>
-		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c" configVersion="071a8932634ba940859bd812badbff6c00000000"/>
-		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента.Form" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c.0" configVersion="07290f1b20e3a548bd7a455749f756f100000000"/>
+		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c" configVersion="a85c73c3f70afc4698f0ac539296812100000000"/>
+		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента.Form" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c.0" configVersion="bcf6fa3664c7104a8d7bde6de164c91200000000"/>
 		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка" id="765f2487-ccc2-472b-84a1-69e2b70eef3d" configVersion="5830548805528b4483318cd442f9ba3d00000000"/>
 		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка.Form" id="765f2487-ccc2-472b-84a1-69e2b70eef3d.0" configVersion="f5c4e266d5b9534fb2928a5fb1e0854b00000000"/>
 		<Metadata name="Document.ПретензияПоставщику.ObjectModule" id="7767066c-4559-4bc4-9e99-b13a8fed94bd.0" configVersion="b5b1d96f1907484798ab15de29097f1100000000"/>
@@ -345,8 +345,8 @@
 			<Metadata name="Document.СобытиеМаршрута.Attribute.Комментарий" id="aba3c5ef-48f9-4f02-bce9-f5a3bdddb376"/>
 			<Metadata name="Document.СобытиеМаршрута.Attribute.МаршрутныйЛист" id="bd214b30-4199-4672-acb3-114fa2e473c3"/>
 		</Metadata>
-		<Metadata name="Document.СобытиеМаршрута.Form.ФормаДокумента" id="71973e08-5d29-4930-bad2-fbcef2860b1c" configVersion="a8d07b75c948704fbf95ada18cf1fbe800000000"/>
-		<Metadata name="Document.СобытиеМаршрута.Form.ФормаДокумента.Form" id="71973e08-5d29-4930-bad2-fbcef2860b1c.0" configVersion="eb4458f22fc84943a481e8df1bd4d94d00000000"/>
+		<Metadata name="Document.СобытиеМаршрута.Form.ФормаДокумента" id="71973e08-5d29-4930-bad2-fbcef2860b1c" configVersion="9a0d5b508752fd46806c803b1131788000000000"/>
+		<Metadata name="Document.СобытиеМаршрута.Form.ФормаДокумента.Form" id="71973e08-5d29-4930-bad2-fbcef2860b1c.0" configVersion="eebf71278f640c4aa4e05258b59cb13500000000"/>
 		<Metadata name="Document.СобытиеМаршрута.Form.ФормаСписка" id="7d98ee6d-e835-4189-a689-bc2d4b3d13ab" configVersion="319bfd057390624f9d5b7edb54e9e74100000000"/>
 		<Metadata name="Document.СобытиеМаршрута.Form.ФормаСписка.Form" id="7d98ee6d-e835-4189-a689-bc2d4b3d13ab.0" configVersion="65cc82046f86534a8d212cec9c6551fa00000000"/>
 		<Metadata name="Document.СобытиеМаршрута.ObjectModule" id="b6e79763-df11-47a1-9980-72ba2b5be74d.0" configVersion="31cfe15ef2492c4a9f3247266eee9def00000000"/>
