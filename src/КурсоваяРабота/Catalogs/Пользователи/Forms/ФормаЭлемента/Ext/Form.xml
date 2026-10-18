@@ -33,16 +33,27 @@
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="15"/>
+					<ChildItems>
 				<InputField name="ИмяПользователяИБ" id="11">
 					<DataPath>Объект.ИмяПользователяИБ</DataPath>
 					<ContextMenu name="ИмяПользователяИБКонтекстноеМеню" id="12"/>
 					<ExtendedTooltip name="ИмяПользователяИБРасширеннаяПодсказка" id="13"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="14">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="15"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
