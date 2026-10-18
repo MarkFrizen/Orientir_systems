@@ -58,15 +58,30 @@
 					<ContextMenu name="ТелефонКонтекстноеМеню" id="24"/>
 					<ExtendedTooltip name="ТелефонРасширеннаяПодсказка" id="25"/>
 				</InputField>
-				<InputField name="Email" id="26">
-					<DataPath>Объект.Email</DataPath>
-					<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28"/>
-				</InputField>
 				<InputField name="Гражданство" id="29">
 					<DataPath>Объект.Гражданство</DataPath>
 					<ContextMenu name="ГражданствоКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="ГражданствоРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+				<InputField name="Email" id="26">
+					<DataPath>Объект.Email</DataPath>
+					<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28"/>
 				</InputField>
 				<InputField name="ПредпочтенияПитания" id="32">
 					<DataPath>Объект.ПредпочтенияПитания</DataPath>
@@ -84,10 +99,6 @@
 					<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

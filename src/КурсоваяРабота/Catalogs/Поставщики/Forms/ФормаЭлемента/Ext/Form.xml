@@ -55,16 +55,6 @@
 					<ContextMenu name="ИННКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="ИННРасширеннаяПодсказка" id="19"/>
 				</InputField>
-				<InputField name="КПП" id="20">
-					<DataPath>Объект.КПП</DataPath>
-					<ContextMenu name="КППКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="КППРасширеннаяПодсказка" id="22"/>
-				</InputField>
-				<InputField name="ЮрАдрес" id="23">
-					<DataPath>Объект.ЮрАдрес</DataPath>
-					<ContextMenu name="ЮрАдресКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ЮрАдресРасширеннаяПодсказка" id="25"/>
-				</InputField>
 				<InputField name="Телефон" id="26">
 					<DataPath>Объект.Телефон</DataPath>
 					<ContextMenu name="ТелефонКонтекстноеМеню" id="27"/>
@@ -75,11 +65,6 @@
 					<ContextMenu name="EmailКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="31"/>
 				</InputField>
-				<InputField name="КонтактноеЛицо" id="32">
-					<DataPath>Объект.КонтактноеЛицо</DataPath>
-					<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="34"/>
-				</InputField>
 				<InputField name="ЧасоваяЗона" id="35">
 					<DataPath>Объект.ЧасоваяЗона</DataPath>
 					<ContextMenu name="ЧасоваяЗонаКонтекстноеМеню" id="36"/>
@@ -88,8 +73,34 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+				<InputField name="КПП" id="20">
+					<DataPath>Объект.КПП</DataPath>
+					<ContextMenu name="КППКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КППРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ЮрАдрес" id="23">
+					<DataPath>Объект.ЮрАдрес</DataPath>
+					<ContextMenu name="ЮрАдресКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ЮрАдресРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<InputField name="КонтактноеЛицо" id="32">
+					<DataPath>Объект.КонтактноеЛицо</DataPath>
+					<ContextMenu name="КонтактноеЛицоКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КонтактноеЛицоРасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

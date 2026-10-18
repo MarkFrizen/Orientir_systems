@@ -49,11 +49,6 @@
 					<ContextMenu name="КатегорияКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="КатегорияРасширеннаяПодсказка" id="19"/>
 				</InputField>
-				<InputField name="Координаты" id="20">
-					<DataPath>Объект.Координаты</DataPath>
-					<ContextMenu name="КоординатыКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="КоординатыРасширеннаяПодсказка" id="22"/>
-				</InputField>
 				<InputField name="ЧасоваяЗона" id="23">
 					<DataPath>Объект.ЧасоваяЗона</DataPath>
 					<ContextMenu name="ЧасоваяЗонаКонтекстноеМеню" id="24"/>
@@ -63,6 +58,26 @@
 					<DataPath>Объект.ТелефонРесепшн</DataPath>
 					<ContextMenu name="ТелефонРесепшнКонтекстноеМеню" id="27"/>
 					<ExtendedTooltip name="ТелефонРесепшнРасширеннаяПодсказка" id="28"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="36"/>
+					<ChildItems>
+				<InputField name="Координаты" id="20">
+					<DataPath>Объект.Координаты</DataPath>
+					<ContextMenu name="КоординатыКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="КоординатыРасширеннаяПодсказка" id="22"/>
 				</InputField>
 				<InputField name="EmailРесепшн" id="29">
 					<DataPath>Объект.EmailРесепшн</DataPath>
@@ -75,10 +90,6 @@
 					<ExtendedTooltip name="РейтингРасширеннаяПодсказка" id="34"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="35">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="36"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

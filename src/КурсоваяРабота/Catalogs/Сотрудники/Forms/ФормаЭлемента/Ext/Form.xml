@@ -43,6 +43,21 @@
 					<ContextMenu name="ДолжностьКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="ДолжностьРасширеннаяПодсказка" id="16"/>
 				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
 				<InputField name="Пользователь1С" id="17">
 					<DataPath>Объект.Пользователь1С</DataPath>
 					<ContextMenu name="Пользователь1СКонтекстноеМеню" id="18"/>
@@ -59,10 +74,6 @@
 					<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="25"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="26">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="27"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
