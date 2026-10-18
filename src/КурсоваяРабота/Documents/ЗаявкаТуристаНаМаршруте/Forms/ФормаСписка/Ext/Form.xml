@@ -152,4 +152,23 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеПросрочкаSLA" id="100">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.СрокSLA &lt; ТекущаяДата() И (Список.Статус = Перечисления.СтатусыЗапроса.Новый ИЛИ Список.Статус = Перечисления.СтатусыЗапроса.ВРаботе ИЛИ Список.Статус = Перечисления.СтатусыЗапроса.ОжидаетПоставщика)</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>

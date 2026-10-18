@@ -142,4 +142,23 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеПросрочка" id="100">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.ДатаОжиданияПодтверждения &lt; ТекущаяДата() И (Список.Статус = Перечисления.СтатусыЗаказа.Отправлен ИЛИ Список.Статус = Перечисления.СтатусыЗаказа.ЧастичноПодтверждён)</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>

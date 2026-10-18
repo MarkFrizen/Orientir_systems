@@ -157,4 +157,38 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеОтменена" id="100">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.Статус = Перечисления.СтатусыЗаявок.Отменена</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#EDEDED,ЦветТекста=#7F7F7F</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+			<Item name="УсловноеОформлениеЗавершена" id="101">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.Статус = Перечисления.СтатусыЗаявок.Завершена</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#C6EFCE,ЦветТекста=#006100</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>

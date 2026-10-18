@@ -167,4 +167,38 @@
 			</Settings>
 		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеТяжёлый" id="100">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.УровеньТяжести = Перечисления.УровниТяжести.Тяжёлый И Список.Статус &lt;&gt; Перечисления.СтатусыИнцидента.Закрыт</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+			<Item name="УсловноеОформлениеУрегулирован" id="101">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.Статус = Перечисления.СтатусыИнцидента.Урегулирован</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#C6EFCE,ЦветТекста=#006100</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>

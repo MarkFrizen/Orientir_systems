@@ -146,5 +146,49 @@
 				</ListSettings>
 			</Settings>
 		</Attribute>
+		<Attribute name="ПорогСогласования" id="48">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+	<ConditionalAppearance>
+		<Items>
+			<Item name="УсловноеОформлениеОтклонена" id="100">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.Статус = Перечисления.СтатусыПретензии.Отклонена</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+			<Item name="УсловноеОформлениеОплачена" id="101">
+				<Field>Список</Field>
+				<Condition>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Список.Статус = Перечисления.СтатусыПретензии.Оплачена</v8:content>
+					</v8:item>
+				</Condition>
+				<Format>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЦветФона=#C6EFCE,ЦветТекста=#006100</v8:content>
+					</v8:item>
+				</Format>
+			</Item>
+		</Items>
+	</ConditionalAppearance>
 </Form>
