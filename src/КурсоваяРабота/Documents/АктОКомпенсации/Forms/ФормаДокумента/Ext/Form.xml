@@ -6,6 +6,7 @@
 			<v8:content>Акт окомпенсации</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -42,7 +43,14 @@
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<Width>9</Width>
 													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
-													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+																										<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер документа по учётной системе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 												<InputField name="Дата" id="14">
 													<DataPath>Объект.Date</DataPath>
@@ -53,24 +61,52 @@
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
-													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+																										<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Дата документа</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
 										<InputField name="Претензия" id="17">
 											<DataPath>Объект.Претензия</DataPath>
 											<ContextMenu name="ПретензияКонтекстноеМеню" id="18"/>
-											<ExtendedTooltip name="ПретензияРасширеннаяПодсказка" id="19"/>
+																						<ExtendedTooltip name="ПретензияРасширеннаяПодсказка" id="19">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Претензия, по которой оформлен акт</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Инцидент" id="20">
 											<DataPath>Объект.Инцидент</DataPath>
 											<ContextMenu name="ИнцидентКонтекстноеМеню" id="21"/>
-											<ExtendedTooltip name="ИнцидентРасширеннаяПодсказка" id="22"/>
+																						<ExtendedTooltip name="ИнцидентРасширеннаяПодсказка" id="22">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Инцидент, по которому оформлен документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="СуммаКомпенсацииТуристу" id="23">
 											<DataPath>Объект.СуммаКомпенсацииТуристу</DataPath>
 											<ContextMenu name="СуммаКомпенсацииТуристуКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="СуммаКомпенсацииТуристуРасширеннаяПодсказка" id="25"/>
+																						<ExtendedTooltip name="СуммаКомпенсацииТуристуРасширеннаяПодсказка" id="25">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сумма компенсации, выплачиваемая туристу</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -87,12 +123,26 @@
 										<InputField name="Валюта" id="31">
 											<DataPath>Объект.Валюта</DataPath>
 											<ContextMenu name="ВалютаКонтекстноеМеню" id="32"/>
-											<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="33"/>
+																						<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="33">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Валюта цены</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="ДатаАкта" id="34">
 											<DataPath>Объект.ДатаАкта</DataPath>
 											<ContextMenu name="ДатаАктаКонтекстноеМеню" id="35"/>
-											<ExtendedTooltip name="ДатаАктаРасширеннаяПодсказка" id="36"/>
+																						<ExtendedTooltip name="ДатаАктаРасширеннаяПодсказка" id="36">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Дата оформления акта</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>

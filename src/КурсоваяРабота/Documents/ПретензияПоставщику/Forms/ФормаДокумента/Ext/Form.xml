@@ -6,6 +6,7 @@
 			<v8:content>Претензия поставщику</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -30,7 +31,14 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<Width>9</Width>
 									<ContextMenu name="НомерКонтекстноеМеню" id="8"/>
-									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9"/>
+																		<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Номер документа по учётной системе</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="Дата" id="10">
 									<DataPath>Объект.Date</DataPath>
@@ -41,29 +49,64 @@
 										</v8:item>
 									</Title>
 									<ContextMenu name="ДатаКонтекстноеМеню" id="11"/>
-									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12"/>
+																		<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата документа</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
 						<InputField name="Инцидент" id="13">
 							<DataPath>Объект.Инцидент</DataPath>
 							<ContextMenu name="ИнцидентКонтекстноеМеню" id="14"/>
-							<ExtendedTooltip name="ИнцидентРасширеннаяПодсказка" id="15"/>
+														<ExtendedTooltip name="ИнцидентРасширеннаяПодсказка" id="15">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Инцидент, по которому оформлен документ</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Поставщик" id="16">
 							<DataPath>Объект.Поставщик</DataPath>
 							<ContextMenu name="ПоставщикКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="18"/>
+														<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="18">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Поставщик услуг по документу</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Договор" id="19">
 							<DataPath>Объект.Договор</DataPath>
 							<ContextMenu name="ДоговорКонтекстноеМеню" id="20"/>
-							<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="21"/>
+														<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="21">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Действующий договор с поставщиком</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="СуммаТребования" id="22">
 							<DataPath>Объект.СуммаТребования</DataPath>
 							<ContextMenu name="СуммаТребованияКонтекстноеМеню" id="23"/>
-							<ExtendedTooltip name="СуммаТребованияРасширеннаяПодсказка" id="24"/>
+														<ExtendedTooltip name="СуммаТребованияРасширеннаяПодсказка" id="24">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Сравнивается с константой ПорогСогласованияРуководителем</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -75,32 +118,71 @@
 						<InputField name="Валюта" id="27">
 							<DataPath>Объект.Валюта</DataPath>
 							<ContextMenu name="ВалютаКонтекстноеМеню" id="28"/>
-							<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="29"/>
+														<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="29">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Валюта цены</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Статус" id="30">
 							<DataPath>Объект.Статус</DataPath>
 							<ContextMenu name="СтатусКонтекстноеМеню" id="31"/>
-							<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="32"/>
+														<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="32">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Текущий статус документа</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<CheckBoxField name="СогласованоРуководителем" id="33">
 							<DataPath>Объект.СогласованоРуководителем</DataPath>
 							<CheckBoxType>Auto</CheckBoxType>
 							<TitleLocation>Right</TitleLocation>
 							<ContextMenu name="СогласованоРуководителемКонтекстноеМеню" id="34"/>
-							<ExtendedTooltip name="СогласованоРуководителемРасширеннаяПодсказка" id="35"/>
+														<ExtendedTooltip name="СогласованоРуководителемРасширеннаяПодсказка" id="35">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Обязательно при сумме требования выше порога согласования</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</CheckBoxField>
-						<InputField name="Руководитель" id="36">
-							<DataPath>Объект.Руководитель</DataPath>
-							<ContextMenu name="РуководительКонтекстноеМеню" id="37"/>
-							<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="38"/>
-						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+				<InputField name="Руководитель" id="36">
+					<DataPath>Объект.Руководитель</DataPath>
+					<ContextMenu name="РуководительКонтекстноеМеню" id="37"/>
+										<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="38">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Руководитель, согласовавший претензию</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
