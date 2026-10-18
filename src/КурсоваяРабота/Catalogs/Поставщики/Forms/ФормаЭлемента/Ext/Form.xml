@@ -58,7 +58,14 @@
 						</v8:item>
 					</Title>
 					<ContextMenu name="РодительКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Группа, в которую входит элемент справочника</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ТипПоставщика" id="14">
 					<DataPath>Объект.ТипПоставщика</DataPath>

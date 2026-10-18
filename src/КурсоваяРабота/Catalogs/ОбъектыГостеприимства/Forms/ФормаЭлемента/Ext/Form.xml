@@ -20,7 +20,14 @@
 					<DataPath>Объект.Owner</DataPath>
 					<ReadOnly>true</ReadOnly>
 					<ContextMenu name="ВладелецКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="5"/>
+										<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Владелец элемента справочника</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<UsualGroup name="ГруппаКодНаименование" id="6">
 					<Group>Horizontal</Group>
