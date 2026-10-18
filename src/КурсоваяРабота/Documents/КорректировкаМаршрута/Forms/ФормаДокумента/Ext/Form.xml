@@ -6,6 +6,7 @@
 			<v8:content>Корректировка маршрута</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -42,7 +43,14 @@
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<Width>9</Width>
 													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
-													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+																										<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер документа по учётной системе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 												<InputField name="Дата" id="14">
 													<DataPath>Объект.Date</DataPath>
@@ -53,19 +61,40 @@
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
-													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+																										<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Дата документа</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
 										<InputField name="МаршрутныйЛист" id="17">
 											<DataPath>Объект.МаршрутныйЛист</DataPath>
 											<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="18"/>
-											<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19"/>
+																						<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Маршрутный лист поездки</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Причина" id="20">
 											<DataPath>Объект.Причина</DataPath>
 											<ContextMenu name="ПричинаКонтекстноеМеню" id="21"/>
-											<ExtendedTooltip name="ПричинаРасширеннаяПодсказка" id="22"/>
+																						<ExtendedTooltip name="ПричинаРасширеннаяПодсказка" id="22">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Причина корректировки маршрута</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -77,14 +106,28 @@
 										<InputField name="Инициатор" id="25">
 											<DataPath>Объект.Инициатор</DataPath>
 											<ContextMenu name="ИнициаторКонтекстноеМеню" id="26"/>
-											<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="27"/>
+																						<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="27">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сотрудник, инициировавший документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<CheckBoxField name="Согласовано" id="28">
 											<DataPath>Объект.Согласовано</DataPath>
 											<CheckBoxType>Auto</CheckBoxType>
 											<TitleLocation>Right</TitleLocation>
 											<ContextMenu name="СогласованоКонтекстноеМеню" id="29"/>
-											<ExtendedTooltip name="СогласованоРасширеннаяПодсказка" id="30"/>
+																						<ExtendedTooltip name="СогласованоРасширеннаяПодсказка" id="30">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Признак согласования корректировки</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>

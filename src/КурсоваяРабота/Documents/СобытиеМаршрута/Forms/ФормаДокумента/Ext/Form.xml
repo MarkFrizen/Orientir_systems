@@ -6,6 +6,7 @@
 			<v8:content>Событие маршрута</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -30,7 +31,14 @@
 									<AutoMaxWidth>false</AutoMaxWidth>
 									<Width>9</Width>
 									<ContextMenu name="НомерКонтекстноеМеню" id="8"/>
-									<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9"/>
+																		<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="9">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Номер документа по учётной системе</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="Дата" id="10">
 									<DataPath>Объект.Date</DataPath>
@@ -41,29 +49,52 @@
 										</v8:item>
 									</Title>
 									<ContextMenu name="ДатаКонтекстноеМеню" id="11"/>
-									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12"/>
+																		<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата документа</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
 						<InputField name="МаршрутныйЛист" id="13">
 							<DataPath>Объект.МаршрутныйЛист</DataPath>
 							<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="14"/>
-							<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="15"/>
+														<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="15">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Маршрутный лист поездки</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="ДатаВремяUTC" id="16">
 							<DataPath>Объект.ДатаВремяUTC</DataPath>
 							<ContextMenu name="ДатаВремяUTCКонтекстноеМеню" id="17"/>
-							<ExtendedTooltip name="ДатаВремяUTCРасширеннаяПодсказка" id="18"/>
-						</InputField>
-						<InputField name="ЛокальноеВремя" id="19">
-							<DataPath>Объект.ЛокальноеВремя</DataPath>
-							<ContextMenu name="ЛокальноеВремяКонтекстноеМеню" id="20"/>
-							<ExtendedTooltip name="ЛокальноеВремяРасширеннаяПодсказка" id="21"/>
+														<ExtendedTooltip name="ДатаВремяUTCРасширеннаяПодсказка" id="18">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Момент события в UTC</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="ТипСобытия" id="22">
 							<DataPath>Объект.ТипСобытия</DataPath>
 							<ContextMenu name="ТипСобытияКонтекстноеМеню" id="23"/>
-							<ExtendedTooltip name="ТипСобытияРасширеннаяПодсказка" id="24"/>
+														<ExtendedTooltip name="ТипСобытияРасширеннаяПодсказка" id="24">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Тип точки маршрута</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -75,35 +106,93 @@
 						<InputField name="Объект" id="27">
 							<DataPath>Объект.Объект</DataPath>
 							<ContextMenu name="ОбъектКонтекстноеМеню" id="28"/>
-							<ExtendedTooltip name="ОбъектРасширеннаяПодсказка" id="29"/>
+														<ExtendedTooltip name="ОбъектРасширеннаяПодсказка" id="29">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Объект гостеприимства, к которому относится событие</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Поставщик" id="30">
 							<DataPath>Объект.Поставщик</DataPath>
 							<ContextMenu name="ПоставщикКонтекстноеМеню" id="31"/>
-							<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="32"/>
+														<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="32">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Поставщик услуг по документу</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="ДлительностьМинут" id="33">
 							<DataPath>Объект.ДлительностьМинут</DataPath>
 							<ContextMenu name="ДлительностьМинутКонтекстноеМеню" id="34"/>
-							<ExtendedTooltip name="ДлительностьМинутРасширеннаяПодсказка" id="35"/>
-						</InputField>
-						<InputField name="БуферДоСледующегоМинут" id="36">
-							<DataPath>Объект.БуферДоСледующегоМинут</DataPath>
-							<ContextMenu name="БуферДоСледующегоМинутКонтекстноеМеню" id="37"/>
-							<ExtendedTooltip name="БуферДоСледующегоМинутРасширеннаяПодсказка" id="38"/>
+														<ExtendedTooltip name="ДлительностьМинутРасширеннаяПодсказка" id="35">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Плановая длительность события в минутах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<InputField name="Комментарий" id="39">
-			<DataPath>Объект.Комментарий</DataPath>
-			<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
-			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41"/>
-		</InputField>
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="43"/>
+					<ChildItems>
+				<InputField name="ЛокальноеВремя" id="19">
+					<DataPath>Объект.ЛокальноеВремя</DataPath>
+					<ContextMenu name="ЛокальноеВремяКонтекстноеМеню" id="20"/>
+										<ExtendedTooltip name="ЛокальноеВремяРасширеннаяПодсказка" id="21">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Момент события в часовой зоне объекта</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="БуферДоСледующегоМинут" id="36">
+					<DataPath>Объект.БуферДоСледующегоМинут</DataPath>
+					<ContextMenu name="БуферДоСледующегоМинутКонтекстноеМеню" id="37"/>
+										<ExtendedTooltip name="БуферДоСледующегоМинутРасширеннаяПодсказка" id="38">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Запас времени до следующего события; отрицательное значение означает накладку</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="Комментарий" id="39">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
+										<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Произвольный комментарий пользователя</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
