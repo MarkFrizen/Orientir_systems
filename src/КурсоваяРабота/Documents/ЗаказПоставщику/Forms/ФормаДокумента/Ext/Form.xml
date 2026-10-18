@@ -6,6 +6,7 @@
 			<v8:content>Заказ поставщику</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -42,7 +43,14 @@
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<Width>9</Width>
 													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
-													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+																										<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер документа по учётной системе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 												<InputField name="Дата" id="14">
 													<DataPath>Объект.Date</DataPath>
@@ -53,24 +61,52 @@
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
-													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+																										<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Дата документа</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
 										<InputField name="ЗаявкаНаТур" id="17">
 											<DataPath>Объект.ЗаявкаНаТур</DataPath>
 											<ContextMenu name="ЗаявкаНаТурКонтекстноеМеню" id="18"/>
-											<ExtendedTooltip name="ЗаявкаНаТурРасширеннаяПодсказка" id="19"/>
+																						<ExtendedTooltip name="ЗаявкаНаТурРасширеннаяПодсказка" id="19">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Заявка на тур, в рамках которой создан документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Поставщик" id="20">
 											<DataPath>Объект.Поставщик</DataPath>
 											<ContextMenu name="ПоставщикКонтекстноеМеню" id="21"/>
-											<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="22"/>
+																						<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="22">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Поставщик услуг по документу</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Договор" id="23">
 											<DataPath>Объект.Договор</DataPath>
 											<ContextMenu name="ДоговорКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="25"/>
+																						<ExtendedTooltip name="ДоговорРасширеннаяПодсказка" id="25">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Действующий договор с поставщиком</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -82,17 +118,38 @@
 										<InputField name="ДатаОжиданияПодтверждения" id="28">
 											<DataPath>Объект.ДатаОжиданияПодтверждения</DataPath>
 											<ContextMenu name="ДатаОжиданияПодтвержденияКонтекстноеМеню" id="29"/>
-											<ExtendedTooltip name="ДатаОжиданияПодтвержденияРасширеннаяПодсказка" id="30"/>
+																						<ExtendedTooltip name="ДатаОжиданияПодтвержденияРасширеннаяПодсказка" id="30">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Крайний срок ответа поставщика; после него заказ эскалируется</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Статус" id="31">
 											<DataPath>Объект.Статус</DataPath>
 											<ContextMenu name="СтатусКонтекстноеМеню" id="32"/>
-											<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="33"/>
+																						<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="33">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Текущий статус документа</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Ответственный" id="34">
 											<DataPath>Объект.Ответственный</DataPath>
 											<ContextMenu name="ОтветственныйКонтекстноеМеню" id="35"/>
-											<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="36"/>
+																						<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="36">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сотрудник, отвечающий за документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -101,7 +158,14 @@
 						<InputField name="Комментарий" id="37">
 							<DataPath>Объект.Комментарий</DataPath>
 							<ContextMenu name="КомментарийКонтекстноеМеню" id="38"/>
-							<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="39"/>
+														<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="39">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Произвольный комментарий пользователя</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</Page>
