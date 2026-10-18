@@ -6,6 +6,7 @@
 			<v8:content>Заявки на тур</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -24,64 +25,148 @@
 						<InputField name="Наименование" id="5">
 							<DataPath>Объект.Description</DataPath>
 							<ContextMenu name="НаименованиеКонтекстноеМеню" id="6"/>
-							<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7"/>
+														<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="7">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Наименование элемента справочника, отображается в списках и отчётах</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 						<InputField name="Код" id="8">
 							<DataPath>Объект.Code</DataPath>
 							<ContextMenu name="КодКонтекстноеМеню" id="9"/>
-							<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10"/>
+														<ExtendedTooltip name="КодРасширеннаяПодсказка" id="10">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Служебный код элемента; используется для сортировки и поиска</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
 				<InputField name="Номер" id="11">
 					<DataPath>Объект.Номер</DataPath>
 					<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
-					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+										<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Номер документа по учётной системе</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Дата" id="14">
 					<DataPath>Объект.Дата</DataPath>
 					<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
-					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+										<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата документа</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Турист" id="17">
 					<DataPath>Объект.Турист</DataPath>
 					<ContextMenu name="ТуристКонтекстноеМеню" id="18"/>
-					<ExtendedTooltip name="ТуристРасширеннаяПодсказка" id="19"/>
+										<ExtendedTooltip name="ТуристРасширеннаяПодсказка" id="19">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Турист, к которому относится документ</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Маршрут" id="20">
 					<DataPath>Объект.Маршрут</DataPath>
 					<ContextMenu name="МаршрутКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="МаршрутРасширеннаяПодсказка" id="22"/>
+										<ExtendedTooltip name="МаршрутРасширеннаяПодсказка" id="22">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тур, выбранный по заявке</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ДатаНачала" id="23">
 					<DataPath>Объект.ДатаНачала</DataPath>
 					<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="24"/>
-					<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="25"/>
+										<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="25">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата начала действия или поездки</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="ДатаОкончания" id="26">
 					<DataPath>Объект.ДатаОкончания</DataPath>
 					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="27"/>
-					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="28"/>
+										<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="28">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата окончания действия или поездки</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Статус" id="29">
 					<DataPath>Объект.Статус</DataPath>
 					<ContextMenu name="СтатусКонтекстноеМеню" id="30"/>
-					<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="31"/>
+										<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="31">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Текущий статус документа</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Сумма" id="32">
 					<DataPath>Объект.Сумма</DataPath>
 					<ContextMenu name="СуммаКонтекстноеМеню" id="33"/>
-					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="34"/>
+										<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="34">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Стоимость тура по заявке</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Валюта" id="35">
 					<DataPath>Объект.Валюта</DataPath>
 					<ContextMenu name="ВалютаКонтекстноеМеню" id="36"/>
-					<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="37"/>
+										<ExtendedTooltip name="ВалютаРасширеннаяПодсказка" id="37">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валюта цены</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 				<InputField name="Ответственный" id="38">
 					<DataPath>Объект.Ответственный</DataPath>
 					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="39"/>
-					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="40"/>
+										<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="40">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сотрудник, отвечающий за документ</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
