@@ -16,11 +16,11 @@ $epf = Join-Path $projectRoot 'build\ПроверкаДанных.epf'
 $log = Join-Path $env:TEMP 'kursovaya-check.log'
 Remove-Item $log -Force -ErrorAction SilentlyContinue
 
-if (-not (Test-Path $epf)) { throw "Не найден файл обработки: $epf" }
+if (-not (Test-Path $epf)) { Write-Host "Не найден файл обработки: $epf"; exit 3 }
 
 if (-not $SkipSessionCheck) {
 	$procs = Get-Process -Name 1cv8,1cv8c,1cv8s -ErrorAction SilentlyContinue
-	if ($procs) { throw 'Есть запущенные процессы 1С - закройте их (лицензия на 1 место).' }
+	if ($procs) { Write-Host 'Есть запущенные процессы 1С - закройте их (лицензия на 1 место).'; exit 3 }
 }
 
 $argsLine = '/F "' + $db.path + '" /N"Администратор" /RunModeManagedApplication /Execute "' + $epf + '" /C "' + $log + '" /TESTMANAGER /DisableStartupDialogs'
@@ -29,7 +29,7 @@ $sw = [System.Diagnostics.Stopwatch]::StartNew()
 $p = Start-Process -FilePath $exe -ArgumentList $argsLine -PassThru
 if (-not $p.WaitForExit($TimeoutSec * 1000)) {
 	Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
-	throw 'Таймаут ожидания обработки'
+	Write-Host 'Таймаут ожидания обработки'; exit 3
 }
 Write-Host ("Завершено за {0} с, код {1}" -f [int]$sw.Elapsed.TotalSeconds, $p.ExitCode)
 
