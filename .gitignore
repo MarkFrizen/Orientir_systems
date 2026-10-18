@@ -9,6 +9,8 @@ db/**/1Cv8snc.1CD
 db/**/1Cv8.cgr
 db/**/1Cv8JobScheduler/
 db/**/1Cv8Log/
+db/backup/
+.superpowers/
 *.epf
 *.erf
 *.log
