@@ -6,6 +6,7 @@
 			<v8:content>Заявка туриста на маршруте</v8:content>
 		</v8:item>
 	</Title>
+	<AutoMarkIncomplete>true</AutoMarkIncomplete>
 	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
@@ -42,7 +43,14 @@
 													<AutoMaxWidth>false</AutoMaxWidth>
 													<Width>9</Width>
 													<ContextMenu name="НомерКонтекстноеМеню" id="12"/>
-													<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13"/>
+																										<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="13">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Номер документа по учётной системе</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 												<InputField name="Дата" id="14">
 													<DataPath>Объект.Date</DataPath>
@@ -53,34 +61,64 @@
 														</v8:item>
 													</Title>
 													<ContextMenu name="ДатаКонтекстноеМеню" id="15"/>
-													<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16"/>
+																										<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="16">
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Дата документа</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
 												</InputField>
 											</ChildItems>
 										</UsualGroup>
 										<InputField name="МаршрутныйЛист" id="17">
 											<DataPath>Объект.МаршрутныйЛист</DataPath>
 											<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="18"/>
-											<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19"/>
+																						<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="19">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Маршрутный лист поездки</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Турист" id="20">
 											<DataPath>Объект.Турист</DataPath>
 											<ContextMenu name="ТуристКонтекстноеМеню" id="21"/>
-											<ExtendedTooltip name="ТуристРасширеннаяПодсказка" id="22"/>
+																						<ExtendedTooltip name="ТуристРасширеннаяПодсказка" id="22">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Турист, к которому относится документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="ТипЗапроса" id="23">
 											<DataPath>Объект.ТипЗапроса</DataPath>
 											<ContextMenu name="ТипЗапросаКонтекстноеМеню" id="24"/>
-											<ExtendedTooltip name="ТипЗапросаРасширеннаяПодсказка" id="25"/>
+																						<ExtendedTooltip name="ТипЗапросаРасширеннаяПодсказка" id="25">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Классификатор запроса туриста</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="ТекстЗапроса" id="26">
 											<DataPath>Объект.ТекстЗапроса</DataPath>
 											<ContextMenu name="ТекстЗапросаКонтекстноеМеню" id="27"/>
-											<ExtendedTooltip name="ТекстЗапросаРасширеннаяПодсказка" id="28"/>
-										</InputField>
-										<InputField name="КлассификацияИИ" id="29">
-											<DataPath>Объект.КлассификацияИИ</DataPath>
-											<ContextMenu name="КлассификацияИИКонтекстноеМеню" id="30"/>
-											<ExtendedTooltip name="КлассификацияИИРасширеннаяПодсказка" id="31"/>
+																						<ExtendedTooltip name="ТекстЗапросаРасширеннаяПодсказка" id="28">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Текст обращения туриста</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -92,22 +130,38 @@
 										<InputField name="СрокSLA" id="34">
 											<DataPath>Объект.СрокSLA</DataPath>
 											<ContextMenu name="СрокSLAКонтекстноеМеню" id="35"/>
-											<ExtendedTooltip name="СрокSLAРасширеннаяПодсказка" id="36"/>
+																						<ExtendedTooltip name="СрокSLAРасширеннаяПодсказка" id="36">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Срок рассчитывается от даты регистрации запроса по нормативу SLAЧасов</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Статус" id="37">
 											<DataPath>Объект.Статус</DataPath>
 											<ContextMenu name="СтатусКонтекстноеМеню" id="38"/>
-											<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="39"/>
-										</InputField>
-										<InputField name="Инициатор" id="40">
-											<DataPath>Объект.Инициатор</DataPath>
-											<ContextMenu name="ИнициаторКонтекстноеМеню" id="41"/>
-											<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="42"/>
+																						<ExtendedTooltip name="СтатусРасширеннаяПодсказка" id="39">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Текущий статус документа</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Ответственный" id="43">
 											<DataPath>Объект.Ответственный</DataPath>
 											<ContextMenu name="ОтветственныйКонтекстноеМеню" id="44"/>
-											<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="45"/>
+																						<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="45">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сотрудник, отвечающий за документ</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
@@ -210,8 +264,43 @@
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="84">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дополнительно</v8:content>
+								</v8:item>
+							</Title>
 							<Group>Vertical</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ShowTitle>true</ShowTitle>
 							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="85"/>
+													<ChildItems>
+								<InputField name="КлассификацияИИ" id="29">
+									<DataPath>Объект.КлассификацияИИ</DataPath>
+									<ContextMenu name="КлассификацияИИКонтекстноеМеню" id="30"/>
+																		<ExtendedTooltip name="КлассификацияИИРасширеннаяПодсказка" id="31">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Результат автоматической классификации обращения ИИ-сервисом</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</InputField>
+								<InputField name="Инициатор" id="40">
+									<DataPath>Объект.Инициатор</DataPath>
+									<ContextMenu name="ИнициаторКонтекстноеМеню" id="41"/>
+																		<ExtendedTooltip name="ИнициаторРасширеннаяПодсказка" id="42">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сотрудник, инициировавший документ</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</InputField>
+							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
 				</Page>
