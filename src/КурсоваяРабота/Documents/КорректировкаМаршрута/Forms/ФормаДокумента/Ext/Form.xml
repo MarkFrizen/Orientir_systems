@@ -182,22 +182,50 @@
 								<InputField name="ИзмененияСобытиеМаршрута" id="49">
 									<DataPath>Объект.Изменения.СобытиеМаршрута</DataPath>
 									<ContextMenu name="ИзмененияСобытиеМаршрутаКонтекстноеМеню" id="50"/>
-									<ExtendedTooltip name="ИзмененияСобытиеМаршрутаРасширеннаяПодсказка" id="51"/>
+																		<ExtendedTooltip name="ИзмененияСобытиеМаршрутаРасширеннаяПодсказка" id="51">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Событие маршрута, которое корректируется</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИзмененияСтароеВремяUTC" id="52">
 									<DataPath>Объект.Изменения.СтароеВремяUTC</DataPath>
 									<ContextMenu name="ИзмененияСтароеВремяUTCКонтекстноеМеню" id="53"/>
-									<ExtendedTooltip name="ИзмененияСтароеВремяUTCРасширеннаяПодсказка" id="54"/>
+																		<ExtendedTooltip name="ИзмененияСтароеВремяUTCРасширеннаяПодсказка" id="54">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Время события до корректировки</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИзмененияНовоеВремяUTC" id="55">
 									<DataPath>Объект.Изменения.НовоеВремяUTC</DataPath>
 									<ContextMenu name="ИзмененияНовоеВремяUTCКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="ИзмененияНовоеВремяUTCРасширеннаяПодсказка" id="57"/>
+																		<ExtendedTooltip name="ИзмененияНовоеВремяUTCРасширеннаяПодсказка" id="57">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Время события после корректировки</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИзмененияНовыйОбъект" id="58">
 									<DataPath>Объект.Изменения.НовыйОбъект</DataPath>
 									<ContextMenu name="ИзмененияНовыйОбъектКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="ИзмененияНовыйОбъектРасширеннаяПодсказка" id="60"/>
+																		<ExtendedTooltip name="ИзмененияНовыйОбъектРасширеннаяПодсказка" id="60">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Новый объект события</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>

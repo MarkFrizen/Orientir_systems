@@ -168,47 +168,110 @@
 								<InputField name="ПодтверждённыеУслугиУслуга" id="52">
 									<DataPath>Объект.ПодтверждённыеУслуги.Услуга</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиУслугаКонтекстноеМеню" id="53"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиУслугаРасширеннаяПодсказка" id="54"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиУслугаРасширеннаяПодсказка" id="54">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Услуга из номенклатуры</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиОбъект" id="55">
 									<DataPath>Объект.ПодтверждённыеУслуги.Объект</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиОбъектКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиОбъектРасширеннаяПодсказка" id="57"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиОбъектРасширеннаяПодсказка" id="57">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объект оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиДатаНачала" id="58">
 									<DataPath>Объект.ПодтверждённыеУслуги.ДатаНачала</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиДатаНачалаКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиДатаНачалаРасширеннаяПодсказка" id="60"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиДатаНачалаРасширеннаяПодсказка" id="60">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата начала оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиДатаОкончания" id="61">
 									<DataPath>Объект.ПодтверждённыеУслуги.ДатаОкончания</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиДатаОкончанияКонтекстноеМеню" id="62"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиДатаОкончанияРасширеннаяПодсказка" id="63"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиДатаОкончанияРасширеннаяПодсказка" id="63">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата окончания оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиКоличество" id="64">
 									<DataPath>Объект.ПодтверждённыеУслуги.Количество</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиКоличествоКонтекстноеМеню" id="65"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиКоличествоРасширеннаяПодсказка" id="66"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиКоличествоРасширеннаяПодсказка" id="66">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Количество услуг</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиТипНомераФакт" id="67">
 									<DataPath>Объект.ПодтверждённыеУслуги.ТипНомераФакт</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиТипНомераФактКонтекстноеМеню" id="68"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиТипНомераФактРасширеннаяПодсказка" id="69"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиТипНомераФактРасширеннаяПодсказка" id="69">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Фактический тип номера по подтверждению</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиТипПитанияФакт" id="70">
 									<DataPath>Объект.ПодтверждённыеУслуги.ТипПитанияФакт</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиТипПитанияФактКонтекстноеМеню" id="71"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиТипПитанияФактРасширеннаяПодсказка" id="72"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиТипПитанияФактРасширеннаяПодсказка" id="72">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Фактический тип питания по подтверждению</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиЦена" id="73">
 									<DataPath>Объект.ПодтверждённыеУслуги.Цена</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиЦенаКонтекстноеМеню" id="74"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиЦенаРасширеннаяПодсказка" id="75"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиЦенаРасширеннаяПодсказка" id="75">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Цена за единицу услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ПодтверждённыеУслугиСумма" id="76">
 									<DataPath>Объект.ПодтверждённыеУслуги.Сумма</DataPath>
 									<ContextMenu name="ПодтверждённыеУслугиСуммаКонтекстноеМеню" id="77"/>
-									<ExtendedTooltip name="ПодтверждённыеУслугиСуммаРасширеннаяПодсказка" id="78"/>
+																		<ExtendedTooltip name="ПодтверждённыеУслугиСуммаРасширеннаяПодсказка" id="78">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма по строке</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>

@@ -216,22 +216,50 @@
 								<InputField name="ИсторияОбработкиДатаВремя" id="64">
 									<DataPath>Объект.ИсторияОбработки.ДатаВремя</DataPath>
 									<ContextMenu name="ИсторияОбработкиДатаВремяКонтекстноеМеню" id="65"/>
-									<ExtendedTooltip name="ИсторияОбработкиДатаВремяРасширеннаяПодсказка" id="66"/>
+																		<ExtendedTooltip name="ИсторияОбработкиДатаВремяРасширеннаяПодсказка" id="66">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата и время действия</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИсторияОбработкиСотрудник" id="67">
 									<DataPath>Объект.ИсторияОбработки.Сотрудник</DataPath>
 									<ContextMenu name="ИсторияОбработкиСотрудникКонтекстноеМеню" id="68"/>
-									<ExtendedTooltip name="ИсторияОбработкиСотрудникРасширеннаяПодсказка" id="69"/>
+																		<ExtendedTooltip name="ИсторияОбработкиСотрудникРасширеннаяПодсказка" id="69">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сотрудник, выполнивший действие</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИсторияОбработкиДействие" id="70">
 									<DataPath>Объект.ИсторияОбработки.Действие</DataPath>
 									<ContextMenu name="ИсторияОбработкиДействиеКонтекстноеМеню" id="71"/>
-									<ExtendedTooltip name="ИсторияОбработкиДействиеРасширеннаяПодсказка" id="72"/>
+																		<ExtendedTooltip name="ИсторияОбработкиДействиеРасширеннаяПодсказка" id="72">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Выполненное действие</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="ИсторияОбработкиКомментарий" id="73">
 									<DataPath>Объект.ИсторияОбработки.Комментарий</DataPath>
 									<ContextMenu name="ИсторияОбработкиКомментарийКонтекстноеМеню" id="74"/>
-									<ExtendedTooltip name="ИсторияОбработкиКомментарийРасширеннаяПодсказка" id="75"/>
+																		<ExtendedTooltip name="ИсторияОбработкиКомментарийРасширеннаяПодсказка" id="75">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Комментарий к выполненному действию</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>

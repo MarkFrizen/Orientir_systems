@@ -216,52 +216,122 @@
 								<InputField name="УслугиУслуга" id="58">
 									<DataPath>Объект.Услуги.Услуга</DataPath>
 									<ContextMenu name="УслугиУслугаКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="УслугиУслугаРасширеннаяПодсказка" id="60"/>
+																		<ExtendedTooltip name="УслугиУслугаРасширеннаяПодсказка" id="60">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Услуга из номенклатуры</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиОбъект" id="61">
 									<DataPath>Объект.Услуги.Объект</DataPath>
 									<ContextMenu name="УслугиОбъектКонтекстноеМеню" id="62"/>
-									<ExtendedTooltip name="УслугиОбъектРасширеннаяПодсказка" id="63"/>
+																		<ExtendedTooltip name="УслугиОбъектРасширеннаяПодсказка" id="63">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объект оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиДатаНачала" id="64">
 									<DataPath>Объект.Услуги.ДатаНачала</DataPath>
 									<ContextMenu name="УслугиДатаНачалаКонтекстноеМеню" id="65"/>
-									<ExtendedTooltip name="УслугиДатаНачалаРасширеннаяПодсказка" id="66"/>
+																		<ExtendedTooltip name="УслугиДатаНачалаРасширеннаяПодсказка" id="66">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата начала оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиДатаОкончания" id="67">
 									<DataPath>Объект.Услуги.ДатаОкончания</DataPath>
 									<ContextMenu name="УслугиДатаОкончанияКонтекстноеМеню" id="68"/>
-									<ExtendedTooltip name="УслугиДатаОкончанияРасширеннаяПодсказка" id="69"/>
+																		<ExtendedTooltip name="УслугиДатаОкончанияРасширеннаяПодсказка" id="69">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дата окончания оказания услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиКоличество" id="70">
 									<DataPath>Объект.Услуги.Количество</DataPath>
 									<ContextMenu name="УслугиКоличествоКонтекстноеМеню" id="71"/>
-									<ExtendedTooltip name="УслугиКоличествоРасширеннаяПодсказка" id="72"/>
+																		<ExtendedTooltip name="УслугиКоличествоРасширеннаяПодсказка" id="72">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Количество услуг</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиТипНомера" id="73">
 									<DataPath>Объект.Услуги.ТипНомера</DataPath>
 									<ContextMenu name="УслугиТипНомераКонтекстноеМеню" id="74"/>
-									<ExtendedTooltip name="УслугиТипНомераРасширеннаяПодсказка" id="75"/>
+																		<ExtendedTooltip name="УслугиТипНомераРасширеннаяПодсказка" id="75">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Тип номера размещения</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиТипПитания" id="76">
 									<DataPath>Объект.Услуги.ТипПитания</DataPath>
 									<ContextMenu name="УслугиТипПитанияКонтекстноеМеню" id="77"/>
-									<ExtendedTooltip name="УслугиТипПитанияРасширеннаяПодсказка" id="78"/>
+																		<ExtendedTooltip name="УслугиТипПитанияРасширеннаяПодсказка" id="78">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Тип питания</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиЦена" id="79">
 									<DataPath>Объект.Услуги.Цена</DataPath>
 									<ContextMenu name="УслугиЦенаКонтекстноеМеню" id="80"/>
-									<ExtendedTooltip name="УслугиЦенаРасширеннаяПодсказка" id="81"/>
+																		<ExtendedTooltip name="УслугиЦенаРасширеннаяПодсказка" id="81">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Цена за единицу услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиСумма" id="82">
 									<DataPath>Объект.Услуги.Сумма</DataPath>
 									<ContextMenu name="УслугиСуммаКонтекстноеМеню" id="83"/>
-									<ExtendedTooltip name="УслугиСуммаРасширеннаяПодсказка" id="84"/>
+																		<ExtendedTooltip name="УслугиСуммаРасширеннаяПодсказка" id="84">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма по строке</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="УслугиДополнительныеПараметры" id="85">
 									<DataPath>Объект.Услуги.ДополнительныеПараметры</DataPath>
 									<ContextMenu name="УслугиДополнительныеПараметрыКонтекстноеМеню" id="86"/>
-									<ExtendedTooltip name="УслугиДополнительныеПараметрыРасширеннаяПодсказка" id="87"/>
+																		<ExtendedTooltip name="УслугиДополнительныеПараметрыРасширеннаяПодсказка" id="87">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Дополнительные параметры услуги</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>

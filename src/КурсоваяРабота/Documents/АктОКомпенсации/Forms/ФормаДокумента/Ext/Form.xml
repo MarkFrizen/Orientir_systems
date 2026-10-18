@@ -118,7 +118,14 @@
 										<InputField name="СуммаВзысканияСПоставщика" id="28">
 											<DataPath>Объект.СуммаВзысканияСПоставщика</DataPath>
 											<ContextMenu name="СуммаВзысканияСПоставщикаКонтекстноеМеню" id="29"/>
-											<ExtendedTooltip name="СуммаВзысканияСПоставщикаРасширеннаяПодсказка" id="30"/>
+																						<ExtendedTooltip name="СуммаВзысканияСПоставщикаРасширеннаяПодсказка" id="30">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Сумма, взыскиваемая с поставщика</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</InputField>
 										<InputField name="Валюта" id="31">
 											<DataPath>Объект.Валюта</DataPath>
@@ -197,17 +204,38 @@
 								<InputField name="СтруктураКомпенсацииВидКомпенсации" id="55">
 									<DataPath>Объект.СтруктураКомпенсации.ВидКомпенсации</DataPath>
 									<ContextMenu name="СтруктураКомпенсацииВидКомпенсацииКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="СтруктураКомпенсацииВидКомпенсацииРасширеннаяПодсказка" id="57"/>
+																		<ExtendedTooltip name="СтруктураКомпенсацииВидКомпенсацииРасширеннаяПодсказка" id="57">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Вид компенсации</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="СтруктураКомпенсацииСумма" id="58">
 									<DataPath>Объект.СтруктураКомпенсации.Сумма</DataPath>
 									<ContextMenu name="СтруктураКомпенсацииСуммаКонтекстноеМеню" id="59"/>
-									<ExtendedTooltip name="СтруктураКомпенсацииСуммаРасширеннаяПодсказка" id="60"/>
+																		<ExtendedTooltip name="СтруктураКомпенсацииСуммаРасширеннаяПодсказка" id="60">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сумма по строке</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="СтруктураКомпенсацииОписание" id="61">
 									<DataPath>Объект.СтруктураКомпенсации.Описание</DataPath>
 									<ContextMenu name="СтруктураКомпенсацииОписаниеКонтекстноеМеню" id="62"/>
-									<ExtendedTooltip name="СтруктураКомпенсацииОписаниеРасширеннаяПодсказка" id="63"/>
+																		<ExtendedTooltip name="СтруктураКомпенсацииОписаниеРасширеннаяПодсказка" id="63">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Описание строки компенсации</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>

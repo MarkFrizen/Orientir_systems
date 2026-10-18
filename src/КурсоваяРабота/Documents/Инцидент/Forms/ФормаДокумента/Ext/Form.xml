@@ -287,12 +287,26 @@
 								<InputField name="МатериалыФайл" id="73">
 									<DataPath>Объект.Материалы.Файл</DataPath>
 									<ContextMenu name="МатериалыФайлКонтекстноеМеню" id="74"/>
-									<ExtendedTooltip name="МатериалыФайлРасширеннаяПодсказка" id="75"/>
+																		<ExtendedTooltip name="МатериалыФайлРасширеннаяПодсказка" id="75">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Файл материала</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 								<InputField name="МатериалыОписание" id="76">
 									<DataPath>Объект.Материалы.Описание</DataPath>
 									<ContextMenu name="МатериалыОписаниеКонтекстноеМеню" id="77"/>
-									<ExtendedTooltip name="МатериалыОписаниеРасширеннаяПодсказка" id="78"/>
+																		<ExtendedTooltip name="МатериалыОписаниеРасширеннаяПодсказка" id="78">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Описание материала</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
 								</InputField>
 							</ChildItems>
 						</Table>
