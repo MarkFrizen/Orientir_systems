@@ -16,3 +16,4 @@ db/backup/
 *.log
 .opencode
 .env
+.git_credentials_for_repo
