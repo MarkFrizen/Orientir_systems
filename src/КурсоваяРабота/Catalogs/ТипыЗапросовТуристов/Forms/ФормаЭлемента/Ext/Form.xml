@@ -43,16 +43,27 @@
 					<ContextMenu name="КритичностьКонтекстноеМеню" id="15"/>
 					<ExtendedTooltip name="КритичностьРасширеннаяПодсказка" id="16"/>
 				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
 				<InputField name="ШаблонОтвета" id="17">
 					<DataPath>Объект.ШаблонОтвета</DataPath>
 					<ContextMenu name="ШаблонОтветаКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="ШаблонОтветаРасширеннаяПодсказка" id="19"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="20">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="21"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

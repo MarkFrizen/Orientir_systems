@@ -55,11 +55,6 @@
 					<ContextMenu name="ЕдиницаКонтекстноеМеню" id="18"/>
 					<ExtendedTooltip name="ЕдиницаРасширеннаяПодсказка" id="19"/>
 				</InputField>
-				<InputField name="БазоваяЦена" id="20">
-					<DataPath>Объект.БазоваяЦена</DataPath>
-					<ContextMenu name="БазоваяЦенаКонтекстноеМеню" id="21"/>
-					<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22"/>
-				</InputField>
 				<InputField name="Валюта" id="23">
 					<DataPath>Объект.Валюта</DataPath>
 					<ContextMenu name="ВалютаКонтекстноеМеню" id="24"/>
@@ -68,8 +63,24 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
 			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+				<InputField name="БазоваяЦена" id="20">
+					<DataPath>Объект.БазоваяЦена</DataPath>
+					<ContextMenu name="БазоваяЦенаКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22"/>
+				</InputField>
+			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

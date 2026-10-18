@@ -69,6 +69,21 @@
 					<ContextMenu name="ПроцентШтрафаКонтекстноеМеню" id="30"/>
 					<ExtendedTooltip name="ПроцентШтрафаРасширеннаяПодсказка" id="31"/>
 				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
 				<InputField name="МаксимальнаяКомпенсация" id="32">
 					<DataPath>Объект.МаксимальнаяКомпенсация</DataPath>
 					<ContextMenu name="МаксимальнаяКомпенсацияКонтекстноеМеню" id="33"/>
@@ -85,10 +100,6 @@
 					<ExtendedTooltip name="УсловияОтменыРасширеннаяПодсказка" id="40"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

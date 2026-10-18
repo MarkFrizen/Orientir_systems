@@ -38,6 +38,21 @@
 					<ContextMenu name="УровеньТяжестиКонтекстноеМеню" id="12"/>
 					<ExtendedTooltip name="УровеньТяжестиРасширеннаяПодсказка" id="13"/>
 				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ShowTitle>true</ShowTitle>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
 				<InputField name="ШаблонПретензии" id="14">
 					<DataPath>Объект.ШаблонПретензии</DataPath>
 					<ContextMenu name="ШаблонПретензииКонтекстноеМеню" id="15"/>
@@ -49,10 +64,6 @@
 					<ExtendedTooltip name="ТиповойПроцентКомпенсацииРасширеннаяПодсказка" id="19"/>
 				</InputField>
 			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="20">
-			<Group>Vertical</Group>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="21"/>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>
