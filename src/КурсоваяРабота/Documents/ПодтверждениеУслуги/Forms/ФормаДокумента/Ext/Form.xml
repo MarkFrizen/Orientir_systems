@@ -395,7 +395,7 @@
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ЦветТекста</dcscor:parameter>
-					<dcscor:value xsi:type="v8ui:Color">#9C6500</dcscor:value>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
 				</dcscor:item>
 			</dcsset:appearance>
 		</dcsset:item>
