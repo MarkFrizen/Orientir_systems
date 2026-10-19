@@ -224,12 +224,12 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">СуммаТребования</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.СуммаТребования</dcsset:left>
 					<dcsset:comparisonType>Greater</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ПорогСогласования</dcsset:right>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">СогласованоРуководителем</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.СогласованоРуководителем</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
 				</dcsset:item>

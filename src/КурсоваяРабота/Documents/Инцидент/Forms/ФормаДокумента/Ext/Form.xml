@@ -378,7 +378,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">УровеньТяжести</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.УровеньТяжести</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.УровниТяжести.Тяжёлый</dcsset:right>
 				</dcsset:item>

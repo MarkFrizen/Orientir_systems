@@ -363,7 +363,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">РезультатСверки</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.РезультатСверки</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.РезультатыСверки.ЕстьРасхождения</dcsset:right>
 				</dcsset:item>
@@ -387,7 +387,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ПодтверждённыеУслуги.Количество</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.ПодтверждённыеУслуги.Количество</dcsset:left>
 					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>

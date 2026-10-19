@@ -363,12 +363,12 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">СрокSLA</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.СрокSLA</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.Статус</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.Новый</dcsset:right>
 				</dcsset:item>
@@ -392,12 +392,12 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">СрокSLA</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.СрокSLA</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.Статус</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.ВРаботе</dcsset:right>
 				</dcsset:item>
@@ -421,12 +421,12 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">СрокSLA</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.СрокSLA</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.Статус</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.ОжидаетПоставщика</dcsset:right>
 				</dcsset:item>

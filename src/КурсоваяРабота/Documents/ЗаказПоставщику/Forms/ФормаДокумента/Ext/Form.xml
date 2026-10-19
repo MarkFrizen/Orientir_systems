@@ -414,7 +414,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Услуги.Количество</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.Услуги.Количество</dcsset:left>
 					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>
@@ -438,7 +438,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Услуги.Сумма</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.Услуги.Сумма</dcsset:left>
 					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
 					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>

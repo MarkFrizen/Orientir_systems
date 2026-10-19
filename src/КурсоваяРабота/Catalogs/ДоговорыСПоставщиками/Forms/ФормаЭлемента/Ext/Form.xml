@@ -202,7 +202,7 @@
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">ДатаОкончания</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект.ДатаОкончания</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
 				</dcsset:item>
