@@ -292,9 +292,21 @@
 	</Attributes>
 <Commands>
 		<Command name="ОткрытьМаршрутныйЛист" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть маршрутный лист</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьМаршрутныйЛист</Action>
 		</Command>
 		<Command name="ПрименитьКорректировку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применить корректировку</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ПрименитьКорректировку</Action>
 		</Command>
 	</Commands></Form>

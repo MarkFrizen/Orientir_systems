@@ -166,31 +166,122 @@
 				</ListSettings>
 			</Settings>
 		</Attribute>
+		<Attribute name="ДатаСравнения" id="51">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
-	<ConditionalAppearance>
-		<Items>
-			<Item name="УсловноеОформлениеПросрочкаSLA" id="100">
-				<Field>Список</Field>
-				<Condition>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Список.СрокSLA &lt; ТекущаяДата() И (Список.Статус = Перечисления.СтатусыЗапроса.Новый ИЛИ Список.Статус = Перечисления.СтатусыЗапроса.ВРаботе ИЛИ Список.Статус = Перечисления.СтатусыЗапроса.ОжидаетПоставщика)</v8:content>
-					</v8:item>
-				</Condition>
-				<Format>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
-					</v8:item>
-				</Format>
-			</Item>
-		</Items>
-	</ConditionalAppearance>
+
 <Commands>
 		<Command name="ПоказатьПросроченные" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать просроченные</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ПоказатьПросроченные</Action>
 		</Command>
 		<Command name="СброситьОтбор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить отбор</v8:content>
+				</v8:item>
+			</Title>
 			<Action>СброситьОтбор</Action>
 		</Command>
-	</Commands></Form>
+	</Commands>	<ConditionalAppearance>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Список</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.СрокSLA</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.Новый</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Список</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.СрокSLA</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.ВРаботе</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Список</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.СрокSLA</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.СтатусыЗапроса.ОжидаетПоставщика</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
+	</ConditionalAppearance>
+</Form>

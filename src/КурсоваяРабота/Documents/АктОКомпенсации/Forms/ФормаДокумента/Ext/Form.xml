@@ -306,12 +306,30 @@
 	</Attributes>
 <Commands>
 		<Command name="ОткрытьПретензию" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть претензию</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьПретензию</Action>
 		</Command>
 		<Command name="ОткрытьИнцидент" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть инцидент</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьИнцидент</Action>
 		</Command>
 		<Command name="ПересчитатьСтруктуру" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать структуру</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ПересчитатьСтруктуру</Action>
 		</Command>
 	</Commands></Form>

@@ -133,22 +133,29 @@
 		</Attribute>
 	</Attributes>
 	<ConditionalAppearance>
-		<Items>
-			<Item name="УсловноеОформлениеРасхождения" id="100">
-				<Field>Список</Field>
-				<Condition>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Список.РезультатСверки = Перечисления.РезультатыСверки.ЕстьРасхождения</v8:content>
-					</v8:item>
-				</Condition>
-				<Format>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЦветФона=#FFEB9C,ЦветТекста=#9C6500</v8:content>
-					</v8:item>
-				</Format>
-			</Item>
-		</Items>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Список</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.РезультатСверки</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.РезультатыСверки.ЕстьРасхождения</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFEB9C</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C6500</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
 	</ConditionalAppearance>
 </Form>

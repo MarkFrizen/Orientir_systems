@@ -227,36 +227,73 @@
 			</Type>
 		</Attribute>
 	</Attributes>
-	<ConditionalAppearance>
-		<Items>
-			<Item name="УсловноеОформлениеПорог" id="200">
-				<Field>Объект.СуммаТребования</Field>
-				<Condition>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Объект.СуммаТребования &gt; ПорогСогласования И НЕ Объект.СогласованоРуководителем</v8:content>
-					</v8:item>
-				</Condition>
-				<Format>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
-					</v8:item>
-				</Format>
-			</Item>
-		</Items>
-	</ConditionalAppearance>
+
 <Commands>
 		<Command name="ОткрытьИнцидент" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть инцидент</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьИнцидент</Action>
 		</Command>
 		<Command name="ОткрытьДоговор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть договор</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьДоговор</Action>
 		</Command>
 		<Command name="СоздатьАкт" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать акт</v8:content>
+				</v8:item>
+			</Title>
 			<Action>СоздатьАкт</Action>
 		</Command>
 		<Command name="РассчитатьКомпенсацию" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рассчитать компенсацию</v8:content>
+				</v8:item>
+			</Title>
 			<Action>РассчитатьКомпенсацию</Action>
 		</Command>
-	</Commands></Form>
+	</Commands>	<ConditionalAppearance>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Объект.СуммаТребования</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Объект.СуммаТребования</dcsset:left>
+					<dcsset:comparisonType>Greater</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">ПорогСогласования</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Объект.СогласованоРуководителем</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Ложь</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
+	</ConditionalAppearance>
+</Form>

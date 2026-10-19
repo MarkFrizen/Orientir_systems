@@ -154,12 +154,30 @@
 	</Attributes>
 <Commands>
 		<Command name="ОткрытьЗаявку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть заявку</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьЗаявку</Action>
 		</Command>
 		<Command name="ОткрытьТуриста" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть туриста</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ОткрытьТуриста</Action>
 		</Command>
 		<Command name="ПересчитатьТайминги" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пересчитать тайминги</v8:content>
+				</v8:item>
+			</Title>
 			<Action>ПересчитатьТайминги</Action>
 		</Command>
 	</Commands></Form>

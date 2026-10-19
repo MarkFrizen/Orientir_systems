@@ -153,22 +153,29 @@
 		</Attribute>
 	</Attributes>
 	<ConditionalAppearance>
-		<Items>
-			<Item name="УсловноеОформлениеБуфер" id="100">
-				<Field>Список</Field>
-				<Condition>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Список.БуферДоСледующегоМинут &lt; 0</v8:content>
-					</v8:item>
-				</Condition>
-				<Format>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
-					</v8:item>
-				</Format>
-			</Item>
-		</Items>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Список</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Список.БуферДоСледующегоМинут</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">0</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
 	</ConditionalAppearance>
 </Form>

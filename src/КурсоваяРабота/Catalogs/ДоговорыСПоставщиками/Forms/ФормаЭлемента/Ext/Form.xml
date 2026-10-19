@@ -195,24 +195,39 @@
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
 		</Attribute>
+		<Attribute name="ДатаСравнения" id="44">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<ConditionalAppearance>
-		<Items>
-			<Item name="УсловноеОформлениеПросрочен" id="200">
-				<Field>Объект.ДатаОкончания</Field>
-				<Condition>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>Объект.ДатаОкончания &lt; ТекущаяДата()</v8:content>
-					</v8:item>
-				</Condition>
-				<Format>
-					<v8:item>
-						<v8:lang>ru</v8:lang>
-						<v8:content>ЦветФона=#FFC7CE,ЦветТекста=#9C0006</v8:content>
-					</v8:item>
-				</Format>
-			</Item>
-		</Items>
+		<dcsset:item>
+			<dcsset:selection>
+				<dcsset:item>
+					<dcsset:field>Объект.ДатаОкончания</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Объект.ДатаОкончания</dcsset:left>
+					<dcsset:comparisonType>Less</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#FFC7CE</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#9C0006</dcscor:value>
+				</dcscor:item>
+			</dcsset:appearance>
+		</dcsset:item>
 	</ConditionalAppearance>
 </Form>
