@@ -377,23 +377,17 @@
 					</Title>
 					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="89"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаПараметры" id="90">
-							<Group>Horizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="91"/>
-							<ChildItems>
-								<UsualGroup name="ГруппаПараметрыЛево" id="92">
-									<Group>Vertical</Group>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="93"/>
-								</UsualGroup>
-								<UsualGroup name="ГруппаПараметрыПраво" id="94">
-									<Group>Vertical</Group>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="95"/>
-								</UsualGroup>
-							</ChildItems>
-						</UsualGroup>
+													<UsualGroup name="ГруппаПараметрыЛево" id="92">
+								<Group>Vertical</Group>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="93"/>
+							</UsualGroup>
+							<UsualGroup name="ГруппаПараметрыПраво" id="94">
+								<Group>Vertical</Group>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="95"/>
+							</UsualGroup>
+						
 						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="96">
 							<Group>Vertical</Group>
 							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="97"/>
@@ -415,14 +409,14 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Объект.Услуги.Количество</dcsset:field>
+					<dcsset:field>Услуги.Количество</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Объект.Услуги.Количество</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Услуги.Количество</dcsset:left>
 					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:DesignTimeValue">0</dcsset:right>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:appearance>
@@ -439,14 +433,14 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Объект.Услуги.Сумма</dcsset:field>
+					<dcsset:field>Услуги.Сумма</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Объект.Услуги.Сумма</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Услуги.Сумма</dcsset:left>
 					<dcsset:comparisonType>LessOrEqual</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:DesignTimeValue">0</dcsset:right>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:appearance>

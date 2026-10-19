@@ -108,33 +108,19 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="26">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="27"/>
-					<ChildItems>
-				<InputField name="БазоваяЦена" id="20">
-					<DataPath>Объект.БазоваяЦена</DataPath>
-					<ContextMenu name="БазоваяЦенаКонтекстноеМеню" id="21"/>
-										<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Базовая цена услуги до наценок</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="БазоваяЦена" id="20">
+				<DataPath>Объект.БазоваяЦена</DataPath>
+				<ContextMenu name="БазоваяЦенаКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="БазоваяЦенаРасширеннаяПодсказка" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Базовая цена услуги до наценок</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="28">

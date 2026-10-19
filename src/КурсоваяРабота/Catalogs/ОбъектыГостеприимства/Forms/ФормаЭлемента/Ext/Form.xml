@@ -114,57 +114,43 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="35">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="36"/>
-					<ChildItems>
-				<InputField name="Координаты" id="20">
-					<DataPath>Объект.Координаты</DataPath>
-					<ContextMenu name="КоординатыКонтекстноеМеню" id="21"/>
-										<ExtendedTooltip name="КоординатыРасширеннаяПодсказка" id="22">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Широта и долгота объекта</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="EmailРесепшн" id="29">
-					<DataPath>Объект.EmailРесепшн</DataPath>
-					<ContextMenu name="EmailРесепшнКонтекстноеМеню" id="30"/>
-										<ExtendedTooltip name="EmailРесепшнРасширеннаяПодсказка" id="31">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Адрес электронной почты стойки размещения</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="Рейтинг" id="32">
-					<DataPath>Объект.Рейтинг</DataPath>
-					<ContextMenu name="РейтингКонтекстноеМеню" id="33"/>
-										<ExtendedTooltip name="РейтингРасширеннаяПодсказка" id="34">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Внутренний рейтинг объекта</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="Координаты" id="20">
+				<DataPath>Объект.Координаты</DataPath>
+				<ContextMenu name="КоординатыКонтекстноеМеню" id="21"/>
+									<ExtendedTooltip name="КоординатыРасширеннаяПодсказка" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Широта и долгота объекта</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="EmailРесепшн" id="29">
+				<DataPath>Объект.EmailРесепшн</DataPath>
+				<ContextMenu name="EmailРесепшнКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="EmailРесепшнРасширеннаяПодсказка" id="31">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес электронной почты стойки размещения</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="Рейтинг" id="32">
+				<DataPath>Объект.Рейтинг</DataPath>
+				<ContextMenu name="РейтингКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="РейтингРасширеннаяПодсказка" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внутренний рейтинг объекта</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="37">

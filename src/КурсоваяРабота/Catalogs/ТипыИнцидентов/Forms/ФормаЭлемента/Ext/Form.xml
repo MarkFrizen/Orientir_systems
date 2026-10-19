@@ -62,45 +62,31 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="20">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="21"/>
-					<ChildItems>
-				<InputField name="ШаблонПретензии" id="14">
-					<DataPath>Объект.ШаблонПретензии</DataPath>
-					<ContextMenu name="ШаблонПретензииКонтекстноеМеню" id="15"/>
-										<ExtendedTooltip name="ШаблонПретензииРасширеннаяПодсказка" id="16">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Типовой текст претензии поставщику</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="ТиповойПроцентКомпенсации" id="17">
-					<DataPath>Объект.ТиповойПроцентКомпенсации</DataPath>
-					<ContextMenu name="ТиповойПроцентКомпенсацииКонтекстноеМеню" id="18"/>
-										<ExtendedTooltip name="ТиповойПроцентКомпенсацииРасширеннаяПодсказка" id="19">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Процент компенсации по умолчанию для инцидентов этого типа</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="ШаблонПретензии" id="14">
+				<DataPath>Объект.ШаблонПретензии</DataPath>
+				<ContextMenu name="ШаблонПретензииКонтекстноеМеню" id="15"/>
+									<ExtendedTooltip name="ШаблонПретензииРасширеннаяПодсказка" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Типовой текст претензии поставщику</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="ТиповойПроцентКомпенсации" id="17">
+				<DataPath>Объект.ТиповойПроцентКомпенсации</DataPath>
+				<ContextMenu name="ТиповойПроцентКомпенсацииКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="ТиповойПроцентКомпенсацииРасширеннаяПодсказка" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Процент компенсации по умолчанию для инцидентов этого типа</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="22">

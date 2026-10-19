@@ -333,23 +333,17 @@
 					</Title>
 					<ExtendedTooltip name="ГруппаДополнительноРасширеннаяПодсказка" id="80"/>
 					<ChildItems>
-						<UsualGroup name="ГруппаПараметры" id="81">
-							<Group>Horizontal</Group>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="82"/>
-							<ChildItems>
-								<UsualGroup name="ГруппаПараметрыЛево" id="83">
-									<Group>Vertical</Group>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="84"/>
-								</UsualGroup>
-								<UsualGroup name="ГруппаПараметрыПраво" id="85">
-									<Group>Vertical</Group>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="86"/>
-								</UsualGroup>
-							</ChildItems>
-						</UsualGroup>
+													<UsualGroup name="ГруппаПараметрыЛево" id="83">
+								<Group>Vertical</Group>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПараметрыЛевоРасширеннаяПодсказка" id="84"/>
+							</UsualGroup>
+							<UsualGroup name="ГруппаПараметрыПраво" id="85">
+								<Group>Vertical</Group>
+								<ShowTitle>false</ShowTitle>
+								<ExtendedTooltip name="ГруппаПараметрыПравоРасширеннаяПодсказка" id="86"/>
+							</UsualGroup>
+						
 					</ChildItems>
 	<InputField name="АвторРегистрации" id="49">
 										<DataPath>Объект.АвторРегистрации</DataPath>
@@ -379,12 +373,12 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Объект.УровеньТяжести</dcsset:field>
+					<dcsset:field>УровеньТяжести</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Объект.УровеньТяжести</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">УровеньТяжести</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.УровниТяжести.Тяжёлый</dcsset:right>
 				</dcsset:item>

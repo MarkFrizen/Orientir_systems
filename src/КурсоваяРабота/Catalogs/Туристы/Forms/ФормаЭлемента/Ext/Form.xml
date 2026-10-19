@@ -125,69 +125,55 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
-					<ChildItems>
-				<InputField name="Email" id="26">
-					<DataPath>Объект.Email</DataPath>
-					<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
-										<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Адрес электронной почты</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="ПредпочтенияПитания" id="32">
-					<DataPath>Объект.ПредпочтенияПитания</DataPath>
-					<ContextMenu name="ПредпочтенияПитанияКонтекстноеМеню" id="33"/>
-										<ExtendedTooltip name="ПредпочтенияПитанияРасширеннаяПодсказка" id="34">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Особые пожелания по питанию</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="МедицинскиеОсобенности" id="35">
-					<DataPath>Объект.МедицинскиеОсобенности</DataPath>
-					<ContextMenu name="МедицинскиеОсобенностиКонтекстноеМеню" id="36"/>
-										<ExtendedTooltip name="МедицинскиеОсобенностиРасширеннаяПодсказка" id="37">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Медицинские ограничения, важные при организации поездки</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="Менеджер" id="38">
-					<DataPath>Объект.Менеджер</DataPath>
-					<ContextMenu name="МенеджерКонтекстноеМеню" id="39"/>
-										<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Сотрудник, ведущий туриста</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="Email" id="26">
+				<DataPath>Объект.Email</DataPath>
+				<ContextMenu name="EmailКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="EmailРасширеннаяПодсказка" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес электронной почты</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="ПредпочтенияПитания" id="32">
+				<DataPath>Объект.ПредпочтенияПитания</DataPath>
+				<ContextMenu name="ПредпочтенияПитанияКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="ПредпочтенияПитанияРасширеннаяПодсказка" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Особые пожелания по питанию</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="МедицинскиеОсобенности" id="35">
+				<DataPath>Объект.МедицинскиеОсобенности</DataPath>
+				<ContextMenu name="МедицинскиеОсобенностиКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="МедицинскиеОсобенностиРасширеннаяПодсказка" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Медицинские ограничения, важные при организации поездки</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="Менеджер" id="38">
+				<DataPath>Объект.Менеджер</DataPath>
+				<ContextMenu name="МенеджерКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="МенеджерРасширеннаяПодсказка" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сотрудник, ведущий туриста</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="43">

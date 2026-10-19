@@ -139,57 +139,43 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="41">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="42"/>
-					<ChildItems>
-				<InputField name="МаксимальнаяКомпенсация" id="32">
-					<DataPath>Объект.МаксимальнаяКомпенсация</DataPath>
-					<ContextMenu name="МаксимальнаяКомпенсацияКонтекстноеМеню" id="33"/>
-										<ExtendedTooltip name="МаксимальнаяКомпенсацияРасширеннаяПодсказка" id="34">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Верхняя граница компенсации по договору; пустое значение — без ограничения</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="УсловияLateCheckIn" id="35">
-					<DataPath>Объект.УсловияLateCheckIn</DataPath>
-					<ContextMenu name="УсловияLateCheckInКонтекстноеМеню" id="36"/>
-										<ExtendedTooltip name="УсловияLateCheckInРасширеннаяПодсказка" id="37">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Особые условия позднего заселения</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="УсловияОтмены" id="38">
-					<DataPath>Объект.УсловияОтмены</DataPath>
-					<ContextMenu name="УсловияОтменыКонтекстноеМеню" id="39"/>
-										<ExtendedTooltip name="УсловияОтменыРасширеннаяПодсказка" id="40">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Условия отмены бронирования и штрафы</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="МаксимальнаяКомпенсация" id="32">
+				<DataPath>Объект.МаксимальнаяКомпенсация</DataPath>
+				<ContextMenu name="МаксимальнаяКомпенсацияКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="МаксимальнаяКомпенсацияРасширеннаяПодсказка" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Верхняя граница компенсации по договору; пустое значение — без ограничения</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="УсловияLateCheckIn" id="35">
+				<DataPath>Объект.УсловияLateCheckIn</DataPath>
+				<ContextMenu name="УсловияLateCheckInКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="УсловияLateCheckInРасширеннаяПодсказка" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Особые условия позднего заселения</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="УсловияОтмены" id="38">
+				<DataPath>Объект.УсловияОтмены</DataPath>
+				<ContextMenu name="УсловияОтменыКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="УсловияОтменыРасширеннаяПодсказка" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия отмены бронирования и штрафы</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="43">
@@ -211,12 +197,12 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Объект.ДатаОкончания</dcsset:field>
+					<dcsset:field>ДатаОкончания</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Объект.ДатаОкончания</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">ДатаОкончания</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
 					<dcsset:right xsi:type="dcscor:Field">ДатаСравнения</dcsset:right>
 				</dcsset:item>

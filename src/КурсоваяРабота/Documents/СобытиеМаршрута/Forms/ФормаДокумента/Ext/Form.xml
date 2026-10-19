@@ -162,57 +162,43 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="42">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="43"/>
-					<ChildItems>
-				<InputField name="ЛокальноеВремя" id="19">
-					<DataPath>Объект.ЛокальноеВремя</DataPath>
-					<ContextMenu name="ЛокальноеВремяКонтекстноеМеню" id="20"/>
-										<ExtendedTooltip name="ЛокальноеВремяРасширеннаяПодсказка" id="21">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Момент события в часовой зоне объекта</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="БуферДоСледующегоМинут" id="36">
-					<DataPath>Объект.БуферДоСледующегоМинут</DataPath>
-					<ContextMenu name="БуферДоСледующегоМинутКонтекстноеМеню" id="37"/>
-										<ExtendedTooltip name="БуферДоСледующегоМинутРасширеннаяПодсказка" id="38">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Запас времени до следующего события; отрицательное значение означает накладку</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="Комментарий" id="39">
-					<DataPath>Объект.Комментарий</DataPath>
-					<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
-										<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Произвольный комментарий пользователя</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
+					<InputField name="ЛокальноеВремя" id="19">
+				<DataPath>Объект.ЛокальноеВремя</DataPath>
+				<ContextMenu name="ЛокальноеВремяКонтекстноеМеню" id="20"/>
+									<ExtendedTooltip name="ЛокальноеВремяРасширеннаяПодсказка" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Момент события в часовой зоне объекта</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="БуферДоСледующегоМинут" id="36">
+				<DataPath>Объект.БуферДоСледующегоМинут</DataPath>
+				<ContextMenu name="БуферДоСледующегоМинутКонтекстноеМеню" id="37"/>
+									<ExtendedTooltip name="БуферДоСледующегоМинутРасширеннаяПодсказка" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запас времени до следующего события; отрицательное значение означает накладку</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+			<InputField name="Комментарий" id="39">
+				<DataPath>Объект.Комментарий</DataPath>
+				<ContextMenu name="КомментарийКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Произвольный комментарий пользователя</v8:content>
+						</v8:item>
+					</Title>
+				</ExtendedTooltip>
+			</InputField>
+		
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="44">
@@ -226,14 +212,14 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Объект.БуферДоСледующегоМинут</dcsset:field>
+					<dcsset:field>БуферДоСледующегоМинут</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
-					<dcsset:left xsi:type="dcscor:Field">Объект.БуферДоСледующегоМинут</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">БуферДоСледующегоМинут</dcsset:left>
 					<dcsset:comparisonType>Less</dcsset:comparisonType>
-					<dcsset:right xsi:type="dcscor:DesignTimeValue">0</dcsset:right>
+					<dcsset:right xsi:type="xs:decimal">0</dcsset:right>
 				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:appearance>
