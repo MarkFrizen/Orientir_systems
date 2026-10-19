@@ -373,8 +373,7 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
-	</Attributes>
-	<ConditionalAppearance>
+		<ConditionalAppearance>
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
@@ -463,6 +462,7 @@
 			</dcsset:appearance>
 		</dcsset:item>
 	</ConditionalAppearance>
+</Attributes>
 
 <Commands>
 		<Command name="ОткрытьМаршрутныйЛист" id="1">

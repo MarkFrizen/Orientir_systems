@@ -166,8 +166,7 @@
 				</ListSettings>
 			</Settings>
 		</Attribute>
-	</Attributes>
-	<ConditionalAppearance>
+		<ConditionalAppearance>
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
@@ -222,4 +221,5 @@
 			</dcsset:appearance>
 		</dcsset:item>
 	</ConditionalAppearance>
+</Attributes>
 </Form>

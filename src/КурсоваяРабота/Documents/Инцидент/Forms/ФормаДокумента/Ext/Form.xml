@@ -404,8 +404,7 @@
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
 		</Attribute>
-	</Attributes>
-	<ConditionalAppearance>
+		<ConditionalAppearance>
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
@@ -431,6 +430,7 @@
 			</dcsset:appearance>
 		</dcsset:item>
 	</ConditionalAppearance>
+</Attributes>
 
 <Commands>
 		<Command name="ОткрытьЗаявку" id="1">
