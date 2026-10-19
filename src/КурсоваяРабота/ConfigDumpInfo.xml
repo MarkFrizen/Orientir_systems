@@ -224,8 +224,8 @@
 		</Metadata>
 		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента" id="8dfba093-7655-4ac8-8af1-24814cac29c9" configVersion="00ef52ac4c73714382d151cf14b0f70f00000000"/>
 		<Metadata name="Document.ЗаказПоставщику.Form.ФормаДокумента.Form" id="8dfba093-7655-4ac8-8af1-24814cac29c9.0" configVersion="a19c36daae724f42b171374eb680046000000000"/>
-		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка" id="36fc3da0-6018-45c8-93cf-d2715bda9c77" configVersion="58576417551c4041a7399a49b8ceea8a00000000"/>
-		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка.Form" id="36fc3da0-6018-45c8-93cf-d2715bda9c77.0" configVersion="5fe9e207d7bd1442a4e2d97c3ec1980300000000"/>
+		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка" id="36fc3da0-6018-45c8-93cf-d2715bda9c77" configVersion="e809cf93e6d322448cb40579c0c78e8b00000000"/>
+		<Metadata name="Document.ЗаказПоставщику.Form.ФормаСписка.Form" id="36fc3da0-6018-45c8-93cf-d2715bda9c77.0" configVersion="54c5825e9692cb42a7d94c8b700ab79200000000"/>
 		<Metadata name="Document.ЗаказПоставщику.ObjectModule" id="a4fc9c37-066b-4559-9b39-71b6926ee185.0" configVersion="bfe138a3873aa34c9cfc1ee77e99cca500000000"/>
 		<Metadata name="Document.ЗаявкаТуристаНаМаршруте" id="3531491d-dcc2-43b8-9402-0e0c85648282" configVersion="1887ccc150aa3d48956f92fa4b72906b00000000">
 			<Metadata name="Document.ЗаявкаТуристаНаМаршруте.TabularSection.ИсторияОбработки" id="01ff459e-dbc7-4e8b-a51c-c95d45ae4f5c"/>
@@ -245,8 +245,8 @@
 		</Metadata>
 		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаДокумента" id="f2b8aa2c-d01b-40db-b242-d243e9d92f89" configVersion="67e0318b4197254d97966180b56464fc00000000"/>
 		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаДокумента.Form" id="f2b8aa2c-d01b-40db-b242-d243e9d92f89.0" configVersion="987d14955eaacf41a102c76da8ef23b500000000"/>
-		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаСписка" id="a8d71161-7466-44e2-bb7c-9ff7f917f723" configVersion="35677cd15f0b3e4987e682b24e5999a000000000"/>
-		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаСписка.Form" id="a8d71161-7466-44e2-bb7c-9ff7f917f723.0" configVersion="a01941c28e8e5d45b4c31fa01322447200000000"/>
+		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаСписка" id="a8d71161-7466-44e2-bb7c-9ff7f917f723" configVersion="ccfc817fbc0b05449939838d3c7e839600000000"/>
+		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.Form.ФормаСписка.Form" id="a8d71161-7466-44e2-bb7c-9ff7f917f723.0" configVersion="7d476227548e71439c29bcb016f909f400000000"/>
 		<Metadata name="Document.ЗаявкаТуристаНаМаршруте.ObjectModule" id="3531491d-dcc2-43b8-9402-0e0c85648282.0" configVersion="802f07d8c43f5942aa6cf87bc1d9234700000000"/>
 		<Metadata name="Document.Инцидент" id="ba7b3f32-c383-4eb1-8469-4aaa4409ee89" configVersion="83e22ed4e5cfe6469d7e362b17cfa30100000000">
 			<Metadata name="Document.Инцидент.Attribute.АвторРегистрации" id="1b514d22-2e82-4be3-a1a9-7822df5c6532"/>
