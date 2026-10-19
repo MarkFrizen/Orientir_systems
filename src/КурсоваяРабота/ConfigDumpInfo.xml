@@ -331,8 +331,8 @@
 		</Metadata>
 		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c" configVersion="b8a997e0dd47b444b52ba3ffe13ecd1700000000"/>
 		<Metadata name="Document.ПретензияПоставщику.Form.ФормаДокумента.Form" id="89be4e2a-aab5-42b3-87b6-796e7c6f6e9c.0" configVersion="f59195149d3657408bd0a5265e231df800000000"/>
-		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка" id="765f2487-ccc2-472b-84a1-69e2b70eef3d" configVersion="bff2effab9468b41a2f353df1051906e00000000"/>
-		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка.Form" id="765f2487-ccc2-472b-84a1-69e2b70eef3d.0" configVersion="e09eac7dbd677f4fb797b675a260874c00000000"/>
+		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка" id="765f2487-ccc2-472b-84a1-69e2b70eef3d" configVersion="8cf38a1625c72e4aa40f19d353483a8d00000000"/>
+		<Metadata name="Document.ПретензияПоставщику.Form.ФормаСписка.Form" id="765f2487-ccc2-472b-84a1-69e2b70eef3d.0" configVersion="5ed5cdc62e97ae42bb0ec7d5cf88be2d00000000"/>
 		<Metadata name="Document.ПретензияПоставщику.ObjectModule" id="7767066c-4559-4bc4-9e99-b13a8fed94bd.0" configVersion="b5b1d96f1907484798ab15de29097f1100000000"/>
 		<Metadata name="Document.СобытиеМаршрута" id="b6e79763-df11-47a1-9980-72ba2b5be74d" configVersion="6507dcc0717b2c42800e360ee002e28800000000">
 			<Metadata name="Document.СобытиеМаршрута.Attribute.Объект" id="0d54db32-afac-4d68-ac72-770305a6a4ec"/>
