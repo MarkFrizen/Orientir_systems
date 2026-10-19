@@ -27,12 +27,24 @@ $argsLine = '/F "' + $base + '" /N"' + $user + '" /RunModeManagedApplication /Ex
 
 Write-Host "Запуск: $exe"
 $sw = [System.Diagnostics.Stopwatch]::StartNew()
+
+# Клиент 1С, запущенный тест-менеджером, живёт отдельным процессом (1cv8c.exe /TestClient).
+# Если прогон прервать, он остаётся и держит файловую базу: следующий запуск молча ждёт соединение.
+# Поэтому чистим сирот и после успешного прогона, и после таймаута.
+function Stop-TestClients {
+    Get-CimInstance Win32_Process -Filter "Name='1cv8.exe' OR Name='1cv8c.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -like '*TestClient*' } |
+        ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
+}
+
 $p = Start-Process -FilePath $exe -ArgumentList $argsLine -PassThru
 if (-not $p.WaitForExit(1200000)) {
     Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+    Stop-TestClients
     throw 'Таймаут прогона тестов'
 }
 Write-Host ("Прогон завершён за {0} с, код {1}" -f [int]$sw.Elapsed.TotalSeconds, $p.ExitCode)
+Stop-TestClients
 
 $passed = 0; $failed = 0; $failedNames = @()
 Get-ChildItem $results -Filter '*-result.xml' | ForEach-Object {
