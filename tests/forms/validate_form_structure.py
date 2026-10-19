@@ -2,10 +2,14 @@
 
 Проверяет:
   * ConditionalAppearance лежит последним ребёнком внутри <Attributes>;
+  * selection в правилах — имя поля формы (без Объект./Список.);
+  * left в условиях — Объект.<поле> для карточек, Список.<поле> для журналов;
+  * числа — xs:decimal, булевы — xs:boolean, перечисления — dcscor:DesignTimeValue;
   * <Events> стоит после <AutoCommandBar> и до <ChildItems>;
   * у каждого <Event> есть процедура в модуле формы;
   * у каждой команды есть обработчик, у каждой кнопки — существующая команда;
-  * нет двойного BOM и дублей id.
+  * в ОткрытьФорму указано полное имя формы (Документ.X.Форма.Y);
+  * нет двойного BOM.
 
 Использование:
   python tests/forms/validate_form_structure.py [<Form.xml> ...]
@@ -18,7 +22,10 @@ import sys
 import xml.etree.ElementTree as ET
 
 NS = "{http://v8.1c.ru/8.3/xcf/logform}"
+SET = "{http://v8.1c.ru/8.1/data-composition-system/settings}"
+COR = "{http://v8.1c.ru/8.1/data-composition-system/core}"
 SRC = os.path.join("src", "КурсоваяРабота")
+XSI = "{http://www.w3.org/2001/XMLSchema-instance}type"
 
 
 def read_module(form_path):
@@ -28,9 +35,51 @@ def read_module(form_path):
     return io.open(module, encoding="utf-8-sig", errors="replace").read()
 
 
+def check_rules(root, errors):
+    attrs = [c for c in root if c.tag == NS + "Attributes"]
+    is_list = False
+    if attrs:
+        for a in attrs[0]:
+            if a.get("name") == "Список":
+                is_list = True
+
+    expected_prefix = "Список." if is_list else "Объект."
+
+    for item in root.iter(SET + "item"):
+        selection = item.find(SET + "selection")
+        if selection is None:
+            continue
+        fields = [f.text or "" for f in selection.iter(SET + "field")]
+        for f in fields:
+            if f.startswith(("Объект.", "Список.")):
+                errors.append("selection должен быть именем поля формы, а не путём: %s" % f)
+
+        filt = item.find(SET + "filter")
+        if filt is None:
+            continue
+        for comp in filt.iter(SET + "item"):
+            left = comp.find(SET + "left")
+            right = comp.find(SET + "right")
+            if left is None:
+                continue
+            left_text = (left.text or "").strip()
+            if left_text and not left_text.startswith(expected_prefix):
+                errors.append("условие должно ссылаться на %s<поле>, а не %s" % (expected_prefix, left_text))
+
+            if right is None:
+                continue
+            rtype = right.get(XSI, "")
+            rtext = (right.text or "").strip()
+            if re.match(r"^-?\d+(\.\d+)?$", rtext) and rtype != "xs:decimal":
+                errors.append("числовой литерал %s должен быть xs:decimal, а не %s" % (rtext, rtype))
+            if rtext in ("true", "false") and rtype != "xs:boolean":
+                errors.append("булев литерал %s должен быть xs:boolean, а не %s" % (rtext, rtype))
+            if rtext.startswith("Перечисление.") and rtype != "dcscor:DesignTimeValue":
+                errors.append("перечисление %s должно быть dcscor:DesignTimeValue, а не %s" % (rtext, rtype))
+
+
 def check(path):
-    errors = []
-    warnings = []
+    errors, warnings = [], []
 
     raw = open(path, "rb").read()
     if raw.startswith(b"\xef\xbb\xbf\xef\xbb\xbf"):
@@ -46,18 +95,20 @@ def check(path):
     children = list(root)
     tags = [c.tag.replace(NS, "") for c in children]
 
-    ca = [c for c in children if c.tag == NS + "ConditionalAppearance"]
-    if ca:
+    ca_nodes = list(root.iter(NS + "ConditionalAppearance"))
+    if ca_nodes:
+        ca = ca_nodes[0]
         parent_tag = None
         for parent in root.iter():
-            if ca[0] in list(parent):
+            if ca in list(parent):
                 parent_tag = parent.tag.replace(NS, "")
         if parent_tag != "Attributes":
             errors.append("ConditionalAppearance должен быть внутри <Attributes>, а он в <%s>" % parent_tag)
         else:
             attrs = [c for c in root if c.tag == NS + "Attributes"][0]
-            if list(attrs)[-1] is not ca[0]:
+            if list(attrs)[-1] is not ca:
                 errors.append("ConditionalAppearance должен быть последним ребёнком <Attributes>")
+        check_rules(root, errors)
 
     if "Events" in tags:
         i_events = tags.index("Events")
@@ -75,6 +126,14 @@ def check(path):
             if handler and ("Процедура %s(" % handler) not in module and ("Функция %s(" % handler) not in module:
                 errors.append("нет обработчика события %s: %s" % (ev.get("name"), handler))
 
+        for m in re.finditer(r'ОткрытьФорму\("([^"]+)"', module):
+            name = m.group(1)
+            parts = name.split(".")
+            if len(parts) == 3:
+                errors.append("в ОткрытьФорму неполное имя формы: %s" % name)
+            elif len(parts) >= 4 and parts[2] != "Форма":
+                errors.append("в ОткрытьФорму нет сегмента .Форма.: %s" % name)
+
     commands = {}
     for cmd in root.iter(NS + "Command"):
         name = cmd.get("name")
@@ -89,8 +148,6 @@ def check(path):
             cmd_name = ref[len("Form.Command."):]
             if cmd_name not in commands:
                 errors.append("кнопка %s ссылается на несуществующую команду %s" % (btn.get("name"), cmd_name))
-
-    # id проверяет form-validate: у элементов, реквизитов и команд разные пространства id.
 
     return errors, warnings
 
