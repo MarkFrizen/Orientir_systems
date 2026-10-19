@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandsVisibility>
+	<Command name="InformationRegister.СрокиКонтроля.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+</CommandsVisibility>
+	<CommandsOrder>
+	<Command name="Catalog.Туристы.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ЗаявкиНаТур.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.Поставщики.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ТурыМаршруты.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ДоговорыСПоставщиками.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ОбъектыГостеприимства.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.НоменклатураУслуг.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ТипыЗапросовТуристов.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ТипыИнцидентов.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.Сотрудники.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.СтраныМира.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.Валюты.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.Пользователи.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+	<Command name="Catalog.ЕдиницыИзмерения.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
+</CommandsOrder>
+</CommandInterface>

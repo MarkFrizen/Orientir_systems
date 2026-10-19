@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandsVisibility>
+	<Command name="Constant.ПорогСогласованияРуководителем.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="InformationRegister.АдресацияЗадач.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыЗаявок.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ТипыПоставщиков.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ВидыУслуг.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыЗаказа.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.РезультатыСверки.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ИсточникиПодтверждения.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ТипыСобытийМаршрута.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыМаршрута.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыЗапроса.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.УровниКритичности.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.УровниТяжести.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыИнцидента.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.СтатусыПретензии.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ВидыКомпенсаций.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ВидыИнтеграций.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.ВидыОперацийKPI.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+	<Command name="Enum.Должности.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
+</CommandsVisibility>
+</CommandInterface>
