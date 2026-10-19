@@ -28,7 +28,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Акт окомпенсации</v8:content>
+					<v8:content>Акт о компенсации</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -210,7 +210,7 @@
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Сумма взыскания споставщика</v8:content>
+							<v8:content>Сумма взыскания с поставщика</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

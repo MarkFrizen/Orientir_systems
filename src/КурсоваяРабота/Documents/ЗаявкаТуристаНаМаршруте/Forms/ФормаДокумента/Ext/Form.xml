@@ -13,6 +13,25 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="86">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="87"/>
+			<ChildItems>
+				<Button name="ОткрытьМаршрутныйЛист" id="88">
+					<CommandName>Form.Command.ОткрытьМаршрутныйЛист</CommandName>
+					<ExtendedTooltip name="ОткрытьМаршрутныйЛистРасширеннаяПодсказка" id="89"/>
+				</Button>
+				<Button name="ОткрытьТуриста" id="90">
+					<CommandName>Form.Command.ОткрытьТуриста</CommandName>
+					<ExtendedTooltip name="ОткрытьТуристаРасширеннаяПодсказка" id="91"/>
+				</Button>
+				<Button name="РассчитатьСрокSLA" id="92">
+					<CommandName>Form.Command.РассчитатьСрокSLA</CommandName>
+					<ExtendedTooltip name="РассчитатьСрокSLAРасширеннаяПодсказка" id="93"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="ГруппаСтраницы" id="1">
 			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
@@ -337,25 +356,6 @@
 				</Page>
 			</ChildItems>
 		</Pages>
-		<UsualGroup name="ГруппаКоманды" id="86">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="87"/>
-			<ChildItems>
-				<Button name="ОткрытьМаршрутныйЛист" id="88">
-					<CommandName>Form.Command.ОткрытьМаршрутныйЛист</CommandName>
-					<ExtendedTooltip name="ОткрытьМаршрутныйЛистРасширеннаяПодсказка" id="89"/>
-				</Button>
-				<Button name="ОткрытьТуриста" id="90">
-					<CommandName>Form.Command.ОткрытьТуриста</CommandName>
-					<ExtendedTooltip name="ОткрытьТуристаРасширеннаяПодсказка" id="91"/>
-				</Button>
-				<Button name="РассчитатьСрокSLA" id="92">
-					<CommandName>Form.Command.РассчитатьСрокSLA</CommandName>
-					<ExtendedTooltip name="РассчитатьСрокSLAРасширеннаяПодсказка" id="93"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="86">

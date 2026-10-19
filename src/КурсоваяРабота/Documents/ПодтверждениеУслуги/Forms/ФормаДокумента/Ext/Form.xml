@@ -13,6 +13,21 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="89">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="90"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаказ" id="91">
+					<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаказРасширеннаяПодсказка" id="92"/>
+				</Button>
+				<Button name="ВыполнитьСверку" id="93">
+					<CommandName>Form.Command.ВыполнитьСверку</CommandName>
+					<ExtendedTooltip name="ВыполнитьСверкуРасширеннаяПодсказка" id="94"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="ГруппаСтраницы" id="1">
 			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
@@ -349,21 +364,6 @@
 				</Page>
 			</ChildItems>
 		</Pages>
-		<UsualGroup name="ГруппаКоманды" id="89">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="90"/>
-			<ChildItems>
-				<Button name="ОткрытьЗаказ" id="91">
-					<CommandName>Form.Command.ОткрытьЗаказ</CommandName>
-					<ExtendedTooltip name="ОткрытьЗаказРасширеннаяПодсказка" id="92"/>
-				</Button>
-				<Button name="ВыполнитьСверку" id="93">
-					<CommandName>Form.Command.ВыполнитьСверку</CommandName>
-					<ExtendedTooltip name="ВыполнитьСверкуРасширеннаяПодсказка" id="94"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="89">

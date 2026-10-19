@@ -13,6 +13,29 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="41">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<Button name="ОткрытьИнцидент" id="43">
+					<CommandName>Form.Command.ОткрытьИнцидент</CommandName>
+					<ExtendedTooltip name="ОткрытьИнцидентРасширеннаяПодсказка" id="44"/>
+				</Button>
+				<Button name="ОткрытьДоговор" id="45">
+					<CommandName>Form.Command.ОткрытьДоговор</CommandName>
+					<ExtendedTooltip name="ОткрытьДоговорРасширеннаяПодсказка" id="46"/>
+				</Button>
+				<Button name="СоздатьАкт" id="47">
+					<CommandName>Form.Command.СоздатьАкт</CommandName>
+					<ExtendedTooltip name="СоздатьАктРасширеннаяПодсказка" id="48"/>
+				</Button>
+				<Button name="РассчитатьКомпенсацию" id="49">
+					<CommandName>Form.Command.РассчитатьКомпенсацию</CommandName>
+					<ExtendedTooltip name="РассчитатьКомпенсациюРасширеннаяПодсказка" id="50"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаШапка" id="1">
 			<Group>Horizontal</Group>
 			<Representation>None</Representation>
@@ -160,56 +183,18 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="39">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительно</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Behavior>Collapsible</Behavior>
-			<Collapsed>true</Collapsed>
-			<ShowTitle>true</ShowTitle>
-			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="40"/>
-					<ChildItems>
-				<InputField name="Руководитель" id="36">
-					<DataPath>Объект.Руководитель</DataPath>
-					<ContextMenu name="РуководительКонтекстноеМеню" id="37"/>
-										<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="38">
-						<Title>
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Руководитель, согласовавший претензию</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-			</ChildItems>
-		</UsualGroup>
-		<UsualGroup name="ГруппаКоманды" id="41">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="42"/>
-			<ChildItems>
-				<Button name="ОткрытьИнцидент" id="43">
-					<CommandName>Form.Command.ОткрытьИнцидент</CommandName>
-					<ExtendedTooltip name="ОткрытьИнцидентРасширеннаяПодсказка" id="44"/>
-				</Button>
-				<Button name="ОткрытьДоговор" id="45">
-					<CommandName>Form.Command.ОткрытьДоговор</CommandName>
-					<ExtendedTooltip name="ОткрытьДоговорРасширеннаяПодсказка" id="46"/>
-				</Button>
-				<Button name="СоздатьАкт" id="47">
-					<CommandName>Form.Command.СоздатьАкт</CommandName>
-					<ExtendedTooltip name="СоздатьАктРасширеннаяПодсказка" id="48"/>
-				</Button>
-				<Button name="РассчитатьКомпенсацию" id="49">
-					<CommandName>Form.Command.РассчитатьКомпенсацию</CommandName>
-					<ExtendedTooltip name="РассчитатьКомпенсациюРасширеннаяПодсказка" id="50"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
+	<InputField name="Руководитель" id="36">
+						<DataPath>Объект.Руководитель</DataPath>
+						<ContextMenu name="РуководительКонтекстноеМеню" id="37"/>
+											<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="38">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Руководитель, согласовавший претензию</v8:content>
+								</v8:item>
+							</Title>
+						</ExtendedTooltip>
+					</InputField>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="41">

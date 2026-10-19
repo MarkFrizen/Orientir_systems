@@ -339,7 +339,7 @@
 							<Synonym>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Старое времяUTC</v8:content>
+									<v8:content>Старое время UTC</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>
@@ -379,7 +379,7 @@
 							<Synonym>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Новое времяUTC</v8:content>
+									<v8:content>Новое время UTC</v8:content>
 								</v8:item>
 							</Synonym>
 							<Comment/>

@@ -12,6 +12,21 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="50">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="51"/>
+			<ChildItems>
+				<Button name="ПоказатьПросроченные" id="52">
+					<CommandName>Form.Command.ПоказатьПросроченные</CommandName>
+					<ExtendedTooltip name="ПоказатьПросроченныеРасширеннаяПодсказка" id="53"/>
+				</Button>
+				<Button name="СброситьОтбор" id="54">
+					<CommandName>Form.Command.СброситьОтбор</CommandName>
+					<ExtendedTooltip name="СброситьОтборРасширеннаяПодсказка" id="55"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="Список" id="1">
 			<DataPath>Список</DataPath>
 			<CommandBarLocation>None</CommandBarLocation>
@@ -125,21 +140,6 @@
 				</LabelField>
 			</ChildItems>
 		</Table>
-		<UsualGroup name="ГруппаКоманды" id="50">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="51"/>
-			<ChildItems>
-				<Button name="ПоказатьПросроченные" id="52">
-					<CommandName>Form.Command.ПоказатьПросроченные</CommandName>
-					<ExtendedTooltip name="ПоказатьПросроченныеРасширеннаяПодсказка" id="53"/>
-				</Button>
-				<Button name="СброситьОтбор" id="54">
-					<CommandName>Form.Command.СброситьОтбор</CommandName>
-					<ExtendedTooltip name="СброситьОтборРасширеннаяПодсказка" id="55"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Список" id="50">

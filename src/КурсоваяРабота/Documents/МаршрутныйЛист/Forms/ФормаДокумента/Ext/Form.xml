@@ -13,6 +13,25 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="29">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаявку" id="31">
+					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="32"/>
+				</Button>
+				<Button name="ОткрытьТуриста" id="33">
+					<CommandName>Form.Command.ОткрытьТуриста</CommandName>
+					<ExtendedTooltip name="ОткрытьТуристаРасширеннаяПодсказка" id="34"/>
+				</Button>
+				<Button name="ПересчитатьТайминги" id="35">
+					<CommandName>Form.Command.ПересчитатьТайминги</CommandName>
+					<ExtendedTooltip name="ПересчитатьТаймингиРасширеннаяПодсказка" id="36"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаШапка" id="1">
 			<Group>Horizontal</Group>
 			<Representation>None</Representation>
@@ -125,25 +144,6 @@
 		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="27">
 			<Group>Vertical</Group>
 			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="28"/>
-		</UsualGroup>
-		<UsualGroup name="ГруппаКоманды" id="29">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="30"/>
-			<ChildItems>
-				<Button name="ОткрытьЗаявку" id="31">
-					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
-					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="32"/>
-				</Button>
-				<Button name="ОткрытьТуриста" id="33">
-					<CommandName>Form.Command.ОткрытьТуриста</CommandName>
-					<ExtendedTooltip name="ОткрытьТуристаРасширеннаяПодсказка" id="34"/>
-				</Button>
-				<Button name="ПересчитатьТайминги" id="35">
-					<CommandName>Form.Command.ПересчитатьТайминги</CommandName>
-					<ExtendedTooltip name="ПересчитатьТаймингиРасширеннаяПодсказка" id="36"/>
-				</Button>
-			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
 	<Attributes>

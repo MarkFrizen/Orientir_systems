@@ -13,6 +13,29 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаКоманды" id="92">
+			<Group>Horizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="93"/>
+			<ChildItems>
+				<Button name="ОткрытьЗаявку" id="94">
+					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
+					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="95"/>
+				</Button>
+				<Button name="ОткрытьПоставщика" id="96">
+					<CommandName>Form.Command.ОткрытьПоставщика</CommandName>
+					<ExtendedTooltip name="ОткрытьПоставщикаРасширеннаяПодсказка" id="97"/>
+				</Button>
+				<Button name="СоздатьПретензию" id="98">
+					<CommandName>Form.Command.СоздатьПретензию</CommandName>
+					<ExtendedTooltip name="СоздатьПретензиюРасширеннаяПодсказка" id="99"/>
+				</Button>
+				<Button name="Классифицировать" id="100">
+					<CommandName>Form.Command.Классифицировать</CommandName>
+					<ExtendedTooltip name="КлассифицироватьРасширеннаяПодсказка" id="101"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="ГруппаСтраницы" id="1">
 			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
@@ -194,53 +217,38 @@
 								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаТексты" id="90">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Тексты</v8:content>
-								</v8:item>
-							</Title>
-							<Group>Vertical</Group>
-							<Behavior>Collapsible</Behavior>
-							<Collapsed>true</Collapsed>
-							<ShowTitle>true</ShowTitle>
-							<ExtendedTooltip name="ГруппаТекстыРасширеннаяПодсказка" id="91"/>
-							<ChildItems>
-								<InputField name="Описание" id="32">
-									<DataPath>Объект.Описание</DataPath>
-									<MultiLine>true</MultiLine>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Height>5</Height>
-									<HorizontalStretch>true</HorizontalStretch>
-									<ContextMenu name="ОписаниеКонтекстноеМеню" id="33"/>
-																		<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="34">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Подробное описание инцидента</v8:content>
-											</v8:item>
-										</Title>
-									</ExtendedTooltip>
-								</InputField>
-								<InputField name="ТекстИИ" id="37">
-									<DataPath>Объект.ТекстИИ</DataPath>
-									<MultiLine>true</MultiLine>
-									<AutoMaxWidth>false</AutoMaxWidth>
-									<Height>5</Height>
-									<HorizontalStretch>true</HorizontalStretch>
-									<ContextMenu name="ТекстИИКонтекстноеМеню" id="38"/>
-																		<ExtendedTooltip name="ТекстИИРасширеннаяПодсказка" id="39">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Текст, распознанный ИИ-сервисом из обращения</v8:content>
-											</v8:item>
-										</Title>
-									</ExtendedTooltip>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
+	<InputField name="Описание" id="32">
+										<DataPath>Объект.Описание</DataPath>
+										<MultiLine>true</MultiLine>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Height>5</Height>
+										<HorizontalStretch>true</HorizontalStretch>
+										<ContextMenu name="ОписаниеКонтекстноеМеню" id="33"/>
+																			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="34">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подробное описание инцидента</v8:content>
+												</v8:item>
+											</Title>
+										</ExtendedTooltip>
+									</InputField>
+	<InputField name="ТекстИИ" id="37">
+										<DataPath>Объект.ТекстИИ</DataPath>
+										<MultiLine>true</MultiLine>
+										<AutoMaxWidth>false</AutoMaxWidth>
+										<Height>5</Height>
+										<HorizontalStretch>true</HorizontalStretch>
+										<ContextMenu name="ТекстИИКонтекстноеМеню" id="38"/>
+																			<ExtendedTooltip name="ТекстИИРасширеннаяПодсказка" id="39">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Текст, распознанный ИИ-сервисом из обращения</v8:content>
+												</v8:item>
+											</Title>
+										</ExtendedTooltip>
+									</InputField>
 					</ChildItems>
 				</Page>
 				<Page name="ГруппаМатериалы" id="55">
@@ -341,60 +349,22 @@
 								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="ГруппаДополнительныеРеквизиты" id="87">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Дополнительно</v8:content>
-								</v8:item>
-							</Title>
-							<Group>Vertical</Group>
-							<Behavior>Collapsible</Behavior>
-							<Collapsed>true</Collapsed>
-							<ShowTitle>true</ShowTitle>
-							<ExtendedTooltip name="ГруппаДополнительныеРеквизитыРасширеннаяПодсказка" id="88"/>
-													<ChildItems>
-								<InputField name="АвторРегистрации" id="49">
-									<DataPath>Объект.АвторРегистрации</DataPath>
-									<ContextMenu name="АвторРегистрацииКонтекстноеМеню" id="50"/>
-																		<ExtendedTooltip name="АвторРегистрацииРасширеннаяПодсказка" id="51">
-										<Title>
-											<v8:item>
-												<v8:lang>ru</v8:lang>
-												<v8:content>Сотрудник, зарегистрировавший инцидент</v8:content>
-											</v8:item>
-										</Title>
-									</ExtendedTooltip>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
 					</ChildItems>
+	<InputField name="АвторРегистрации" id="49">
+										<DataPath>Объект.АвторРегистрации</DataPath>
+										<ContextMenu name="АвторРегистрацииКонтекстноеМеню" id="50"/>
+																			<ExtendedTooltip name="АвторРегистрацииРасширеннаяПодсказка" id="51">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сотрудник, зарегистрировавший инцидент</v8:content>
+												</v8:item>
+											</Title>
+										</ExtendedTooltip>
+									</InputField>
 				</Page>
 			</ChildItems>
 		</Pages>
-		<UsualGroup name="ГруппаКоманды" id="92">
-			<Group>Horizontal</Group>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="93"/>
-			<ChildItems>
-				<Button name="ОткрытьЗаявку" id="94">
-					<CommandName>Form.Command.ОткрытьЗаявку</CommandName>
-					<ExtendedTooltip name="ОткрытьЗаявкуРасширеннаяПодсказка" id="95"/>
-				</Button>
-				<Button name="ОткрытьПоставщика" id="96">
-					<CommandName>Form.Command.ОткрытьПоставщика</CommandName>
-					<ExtendedTooltip name="ОткрытьПоставщикаРасширеннаяПодсказка" id="97"/>
-				</Button>
-				<Button name="СоздатьПретензию" id="98">
-					<CommandName>Form.Command.СоздатьПретензию</CommandName>
-					<ExtendedTooltip name="СоздатьПретензиюРасширеннаяПодсказка" id="99"/>
-				</Button>
-				<Button name="Классифицировать" id="100">
-					<CommandName>Form.Command.Классифицировать</CommandName>
-					<ExtendedTooltip name="КлассифицироватьРасширеннаяПодсказка" id="101"/>
-				</Button>
-			</ChildItems>
-		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="89">

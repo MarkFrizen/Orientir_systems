@@ -28,7 +28,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Договоры споставщиками</v8:content>
+					<v8:content>Договоры с поставщиками</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -398,7 +398,7 @@
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Условияlate check in</v8:content>
+							<v8:content>Условия позднего заселения</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
