@@ -90,7 +90,10 @@
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
-						</InputField>
+						<Events>
+					<Event name="OnChange">МаршрутныйЛистПриИзменении</Event>
+				</Events>
+				</InputField>
 						<InputField name="ДатаВремяUTC" id="16">
 							<DataPath>Объект.ДатаВремяUTC</DataPath>
 							<ContextMenu name="ДатаВремяUTCКонтекстноеМеню" id="17"/>

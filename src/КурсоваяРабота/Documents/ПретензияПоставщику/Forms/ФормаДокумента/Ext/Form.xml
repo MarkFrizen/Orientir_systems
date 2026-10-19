@@ -98,7 +98,10 @@
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
-						</InputField>
+						<Events>
+					<Event name="OnChange">ИнцидентПриИзменении</Event>
+				</Events>
+				</InputField>
 						<InputField name="Поставщик" id="16">
 							<DataPath>Объект.Поставщик</DataPath>
 							<ContextMenu name="ПоставщикКонтекстноеМеню" id="17"/>
@@ -122,7 +125,10 @@
 									</v8:item>
 								</Title>
 							</ExtendedTooltip>
-						</InputField>
+						<Events>
+					<Event name="OnChange">ДоговорПриИзменении</Event>
+				</Events>
+				</InputField>
 						<InputField name="СуммаТребования" id="22">
 							<DataPath>Объект.СуммаТребования</DataPath>
 							<ContextMenu name="СуммаТребованияКонтекстноеМеню" id="23"/>

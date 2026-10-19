@@ -114,7 +114,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ЗаявкаНаТурПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Поставщик" id="20">
 											<DataPath>Объект.Поставщик</DataPath>
 											<ContextMenu name="ПоставщикКонтекстноеМеню" id="21"/>
@@ -126,7 +129,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ПоставщикПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Договор" id="23">
 											<DataPath>Объект.Договор</DataPath>
 											<ContextMenu name="ДоговорКонтекстноеМеню" id="24"/>
@@ -138,7 +144,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ДоговорПриИзменении</Event>
+				</Events>
+				</InputField>
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="ГруппаШапкаПраво" id="26">
@@ -409,7 +418,7 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Услуги.Количество</dcsset:field>
+					<dcsset:field>УслугиКоличество</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
@@ -433,7 +442,7 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>Услуги.Сумма</dcsset:field>
+					<dcsset:field>УслугиСумма</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>

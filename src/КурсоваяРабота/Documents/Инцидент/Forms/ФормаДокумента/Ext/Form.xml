@@ -110,7 +110,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ЗаявкаНаТурПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Турист" id="20">
 											<DataPath>Объект.Турист</DataPath>
 											<ContextMenu name="ТуристКонтекстноеМеню" id="21"/>
@@ -158,7 +161,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ПоставщикПриИзменении</Event>
+				</Events>
+				</InputField>
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="ГруппаШапкаПраво" id="35">

@@ -106,7 +106,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">МаршрутныйЛистПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Турист" id="20">
 											<DataPath>Объект.Турист</DataPath>
 											<ContextMenu name="ТуристКонтекстноеМеню" id="21"/>
@@ -118,7 +121,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ТуристПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="ТипЗапроса" id="23">
 											<DataPath>Объект.ТипЗапроса</DataPath>
 											<ContextMenu name="ТипЗапросаКонтекстноеМеню" id="24"/>

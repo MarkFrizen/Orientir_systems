@@ -106,7 +106,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ПретензияПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Инцидент" id="20">
 											<DataPath>Объект.Инцидент</DataPath>
 											<ContextMenu name="ИнцидентКонтекстноеМеню" id="21"/>
@@ -118,7 +121,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ИнцидентПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="СуммаКомпенсацииТуристу" id="23">
 											<DataPath>Объект.СуммаКомпенсацииТуристу</DataPath>
 											<ContextMenu name="СуммаКомпенсацииТуристуКонтекстноеМеню" id="24"/>

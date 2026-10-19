@@ -102,7 +102,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">МаршрутныйЛистПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Причина" id="20">
 											<DataPath>Объект.Причина</DataPath>
 											<ContextMenu name="ПричинаКонтекстноеМеню" id="21"/>

@@ -102,7 +102,10 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
-										</InputField>
+										<Events>
+					<Event name="OnChange">ЗаказПоставщикуПриИзменении</Event>
+				</Events>
+				</InputField>
 										<InputField name="Поставщик" id="20">
 											<DataPath>Объект.Поставщик</DataPath>
 											<ContextMenu name="ПоставщикКонтекстноеМеню" id="21"/>
@@ -382,7 +385,7 @@
 		<dcsset:item>
 			<dcsset:selection>
 				<dcsset:item>
-					<dcsset:field>ПодтверждённыеУслуги.Количество</dcsset:field>
+					<dcsset:field>ПодтверждённыеУслугиКоличество</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:filter>
