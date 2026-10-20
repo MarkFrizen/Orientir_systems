@@ -258,6 +258,9 @@
 			<Subsystem>РуководительНаправления</Subsystem>
 			<Subsystem>Сервис</Subsystem>
 			<Role>Администратор</Role>
+			<CommonModule>РасчётКомпенсаций</CommonModule>
+			<CommonModule>КонтрольСроков</CommonModule>
+			<CommonModule>РаботаСДатамиИЧасовымиЗонами</CommonModule>
 			<Constant>ПорогСогласованияРуководителем</Constant>
 			<Catalog>СтраныМира</Catalog>
 			<Catalog>Валюты</Catalog>
