@@ -3,6 +3,10 @@
 	<CommandsVisibility>
 	<Command name="AccumulationRegister.ВзаиморасчётыПоПретензиям.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 </CommandsVisibility>
+	<CommandsPlacement>
+	<Command name="Document.ПретензияПоставщику.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
+	<Command name="Document.ПретензияПоставщику.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
+</CommandsPlacement>
 	<CommandsOrder>
 	<Command name="Document.ПретензияПоставщику.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
 	<Command name="Document.ПретензияПоставщику.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
