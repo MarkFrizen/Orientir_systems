@@ -40,7 +40,8 @@
 					<ExtendedTooltip name="ПересчитатьСуммыРасширеннаяПодсказка" id="109"/>
 				</Button>
 			</ChildItems>
-		</UsualGroup>
+		</UsualGroup>
+
 		<Pages name="ГруппаСтраницы" id="1">
 			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="2"/>
 			<ChildItems>
@@ -166,6 +167,18 @@
 													</v8:item>
 												</Title>
 											</ExtendedTooltip>
+										</InputField>
+										<InputField name="СуммаДокумента" id="110">
+											<DataPath>Объект.СуммаДокумента</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма документа</v8:content>
+												</v8:item>
+											</Title>
+											<ReadOnly>true</ReadOnly>
+											<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="СуммаДокументаРасширеннаяПодсказка" id="112"/>
 										</InputField>
 										<InputField name="Статус" id="31">
 											<DataPath>Объект.Статус</DataPath>
