@@ -4,10 +4,6 @@
 	<Command name="InformationRegister.СтатусыПодтверждений.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 	<Command name="InformationRegister.ПараметрыУслуг.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 </CommandsVisibility>
-	<CommandsPlacement>
-	<Command name="Document.ПодтверждениеУслуги.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Document.ПодтверждениеУслуги.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-</CommandsPlacement>
 	<CommandsOrder>
 	<Command name="Document.ПодтверждениеУслуги.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
 	<Command name="Document.ПодтверждениеУслуги.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>

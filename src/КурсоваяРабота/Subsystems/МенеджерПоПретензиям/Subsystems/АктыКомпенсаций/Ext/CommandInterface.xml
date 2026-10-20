@@ -3,10 +3,6 @@
 	<CommandsVisibility>
 	<Command name="AccumulationRegister.ШтрафыИКомпенсации.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 </CommandsVisibility>
-	<CommandsPlacement>
-	<Command name="Document.АктОКомпенсации.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Document.АктОКомпенсации.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-</CommandsPlacement>
 	<CommandsOrder>
 	<Command name="Document.АктОКомпенсации.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
 	<Command name="Document.АктОКомпенсации.StandardCommand.Create"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>

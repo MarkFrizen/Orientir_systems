@@ -3,22 +3,6 @@
 	<CommandsVisibility>
 	<Command name="InformationRegister.СрокиКонтроля.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 </CommandsVisibility>
-	<CommandsPlacement>
-	<Command name="Catalog.Туристы.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ЗаявкиНаТур.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.Поставщики.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ТурыМаршруты.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ДоговорыСПоставщиками.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ОбъектыГостеприимства.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.НоменклатураУслуг.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ТипыЗапросовТуристов.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ТипыИнцидентов.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.Сотрудники.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.СтраныМира.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.Валюты.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.Пользователи.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-	<Command name="Catalog.ЕдиницыИзмерения.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-</CommandsPlacement>
 	<CommandsOrder>
 	<Command name="Catalog.Туристы.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
 	<Command name="Catalog.ЗаявкиНаТур.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>

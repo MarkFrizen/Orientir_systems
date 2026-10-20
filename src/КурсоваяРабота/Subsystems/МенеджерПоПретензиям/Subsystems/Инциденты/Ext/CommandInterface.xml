@@ -3,9 +3,6 @@
 	<CommandsVisibility>
 	<Command name="InformationRegister.СтатусыИнцидентов.StandardCommand.OpenList"><Visibility><xr:Common>false</xr:Common></Visibility></Command>
 </CommandsVisibility>
-	<CommandsPlacement>
-	<Command name="Document.Инцидент.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup><Placement>Auto</Placement></Command>
-</CommandsPlacement>
 	<CommandsOrder>
 	<Command name="Document.Инцидент.StandardCommand.OpenList"><CommandGroup>NavigationPanelOrdinary</CommandGroup></Command>
 </CommandsOrder>
