@@ -277,7 +277,9 @@
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
-								</InputField>
+								<Events>
+										<Event name="OnChange">УслугиУслугаПриИзменении</Event>
+									</Events></InputField>
 								<InputField name="УслугиОбъект" id="61">
 									<DataPath>Объект.Услуги.Объект</DataPath>
 									<ContextMenu name="УслугиОбъектКонтекстноеМеню" id="62"/>
@@ -325,7 +327,9 @@
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
-								</InputField>
+								<Events>
+										<Event name="OnChange">УслугиКоличествоПриИзменении</Event>
+									</Events></InputField>
 								<InputField name="УслугиТипНомера" id="73">
 									<DataPath>Объект.Услуги.ТипНомера</DataPath>
 									<ContextMenu name="УслугиТипНомераКонтекстноеМеню" id="74"/>
@@ -361,7 +365,9 @@
 											</v8:item>
 										</Title>
 									</ExtendedTooltip>
-								</InputField>
+								<Events>
+										<Event name="OnChange">УслугиЦенаПриИзменении</Event>
+									</Events></InputField>
 								<InputField name="УслугиСумма" id="82">
 									<DataPath>Объект.Услуги.Сумма</DataPath>
 									<ContextMenu name="УслугиСуммаКонтекстноеМеню" id="83"/>
