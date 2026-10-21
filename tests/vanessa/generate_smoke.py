@@ -8,14 +8,18 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CFG = os.path.join(ROOT, 'src', 'КурсоваяРабота')
 
+# Кортеж: каталог исходников, вид метаданных, вид навигационной ссылки, заголовок сценария.
+# У справочников и документов открывается список (e1cib/list), у обработок — форма
+# (e1cib/app): списка у обработки нет, и ссылка list для неё не разрешается.
 KINDS = [
-    ('Catalogs', 'Справочник'),
-    ('Documents', 'Документ'),
-    ('InformationRegisters', 'РегистрСведений'),
-    ('AccumulationRegisters', 'РегистрНакопления'),
-    ('BusinessProcesses', 'БизнесПроцесс'),
-    ('Tasks', 'Задача'),
-    ('ChartsOfCharacteristicTypes', 'ПланВидовХарактеристик'),
+    ('Catalogs', 'Справочник', 'list', 'Открытие списка'),
+    ('Documents', 'Документ', 'list', 'Открытие списка'),
+    ('InformationRegisters', 'РегистрСведений', 'list', 'Открытие списка'),
+    ('AccumulationRegisters', 'РегистрНакопления', 'list', 'Открытие списка'),
+    ('BusinessProcesses', 'БизнесПроцесс', 'list', 'Открытие списка'),
+    ('Tasks', 'Задача', 'list', 'Открытие списка'),
+    ('ChartsOfCharacteristicTypes', 'ПланВидовХарактеристик', 'list', 'Открытие списка'),
+    ('DataProcessors', 'Обработка', 'app', 'Открытие обработки'),
 ]
 
 SECTIONS = [
@@ -37,14 +41,14 @@ def synonym(path):
 
 def main():
     objects = []
-    for folder, kind in KINDS:
+    for folder, kind, link, caption in KINDS:
         base = os.path.join(CFG, folder)
         if not os.path.isdir(base):
             continue
         for name in sorted(os.listdir(base)):
             xml = os.path.join(base, name + '.xml')
             if os.path.isfile(xml):
-                objects.append((kind, name, synonym(xml)))
+                objects.append((kind, name, synonym(xml), link, caption))
 
     lines = [
         '# language: ru',
@@ -58,11 +62,11 @@ def main():
         lines.append('    Когда Я нажимаю кнопку командного интерфейса "%s"' % s)
     lines.append('')
 
-    for kind, name, syn in objects:
+    for kind, name, syn, link, caption in objects:
         title = syn if syn else name
         lines += [
-            'Сценарий: Открытие списка - %s %s' % (kind, title),
-            '    Дано Я открываю навигационную ссылку "e1cib/list/%s.%s"' % (kind, name),
+            'Сценарий: %s - %s %s' % (caption, kind, title),
+            '    Дано Я открываю навигационную ссылку "e1cib/%s/%s.%s"' % (link, kind, name),
             '    Тогда открылось окно "%s*"' % title,
             '',
         ]
