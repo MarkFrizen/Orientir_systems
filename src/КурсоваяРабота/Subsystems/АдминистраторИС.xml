@@ -20,7 +20,13 @@
 				</v8:item>
 			</Explanation>
 			<Picture/>
-			<Content/>
+			<Content>
+			<xr:Item xsi:type="xr:MDObjectRef">Constant.ПорогСогласованияРуководителем</xr:Item>
+			<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ДополнительныеРеквизитыТуриста</xr:Item>
+			<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ДополнительныеРеквизитыУслуг</xr:Item>
+			<xr:Item xsi:type="xr:MDObjectRef">Task.ЗадачаИсполнителя</xr:Item>
+			<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.АдресацияЗадач</xr:Item>
+		</Content>
 		</Properties>
 		<ChildObjects>
 			<Subsystem>НастройкиИнтеграций</Subsystem>
