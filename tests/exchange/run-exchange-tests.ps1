@@ -13,6 +13,11 @@
     Перед первым сценарием, между сценариями и после последнего вызывается сценарий
     «cleanup»: файловая ИБ одна, и повторный импорт тех же кодов упал бы на дублях.
 
+    После последнего сценария база ещё и сверяется с демо-набором — независимо от
+    отчётов уборки: запускается epf\run-check.ps1 (ожидается PASS), сценарий
+    «export-nomenclature» (15 позиций, 6 групп, 21 строка данных) и «export-orders»
+    (4 документа после собственной уборки сценария). Любое расхождение — код 1.
+
     При несовпадении печатается «FAIL <сценарий>: ожидалось X, получен Y» и прогон
     продолжается — так видны все поломки сразу, а не первая. В конце печатается
     «ИТОГО: N/M»; код возврата 0 — все сценарии сошлись, 1 — были расхождения.
@@ -331,6 +336,101 @@ if ($stateProblems.Count -gt 0) {
 }
 else {
     Write-Host 'PASS состояние базы после уборки: 4 заказа, 21 элемент номенклатуры'
+}
+
+# --- демо-набор -------------------------------------------------------------
+# Уборка не должна быть всесильной молча: после прогона база обязана вернуться
+# к демонстрационному набору. Доказательства два и они независимы:
+#   * run-check.ps1 — свой набор проверок обработки ПроверкаДанных.epf;
+#   * сценарии экспорта — считают то, что реально лежит в справочнике и в
+#     документах, то есть повторяют тот же срез, что и «ИТОГО» выше.
+# Второй бьёт по той же базе, но другим кодом: если уборка снесла лишнее или
+# не снесла тестовое, числа разъедутся независимо от текста отчёта уборки.
+$demoProblems = New-Object System.Collections.Generic.List[string]
+
+function Invoke-ProjectScript {
+    param([string]$Path)
+
+    if (-not (Test-Path -LiteralPath $Path)) {
+        return [pscustomobject]@{ ExitCode = -1; Output = "нет файла сценария: $Path" }
+    }
+
+    $arguments = @(
+        '-NoProfile'
+        '-ExecutionPolicy', 'Bypass'
+        '-File', ('"' + $Path + '"')
+    )
+
+    $output = & powershell.exe @arguments 2>&1
+    return [pscustomobject]@{
+        ExitCode = $LASTEXITCODE
+        Output   = ($output | Out-String)
+    }
+}
+
+# 1. Штатная проверка средств контроля: обработка ПроверкаДанных.epf.
+$runCheckPath = Join-Path (Join-Path $ProjectRoot 'epf') 'run-check.ps1'
+$runCheck = Invoke-ProjectScript -Path $runCheckPath
+if ($runCheck.ExitCode -ne 0) {
+    $demoProblems.Add(("run-check: код {0}, ожидался PASS (0)" -f $runCheck.ExitCode))
+    foreach ($line in ($runCheck.Output -split "`r?`n")) {
+        if (-not [string]::IsNullOrWhiteSpace($line)) { Write-Host ("    run-check| " + $line) }
+    }
+}
+else {
+    Write-Host 'run-check: PASS'
+}
+
+# 2. Экспорт номенклатуры: 15 позиций и 6 групп, то есть 21 строка данных.
+$exportData = Join-Path $WorkDir 'demo-nomenclature.csv'
+$exportReport = Join-Path $WorkDir 'demo-nomenclature.txt'
+$exportNomenclature = Invoke-DriverScenario -Scenario 'export-nomenclature' -DataFile $exportData -ReportFile $exportReport
+$positionCounts = [regex]::Match($exportNomenclature.Report, '(?m)^\s*позиций:\s*(\d+),\s*групп:\s*(\d+)')
+$rowCount = [regex]::Match($exportNomenclature.Report, '(?m)^\s*строк:\s*(\d+)')
+
+if (-not $positionCounts.Success) {
+    $demoProblems.Add('экспорт номенклатуры: в отчёте нет строки «позиций: N, групп: M»')
+}
+else {
+    $demoPositions = [int]$positionCounts.Groups[1].Value
+    $demoGroups = [int]$positionCounts.Groups[2].Value
+    $demoRows = if ($rowCount.Success) { [int]$rowCount.Groups[1].Value } else { -1 }
+    if ($demoPositions -ne 15 -or $demoGroups -ne 6 -or $demoRows -ne 21) {
+        $demoProblems.Add(("номенклатура: ожидалось позиций 15, групп 6, строк 21; получено позиций {0}, групп {1}, строк {2}" -f `
+            $demoPositions, $demoGroups, $(if ($rowCount.Success) { $demoRows } else { '?' })))
+    }
+    else {
+        Write-Host ("НоменклатураУслуг: {0} (позиций {1}, групп {2})" -f $demoRows, $demoPositions, $demoGroups)
+    }
+}
+
+# 3. Экспорт заказов: 4 демонстрационных документа.
+$ordersData = Join-Path $WorkDir 'demo-orders.csv'
+$ordersReport = Join-Path $WorkDir 'demo-orders.txt'
+$exportOrders = Invoke-DriverScenario -Scenario 'export-orders' -DataFile $ordersData -ReportFile $ordersReport
+# Первое «документов: N» в отчёте — срез до собственных проверок сценария
+# (он заводит ещё один заказ и потом его убирает), поэтому берём счётчик после
+# уборки: именно он говорит, сколько осталось в базе.
+$orderCounts = [regex]::Match($exportOrders.Report, '(?i)после уборки,\s*документов:\s*(\d+)')
+
+if (-not $orderCounts.Success) {
+    $demoProblems.Add('экспорт заказов: в отчёте нет строки «после уборки, документов: N»')
+}
+else {
+    $demoOrders = [int]$orderCounts.Groups[1].Value
+    if ($demoOrders -ne 4) {
+        $demoProblems.Add(("заказы: ожидалось документов 4, получено {0}" -f $demoOrders))
+    }
+    else {
+        Write-Host ("ЗаказПоставщику: {0}" -f $demoOrders)
+    }
+}
+
+if ($demoProblems.Count -gt 0) {
+    foreach ($problem in $demoProblems) {
+        Write-Host ("FAIL демо-набор: {0}" -f $problem)
+    }
+    $failed.Add('демо-набор')
 }
 
 $total = $Scenarios.Count
