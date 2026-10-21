@@ -256,7 +256,6 @@
 			<Subsystem>МенеджерПоПретензиям</Subsystem>
 			<Subsystem>ОператорСопровождения</Subsystem>
 			<Subsystem>РуководительНаправления</Subsystem>
-			<Subsystem>Сервис</Subsystem>
 			<Role>Администратор</Role>
 			<CommonModule>РасчётКомпенсаций</CommonModule>
 			<CommonModule>КонтрольСроков</CommonModule>
