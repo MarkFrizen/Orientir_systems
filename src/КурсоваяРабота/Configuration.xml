@@ -260,6 +260,7 @@
 			<CommonModule>РасчётКомпенсаций</CommonModule>
 			<CommonModule>КонтрольСроков</CommonModule>
 			<CommonModule>РаботаСДатамиИЧасовымиЗонами</CommonModule>
+			<CommonModule>ОбменCSV</CommonModule>
 			<Constant>ПорогСогласованияРуководителем</Constant>
 			<Catalog>СтраныМира</Catalog>
 			<Catalog>Валюты</Catalog>
