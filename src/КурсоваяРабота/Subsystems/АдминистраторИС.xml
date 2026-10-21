@@ -26,6 +26,7 @@
 			<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ДополнительныеРеквизитыУслуг</xr:Item>
 			<xr:Item xsi:type="xr:MDObjectRef">Task.ЗадачаИсполнителя</xr:Item>
 			<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.АдресацияЗадач</xr:Item>
+			<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ОбменСФайлами</xr:Item>
 		</Content>
 		</Properties>
 		<ChildObjects>
