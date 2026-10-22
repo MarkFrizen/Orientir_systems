@@ -23,7 +23,10 @@
     Путь к файлу отчёта. Драйвер создаёт его заново, поэтому старый удаляется до запуска.
 
 .PARAMETER TimeoutSeconds
-    Таймаут ожидания 1cv8.exe, по умолчанию 10 минут.
+    Таймаут ожидания 1cv8.exe, по умолчанию 30 секунд. По истечении таймаута
+    процесс убивается и возвращается код 1: висящая 1С почти всегда означает
+    модальный диалог (например, ошибку компиляции модуля формы), а не долгую
+    работу сценария.
 
 .OUTPUTS
     System.String — содержимое файла отчёта.
@@ -45,7 +48,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$ReportFile,
 
-    [int]$TimeoutSeconds = 600
+    [int]$TimeoutSeconds = 30
 )
 
 $ErrorActionPreference = 'Stop'
@@ -167,9 +170,28 @@ try {
     $process.StartInfo = $startInfo
     [void]$process.Start()
 
-    if (-not $process.WaitForExit($timeoutMs)) {
+    # Ждём выхода процесса короткими интервалами и параллельно следим за
+    # файлом отчёта: модальный диалог 1С (типичный случай - ошибка компиляции
+    # модуля формы) держит процесс живым вечно, а отчёт так и не появляется.
+    $deadline = (Get-Date).AddMilliseconds($timeoutMs)
+    $exited = $false
+    do {
+        if ($process.WaitForExit(500)) {
+            $exited = $true
+            break
+        }
+        if ((Test-Path -LiteralPath $ReportFile) -and -not $process.HasExited) {
+            # Отчёт создан, процесс закрывается сам - даём ему остаток таймаута.
+            continue
+        }
+    } while ((Get-Date) -lt $deadline)
+
+    if (-not $exited) {
         try { $process.Kill() } catch { }
-        throw "1cv8.exe не завершился за $TimeoutSeconds с ($ReportFile не создан)"
+        Write-Host ("[run-driver] драйвер не создал отчёт за {0} с - вероятно, ошибка компиляции модуля формы; процесс 1cv8 (pid {1}) убит" -f `
+            $TimeoutSeconds, $process.Id)
+        $process.Dispose()
+        exit 1
     }
 
     $exitCode = $process.ExitCode

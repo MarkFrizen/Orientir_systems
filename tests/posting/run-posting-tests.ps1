@@ -9,10 +9,11 @@
     сверяет результат: сценарий пройден, если обёртка вернула код 0, а файл
     отчёта содержит строку «ВЕРДИКТ: PASS».
 
-    Сейчас список сценариев один - selftest (проверка самой инфраструктуры:
+    Сейчас сценариев два: selftest (проверка самой инфраструктуры:
     конфигурация открывается, в метаданных девять документов, у каждого есть
-    модуль объекта). Задачи проведения будут добавлять сценарии в таблицу
-    $DefaultScenarios ниже.
+    модуль объекта) и task-addressing (общий модуль ЗадачиИсполнителям
+    создаёт задачу с адресацией через регистр АдресацияЗадач). Задачи
+    проведения будут добавлять сценарии в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
     продолжается - так видны все поломки сразу. В конце печатается
@@ -26,16 +27,19 @@
       powershell -ExecutionPolicy Bypass -File tests\posting\run-posting-tests.ps1 -Scenario selftest,scenario2
 
 .PARAMETER Scenario
-    Сценарии драйвера через запятую. По умолчанию - selftest.
+    Сценарии драйвера через запятую. По умолчанию - весь список
+    $DefaultScenarios.
 
 .PARAMETER TimeoutSeconds
-    Таймаут одного запуска 1cv8.exe, передаётся обёртке. По умолчанию 4 минуты.
+    Таймаут одного запуска 1cv8.exe, передаётся обёртке. По умолчанию 30
+    секунд: висящая дольше 1С почти всегда означает модальный диалог, а не
+    долгую работу сценария.
 #>
 
 [CmdletBinding()]
 param(
-    [string]$Scenario = 'selftest',
-    [int]$TimeoutSeconds = 240
+    [string]$Scenario = '',
+    [int]$TimeoutSeconds = 30
 )
 
 $ErrorActionPreference = 'Stop'
@@ -50,7 +54,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest')
+$DefaultScenarios = @('selftest', 'task-addressing')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
