@@ -261,6 +261,7 @@
 			<CommonModule>КонтрольСроков</CommonModule>
 			<CommonModule>РаботаСДатамиИЧасовымиЗонами</CommonModule>
 			<CommonModule>ОбменCSV</CommonModule>
+			<CommonModule>ПроведениеДокументов</CommonModule>
 			<Constant>ПорогСогласованияРуководителем</Constant>
 			<Catalog>СтраныМира</Catalog>
 			<Catalog>Валюты</Catalog>
