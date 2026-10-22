@@ -9,11 +9,13 @@
     сверяет результат: сценарий пройден, если обёртка вернула код 0, а файл
     отчёта содержит строку «ВЕРДИКТ: PASS».
 
-    Сейчас сценариев два: selftest (проверка самой инфраструктуры:
+    Список сценариев: selftest (проверка самой инфраструктуры:
     конфигурация открывается, в метаданных девять документов, у каждого есть
-    модуль объекта) и task-addressing (общий модуль ЗадачиИсполнителям
-    создаёт задачу с адресацией через регистр АдресацияЗадач). Задачи
-    проведения будут добавлять сценарии в таблицу $DefaultScenarios ниже.
+    модуль объекта), task-addressing (общий модуль ЗадачиИсполнителям
+    создаёт задачу с адресацией через регистр АдресацияЗадач) и задачи
+    проведения: post-order, post-confirmation, post-route,
+    post-route-correction, post-event. Новые сценарии проведения добавляются
+    в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
     продолжается - так видны все поломки сразу. В конце печатается
@@ -54,7 +56,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
