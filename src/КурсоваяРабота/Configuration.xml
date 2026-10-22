@@ -305,6 +305,7 @@
 			<Enum>ВидыОперацийKPI</Enum>
 			<Enum>Должности</Enum>
 			<DataProcessor>ОбменСФайлами</DataProcessor>
+			<DataProcessor>ФормированиеЗапросовПоставщикам</DataProcessor>
 			<InformationRegister>СтатусыПодтверждений</InformationRegister>
 			<InformationRegister>ПараметрыУслуг</InformationRegister>
 			<InformationRegister>ИсторияОбработокЗапросов</InformationRegister>

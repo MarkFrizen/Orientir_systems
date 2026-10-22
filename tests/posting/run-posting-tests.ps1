@@ -12,10 +12,12 @@
     Список сценариев: selftest (проверка самой инфраструктуры:
     конфигурация открывается, в метаданных девять документов, у каждого есть
     модуль объекта), task-addressing (общий модуль ЗадачиИсполнителям
-    создаёт задачу с адресацией через регистр АдресацияЗадач) и задачи
+    создаёт задачу с адресацией через регистр АдресацияЗадач), задачи
     проведения: post-order, post-confirmation, post-route,
     post-route-correction, post-event, post-tourist-request, post-incident,
-    post-claim и post-compensation-act.
+    post-claim и post-compensation-act, а также proc-requests (обработка
+    ФормированиеЗапросовПоставщикам создаёт заказы по заявкам в работе,
+    повторный запуск не даёт дублей).
     Новые сценарии проведения добавляются в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
@@ -57,7 +59,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
