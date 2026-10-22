@@ -54,7 +54,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
