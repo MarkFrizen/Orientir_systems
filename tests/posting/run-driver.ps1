@@ -188,9 +188,26 @@ try {
 
     if (-not $exited) {
         try { $process.Kill() } catch { }
+        $process.Dispose()
+
+        # Если отчёт успел появиться и содержит вердикт, он важнее того,
+        # что процесс не закрылся: возвращаем код по вердикту, а не FAIL.
+        if (Test-Path -LiteralPath $ReportFile) {
+            $lateReport = Get-Content -LiteralPath $ReportFile -Raw -Encoding UTF8
+            if ($lateReport -match 'ВЕРДИКТ:\s*PASS') {
+                Write-Host "[run-driver] отчёт получен, процесс 1cv8 не завершился сам - убит, вердикт PASS"
+                Write-Output $lateReport.TrimEnd("`r", "`n")
+                exit 0
+            }
+            if ($lateReport -match 'ВЕРДИКТ:\s*FAIL') {
+                Write-Host "[run-driver] отчёт получен, процесс 1cv8 не завершился сам - убит, вердикт FAIL"
+                Write-Output $lateReport.TrimEnd("`r", "`n")
+                exit 1
+            }
+        }
+
         Write-Host ("[run-driver] драйвер не создал отчёт за {0} с - вероятно, ошибка компиляции модуля формы; процесс 1cv8 (pid {1}) убит" -f `
             $TimeoutSeconds, $process.Id)
-        $process.Dispose()
         exit 1
     }
 
