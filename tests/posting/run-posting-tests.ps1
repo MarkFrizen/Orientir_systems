@@ -30,7 +30,13 @@
     подтверждения услуги: количество операций совпадает с числом
     проведённых подтверждений ответственного, время обработки
     неотрицательно, после отмены проведения оборотов не остаётся,
-    сотрудник без операций - нули и пометка «нет операций»).
+    сотрудник без операций - нули и пометка «нет операций»), а также
+    integrity (целостность проведения: откат при ошибке в середине проведения
+    не оставляет записей регистров и не проводит документ, повторное
+    проведение не дублирует записи по регистратору, встречный порядок
+    «претензия - акт о компенсации» сохраняет обороты обоих документов и
+    после отмены акта не теряет требование претензии; конкурентный сеанс не
+    проверяется - файловая ИБ и лицензия на одно рабочее место).
     Новые сценарии проведения добавляются в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
@@ -79,7 +85,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary', 'query-saldo', 'query-kpi')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary', 'query-saldo', 'query-kpi', 'integrity')
 
 # Сервисный сценарий драйвера: уборка объектов, созданных прогонами. Он не
 # входит в список проверок и не считается в «ИТОГО: N/M».
