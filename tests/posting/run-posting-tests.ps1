@@ -17,7 +17,12 @@
     post-route-correction, post-event, post-tourist-request, post-incident,
     post-claim и post-compensation-act, а также proc-requests (обработка
     ФормированиеЗапросовПоставщикам создаёт заказы по заявкам в работе,
-    повторный запуск не даёт дублей).
+    повторный запуск не даёт дублей), proc-timings (обработка
+    ПересчётТайминговМаршрутов пересчитывает тайминги событий и выявляет
+    накладки), proc-overdue (обработка ПросроченныеСрокиИSLA выявляет
+    просрочки и создаёт задачи без дублей) и proc-summary (обработка
+    СводкаСтатусов даёт количества по статусам, совпадающие с ручным
+    подсчётом, и не меняет данные).
     Новые сценарии проведения добавляются в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
@@ -59,7 +64,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
