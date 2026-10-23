@@ -10,6 +10,14 @@
    - Fix: open http://127.0.0.1:4000, open the project card, set «Корневой путь BSL» to `D:\Projects\1C_prj\7 семестр\Kursovaya` (do not touch «Корневой путь всего проекта»), save, then Stop → Start.
    - Healthy server proves itself: diagnostics over all 34 form modules return findings in about a second. A broken one answers `Проект еще не готов. Текущий статус: остановлен.`
    - Registration lives in `C:\Users\vladi\AppData\Local\Infostart\LspSkill\data\data.db` (16 KB) — keep a copy; restoring it brings the correct path back. Do not delete and re-create the project card: re-creation is what writes the default path.
+7. **1C crash dumps are the primary diagnostic signal.** Whenever an `1cv8.exe` run hangs, produces no report where one was expected, or fails in a way you cannot observe (modal dialog, silent hang), do all of the following before retrying:
+   - Look in the project root for files matching `Ошибка_*.zip`.
+   - Pick the one with the **newest `LastWriteTime`** — do not guess from the file name alone.
+   - Unpack it to a temp directory and read `report.json`; the failure text is in `errorInfo.applicationErrorInfo.errors` (each entry: `[context, flags, message, detail]`, and the message names the metadata object, the BSL line and the reason).
+   - A dump whose timestamp is within roughly 10 minutes of now is conclusive evidence of the failure that just happened — treat it as the actual error, not as noise, and do not retry the same operation without changing something.
+   - **A missing dump does not prove the run succeeded** — a compile error, a hang on a lock, or a killed process may leave nothing behind. Absence only means this signal is unavailable.
+   - Before retrying any 1C command, make sure no `1cv8*` process is left running; kill leftovers, then fix the root cause.
+8. **Static check before loading a configuration.** Run `1c-lsp-diagnostics` over every modified `.bsl` and fix all `severity = 1` findings before `LoadConfigFromFiles`. Runtime-only defects still get through, but this catches the recurring ones (reserved names such as `Выполнить`, `Дата` used as a constructor without arguments, `НачатьТранзакцию`, non-existent types such as `СравнениеЗначений`).
 
 # Spec clarifications (confirmed by the customer)
 
