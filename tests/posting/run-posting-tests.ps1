@@ -22,7 +22,15 @@
     накладки), proc-overdue (обработка ПросроченныеСрокиИSLA выявляет
     просрочки и создаёт задачи без дублей) и proc-summary (обработка
     СводкаСтатусов даёт количества по статусам, совпадающие с ручным
-    подсчётом, и не меняет данные).
+    подсчётом, и не меняет данные), а также query-saldo (СводкаСтатусов
+    считает сальдо претензии по движениям ВзаиморасчётыПоПретензиям:
+    требование минус удовлетворение, отмена акта возвращает сумму
+    требования) и query-kpi (СводкаСтатусов считает KPI сотрудника по
+    оборотам KPIОператоров, которые пишет только проведение документа
+    подтверждения услуги: количество операций совпадает с числом
+    проведённых подтверждений ответственного, время обработки
+    неотрицательно, после отмены проведения оборотов не остаётся,
+    сотрудник без операций - нули и пометка «нет операций»).
     Новые сценарии проведения добавляются в таблицу $DefaultScenarios ниже.
 
     При провале печатается «FAIL <сценарий>» и содержимое отчёта, прогон
@@ -64,7 +72,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary', 'query-saldo', 'query-kpi')
 
 $ScenarioList = @($Scenario -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne '' })
 if ($ScenarioList.Count -eq 0) {
