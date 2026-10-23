@@ -17,6 +17,7 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ЗаказПоставщику</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ФормированиеЗапросовПоставщикам</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

@@ -17,6 +17,7 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.KPIОператоров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.СводкаСтатусов</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
