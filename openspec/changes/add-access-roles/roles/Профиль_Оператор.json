@@ -43,10 +43,10 @@
     "DataProcessor.ФормированиеЗапросовПоставщикам: Use, View",
     "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.ОператорСопровождения: View",
-    "Subsystem.ЗаказыПоставщикам: View",
-    "Subsystem.ЗапросыТуристов: View",
-    "Subsystem.МоиЗаявки: View",
-    "Subsystem.Подтверждения: View",
+    "Subsystem.ОператорСопровождения.Subsystem.ЗаказыПоставщикам: View",
+    "Subsystem.ОператорСопровождения.Subsystem.ЗапросыТуристов: View",
+    "Subsystem.ОператорСопровождения.Subsystem.МоиЗаявки: View",
+    "Subsystem.ОператорСопровождения.Subsystem.Подтверждения: View",
     "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

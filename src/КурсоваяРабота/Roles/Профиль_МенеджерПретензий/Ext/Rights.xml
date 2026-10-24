@@ -312,6 +312,20 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.МенеджерПоПретензиям.Subsystem.Инциденты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.МенеджерПоПретензиям.Subsystem.АктыКомпенсаций</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Task.ЗадачаИсполнителя</name>
 		<right>
 			<name>Read</name>
@@ -398,6 +412,13 @@
 		</right>
 		<right>
 			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.МенеджерПоПретензиям.Subsystem.Претензии</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -637,27 +658,6 @@
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.АктыКомпенсаций</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Инциденты</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Претензии</name>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

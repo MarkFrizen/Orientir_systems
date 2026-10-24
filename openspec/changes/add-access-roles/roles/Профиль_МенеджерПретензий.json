@@ -44,9 +44,9 @@
     "AccumulationRegister.KPIОператоров: Read",
     "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.МенеджерПоПретензиям: View",
-    "Subsystem.АктыКомпенсаций: View",
-    "Subsystem.Инциденты: View",
-    "Subsystem.Претензии: View",
+    "Subsystem.МенеджерПоПретензиям.Subsystem.АктыКомпенсаций: View",
+    "Subsystem.МенеджерПоПретензиям.Subsystem.Инциденты: View",
+    "Subsystem.МенеджерПоПретензиям.Subsystem.Претензии: View",
     "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

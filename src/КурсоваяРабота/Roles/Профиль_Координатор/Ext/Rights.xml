@@ -376,6 +376,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.КоординаторЛогистики.Subsystem.Корректировки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Document.ЗаказПоставщику</name>
 		<right>
 			<name>Read</name>
@@ -494,6 +501,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.КоординаторЛогистики.Subsystem.МаршрутныеЛисты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.АдресацияЗадач</name>
 		<right>
 			<name>Read</name>
@@ -604,20 +618,6 @@
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Корректировки</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.МаршрутныеЛисты</name>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

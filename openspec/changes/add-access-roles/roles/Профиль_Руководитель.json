@@ -46,9 +46,9 @@
     "DataProcessor.ПросроченныеСрокиИSLA: Use, View",
     "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.РуководительНаправления: View",
-    "Subsystem.KPIОтчеты: View",
-    "Subsystem.Согласования: View",
-    "Subsystem.Эскалации: View",
+    "Subsystem.РуководительНаправления.Subsystem.KPIОтчеты: View",
+    "Subsystem.РуководительНаправления.Subsystem.Согласования: View",
+    "Subsystem.РуководительНаправления.Subsystem.Эскалации: View",
     "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

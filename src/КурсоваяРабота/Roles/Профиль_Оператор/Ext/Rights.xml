@@ -4,6 +4,13 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
+		<name>Subsystem.ОператорСопровождения.Subsystem.ЗапросыТуристов</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>BusinessProcess.УрегулированиеИнцидента</name>
 		<right>
 			<name>Read</name>
@@ -189,6 +196,13 @@
 		</right>
 		<right>
 			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.ОператорСопровождения.Subsystem.ЗаказыПоставщикам</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -484,6 +498,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.ОператорСопровождения.Subsystem.МоиЗаявки</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>ChartOfCharacteristicTypes.ДополнительныеРеквизитыТуриста</name>
 		<right>
 			<name>Read</name>
@@ -651,37 +672,16 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.ОператорСопровождения.Subsystem.Подтверждения</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.ЗаказыПоставщикам</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.ЗапросыТуристов</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.МоиЗаявки</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Подтверждения</name>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

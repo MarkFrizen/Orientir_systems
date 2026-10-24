@@ -297,6 +297,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.РуководительНаправления.Subsystem.Согласования</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.НоменклатураУслуг</name>
 		<right>
 			<name>Read</name>
@@ -387,6 +394,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.РуководительНаправления.Subsystem.KPIОтчеты</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ИсторияОбработокЗапросов</name>
 		<right>
 			<name>Read</name>
@@ -471,6 +485,13 @@
 		<name>Constant.ПорогСогласованияРуководителем</name>
 		<right>
 			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.РуководительНаправления.Subsystem.Эскалации</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -571,27 +592,6 @@
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.KPIОтчеты</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Согласования</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.Эскалации</name>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

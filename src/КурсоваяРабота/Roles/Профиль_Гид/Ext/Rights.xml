@@ -15,6 +15,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.ГидНаМаршруте.Subsystem.НоваяЗаявка</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.Сотрудники</name>
 		<right>
 			<name>Read</name>
@@ -239,6 +246,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.ГидНаМаршруте.Subsystem.НовыйИнцидент</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.ЗаявкиНаТур</name>
 		<right>
 			<name>Read</name>
@@ -250,6 +264,13 @@
 		</right>
 		<right>
 			<name>InputByString</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
+		<name>Subsystem.ГидНаМаршруте.Subsystem.МойМаршрут</name>
+		<right>
+			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>
@@ -347,6 +368,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Subsystem.ГидНаМаршруте.Subsystem.МоиОбращения</name>
+		<right>
+			<name>View</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.ЕдиницыИзмерения</name>
 		<right>
 			<name>Read</name>
@@ -399,34 +427,6 @@
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.МоиОбращения</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.МойМаршрут</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.НоваяЗаявка</name>
-		<right>
-			<name>View</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
-		<name>Subsystem.НовыйИнцидент</name>
-		<right>
-			<name>View</name>
 			<value>true</value>
 		</right>
 	</object>

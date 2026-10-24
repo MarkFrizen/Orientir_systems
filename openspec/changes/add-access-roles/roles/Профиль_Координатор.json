@@ -41,8 +41,8 @@
     "DataProcessor.ПересчётТайминговМаршрутов: Use, View",
     "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.КоординаторЛогистики: View",
-    "Subsystem.Корректировки: View",
-    "Subsystem.МаршрутныеЛисты: View",
+    "Subsystem.КоординаторЛогистики.Subsystem.Корректировки: View",
+    "Subsystem.КоординаторЛогистики.Subsystem.МаршрутныеЛисты: View",
     "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

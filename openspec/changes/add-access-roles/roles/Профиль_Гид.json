@@ -30,10 +30,10 @@
     "InformationRegister.СтатусыИнцидентов: Read",
     "AccumulationRegister.KPIОператоров: Read",
     "Subsystem.ГидНаМаршруте: View",
-    "Subsystem.МоиОбращения: View",
-    "Subsystem.МойМаршрут: View",
-    "Subsystem.НоваяЗаявка: View",
-    "Subsystem.НовыйИнцидент: View",
+    "Subsystem.ГидНаМаршруте.Subsystem.МоиОбращения: View",
+    "Subsystem.ГидНаМаршруте.Subsystem.МойМаршрут: View",
+    "Subsystem.ГидНаМаршруте.Subsystem.НоваяЗаявка: View",
+    "Subsystem.ГидНаМаршруте.Subsystem.НовыйИнцидент: View",
     "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

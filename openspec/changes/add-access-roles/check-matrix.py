@@ -216,6 +216,11 @@ OFF_MATRIX_POLICY = {
 
 # Родительская подсистема -> (профиль-владелец, вложенные подсистемы).
 # Список детей сверен с диском: src/КурсоваяРабота/Subsystems/*/Subsystems/*.xml.
+# Вложенные подсистемы — отдельные объекты метаданных с КВАЛИФИЦИРОВАННЫМ
+# платформенным именем «Subsystem.<Родитель>.Subsystem.<Ребёнок>» (так их
+# знает ConfigDumpInfo.xml и загружает LoadConfigFromFiles; плоское имя
+# «Subsystem.<Ребёнок>» платформа отбрасывает как «Неизвестный объект
+# метаданных» — task-9-report.md). Родители остаются «Subsystem.<Имя>».
 _SUBSYSTEM_GRANTS = {
     "ОператорСопровождения": (_P_OP, ["ЗаказыПоставщикам", "ЗапросыТуристов", "МоиЗаявки", "Подтверждения"]),
     "КоординаторЛогистики": (_P_KO, ["Корректировки", "МаршрутныеЛисты"]),
@@ -226,16 +231,22 @@ _SUBSYSTEM_GRANTS = {
 for _parent, (_owner, _children) in _SUBSYSTEM_GRANTS.items():
     OFF_MATRIX_POLICY["Subsystem." + _parent] = {_owner: ["Ч"], _P_AU: ["Ч"]}
     for _child in _children:
-        OFF_MATRIX_POLICY["Subsystem." + _child] = {_owner: ["Ч"], _P_AU: ["Ч"]}
+        _qual = "Subsystem.%s.Subsystem.%s" % (_parent, _child)
+        OFF_MATRIX_POLICY[_qual] = {_owner: ["Ч"], _P_AU: ["Ч"]}
 
 # Ключи, запрещённые во ВСЕХ шести профилях (права имеет только роль
 # Администратор: spec сценарии «Настройки интеграций закрыты для профилей»,
 # п.5 НастройкиИнтеграций, п.6 ОбменСФайлами, подсистема АдминистраторИС
-# вместе со всем её деревом вложенных подсистем).
+# вместе со всем её деревом вложенных подсистем). Дети АдминистраторИС
+# перечислены в квалифицированной платформенной форме; плоские варианты
+# оставлены как защита в глубину — правило (a) их всё равно бы отвергло
+# (find_metadata_xml плоские имена детей не разыскивает).
 FORBIDDEN_EVERYWHERE = [
     "InformationRegister.НастройкиИнтеграций",
     "DataProcessor.ОбменСФайлами",
     "Subsystem.АдминистраторИС",
+    "Subsystem.АдминистраторИС.Subsystem.СправочникиНСИ",
+    "Subsystem.АдминистраторИС.Subsystem.НастройкиИнтеграций",
     "Subsystem.СправочникиНСИ",
     "Subsystem.НастройкиИнтеграций",
 ]
@@ -293,19 +304,24 @@ def find_metadata_xml(folder, name):
     """Путь к исходнику метаданных или None.
 
     Прямой путь: <SRC_ROOT>/<folder>/<name>.xml. Вложенные подсистемы —
-    отдельные объекты метаданных и лежат в
-    <SRC_ROOT>/Subsystems/<Parent>/Subsystems/<Child>.xml — проверяем и там.
+    отдельные объекты метаданных: платформенное квалифицированное имя
+    «Subsystem.<Родитель>.Subsystem.<Ребёнок>» (ConfigDumpInfo.xml) даёт
+    name = "<Родитель>.Subsystem.<Ребёнок>", а исходник лежит в
+    <SRC_ROOT>/Subsystems/<Родитель>/Subsystems/<Ребёнок>.xml — спускаемся
+    по цепочке произвольной глубины. Плоское имя ребёнка НЕ разыскивается
+    по всем родителям: платформа его не знает («Неизвестный объект
+    метаданных», task-9-report.md), поэтому ключ обязан быть квалифицированным.
     """
     direct = os.path.join(SRC_ROOT, folder, name + ".xml")
     if os.path.isfile(direct):
         return direct
-    if folder == "Subsystems":
-        base = os.path.join(SRC_ROOT, folder)
-        if os.path.isdir(base):
-            for parent in os.listdir(base):
-                nested = os.path.join(base, parent, "Subsystems", name + ".xml")
-                if os.path.isfile(nested):
-                    return nested
+    if folder == "Subsystems" and ".Subsystem." in name:
+        segments = name.split(".Subsystem.")
+        path = os.path.join(SRC_ROOT, folder, segments[0] + ".xml")
+        for seg in segments[1:]:
+            path = os.path.join(os.path.splitext(path)[0], "Subsystems", seg + ".xml")
+        if os.path.isfile(path):
+            return path
     return None
 
 
@@ -683,7 +699,9 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                         pname,
                         key,
                         os.path.join(SRC_ROOT, folder, mname + ".xml"),
-                        " or Subsystems/<Parent>/Subsystems/%s.xml" % mname
+                        "; nested subsystems must use the qualified platform form "
+                        "Subsystem.<Родитель>.Subsystem.<Ребёнок> (flat child names "
+                        "are unknown to the platform)"
                         if folder == "Subsystems"
                         else "",
                     )
