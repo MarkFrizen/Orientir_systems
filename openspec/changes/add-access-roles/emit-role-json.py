@@ -1,29 +1,24 @@
 # -*- coding: utf-8 -*-
 """Task 4 (add-access-roles): roles-matrix.json -> role-compile DSL JSON x6.
 
-Frozen symbol -> DSL mapping (dsl-reference.md is authoritative; design D2/D5):
-  Ч    -> Read                       (Subsystem: View; DataProcessor/Report: View)
-  П    -> View                       (DataProcessor/Report: View)
-  И    -> Insert, InteractiveInsert  (интерактивное добавление = data right + interactive right)
-  Изм  -> Update                     (platform has no "interactive update"; D5: Изм -> Update)
-  В    -> InputByString
-  Пров -> Document: Posting, InteractivePosting, InteractivePostingRegular
-          BusinessProcess/Task: Update (Update-equivalent per dispatch)
-  Use  -> Use                        (DataProcessor/Report)
-Accepted compiler closure (documented, NOT re-emitted by this script):
-  role-compile closes right dependencies the same way the platform does at load:
-  InteractiveInsert -> Edit, Insert, Read, Update, View; Edit -> Read, Update, View;
-  Update is a prerequisite of the save-in-add flow, so `Update` appears on cells with
-  И/Изм even though the matrix symbol only names one intent. For cells WITH Изм the
-  resulting `Edit` is desired (matrix Изм = editing semantics; design D2's
-  «Изм -> InteractionUpdate» name is obsolete — the real platform gate is `Edit`;
-  both remain one-symbol-per-intent). No XML change for those profiles.
+Вся конвертация «символы матрицы -> DSL-права» и платформенное замыкание
+зависимостей прав живут в общем модуле rights_map.py (единый источник для
+этого скрипта и для гейтов check-matrix.py: def<->матрица, def<->XML).
+Здесь НЕ хардкодится ни политика, ни замыкание — только чтение матрицы и
+запись def-ов.
+
+Замыкание применено ПРЕДВАРИТЕЛЬНО (rights_map.closed_rights): строки objects
+содержат итоговый набор прав, который role-compile запишет в Rights.xml
+(InteractiveInsert -> Edit/Insert/Read/Update/View; InputByString -> Read/View;
+Posting-цепочка -> Edit; подробности и номера строк role-compile.py — в
+докстринге rights_map.py). Поэтому повторная компиляция не добавляет прав
+сверх def-а, и артефакты доказуемо воспроизводимы из roles-matrix.json.
+
 Profile-level suppression (controller ruling, review of Task 4): BLOCKED —
   suppressing `Edit` for Профиль_Гид on Document.Инцидент/ЗаявкаТуристаНаМаршруте
   while keeping InteractiveInsert is impossible via role-compile (dependency
   closure flips the explicit deny back to true; the platform reportedly does the
-  same at load). See the BLOCKED note below and task-4-report.md §8. The matrix
-  stays untouched; checker stays green.
+  same at load). See task-4-report.md §8. The matrix stays untouched.
 setForAttributesByDefault: DSL default (true) — not emitted (controller ruling).
 setForNewObjects: never emitted (default false).
 Presets are NOT used — explicit right lists everywhere.
@@ -36,77 +31,18 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import rights_map  # noqa: E402
+
 MATRIX = os.path.join(HERE, "roles-matrix.json")
 OUT_DIR = os.path.join(HERE, "roles")
 
-# per-type-family symbol -> list of DSL rights
-COMMON = {
-    "Ч": ["Read"],
-    "П": ["View"],
-    "И": ["Insert", "InteractiveInsert"],
-    "Изм": ["Update"],
-    "В": ["InputByString"],
-}
-DOCUMENT = dict(COMMON)
-DOCUMENT["Пров"] = ["Posting", "InteractivePosting", "InteractivePostingRegular"]
-PROCESS = dict(COMMON)
-PROCESS["Пров"] = ["Update"]  # Update-equivalent on BusinessProcess./Task.
-DATAPROCESSOR = {
-    "Ч": ["View"],  # DataProcessor/Report have only Use, View
-    "П": ["View"],
-    "Use": ["Use"],
-}
-SUBSYSTEM = {"Ч": ["View"]}  # Subsystem's only right is View (visibility)
-CONSTANT = {"Ч": ["Read"], "П": ["View"], "Изм": ["Update"]}
-REGISTER = {"Ч": ["Read"], "П": ["View"], "Изм": ["Update"]}
 
-
-def table_for(obj_type):
-    if obj_type == "Document":
-        return DOCUMENT
-    if obj_type in ("BusinessProcess", "Task"):
-        return PROCESS
-    if obj_type in ("DataProcessor", "Report"):
-        return DATAPROCESSOR
-    if obj_type == "Subsystem":
-        return SUBSYSTEM
-    if obj_type == "Constant":
-        return CONSTANT
-    if obj_type.endswith("Register"):
-        return REGISTER
-    return COMMON  # Catalog, ChartOfCharacteristicTypes, etc.
-
-
-# BLOCKED ruling (Task 4 review, CRITICAL 1) — NOT implemented, intentionally:
-# The controller asked to suppress `Edit` for Профиль_Гид on Document.Инцидент and
-# Document.ЗаявкаТуристаНаМаршруте via the DSL full form {"rights": {..., "Edit": false}},
-# keeping InteractiveInsert. role-compile (and, per its measured comment, the platform
-# at load) closes dependencies forward: InteractiveInsert -> [Edit, Insert, Read,
-# Update, View], and "Разрешение перебивает запрет" — an explicit Edit=false is flipped
-# back to true ("по зависимости добавлено — Edit"). The alternative deny syntax
-# {"Edit": {"value": false}} parses to the identical Value:'false' structure
-# (parse_object_entry: bool_val = 'true' if p_value is True or str(p_value) == 'True'
-# else 'false'), so it is overridden the same way. Edit suppression while keeping
-# InteractiveInsert is therefore NOT achievable through role-compile; hand-editing
-# Rights.xml is forbidden by the dispatch (and would diverge from the DB at load).
-# Awaiting controller re-ruling — options in task-4-report.md §8.
-
-
-def convert(key, symbols, profile):
-    obj_type = key.split(".", 1)[0]
-    table = table_for(obj_type)
-    rights = []
-    for sym in symbols:
-        if sym not in table:
-            raise SystemExit(
-                "ERROR: symbol %r not defined for %s (key %s)" % (sym, obj_type, key)
-            )
-        for r in table[sym]:
-            if r not in rights:
-                rights.append(r)
-    if not rights:
-        raise SystemExit("ERROR: empty rights for %s" % key)
-    return "%s: %s" % (key, ", ".join(rights))
+def convert(key, symbols):
+    try:
+        return rights_map.rights_line(key, symbols)
+    except rights_map.ConversionError as exc:
+        raise SystemExit("ERROR: %s" % exc)
 
 
 def main():
@@ -115,7 +51,7 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     ok = True
     for profile, data in matrix["profiles"].items():
-        objects = [convert(k, v, profile) for k, v in data["objects"].items()]
+        objects = [convert(k, v) for k, v in data["objects"].items()]
         doc = {
             "name": profile,
             "synonym": data["synonym"],
