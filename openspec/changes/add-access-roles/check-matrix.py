@@ -15,11 +15,19 @@
                        «-» побеждает правило «присутствует во всех профилях»);
   (c) профилей ровно 6 (spec.md:10 запрещает иные, напр. Профиль_Администратор);
   (d) каждая строка таблиц спеки содержит ровно 6 ячеек прав — короткая/длинная
-      строка FAIL loudly, а не молча отбрасывается.
+      строка FAIL loudly, а не молча отбрасывается;
+  (e) инварианты проведения (design.md D5, «Право обновления при проведении»):
+      символ «Пров» допустим только у ключей Document./BusinessProcess./Task.;
+      для Document.* «Пров» обязан присутствовать тогда и только тогда, когда
+      документ проводимый (--post) и у профиля есть «Изм»;
+      Профиль_Гид не содержит «Пров» нигде.
+      Правило (b) при этом усиливается: ожидаемый список прав ячейки спеки =
+      символы ячейки + «Пров», если документ проводимый и в ячейке есть «Изм».
 Дополнительные ключи объектов (политика «вне матрицы ТЗ») разрешены —
-они проверяются только правилом (a).
+они проверяются только правилами (a) и (e).
 
-Запуск:  python check-matrix.py [путь к roles-matrix.json]
+Запуск:  python check-matrix.py [--post <csv имён проводимых документов>]
+                                 [путь к roles-matrix.json]
 Код возврата: 0 — нарушений нет, 1 — есть нарушения / файлы не найдены.
 """
 import io
@@ -67,6 +75,15 @@ TYPE_TO_FOLDER = {
 
 # Условные обозначения ТЗ (design.md D2): Ч, П, И, Изм, В
 VALID_SYMBOLS = ["Ч", "П", "Изм", "И", "В"]
+
+# Право обновления при проведении (design.md D5) — только для документов,
+# бизнес-процессов и задач; в таблицах спеки не встречается.
+POSTING_SYMBOL = "Пров"
+POSTING_PREFIXES = ("Document.", "BusinessProcess.", "Task.")
+MATRIX_SYMBOLS = VALID_SYMBOLS + [POSTING_SYMBOL]
+
+# Профиль, которому «Пров» запрещён всегда (только чтение/создание, без правки).
+NO_POSTING_PROFILE = "Профиль_Гид"
 
 ABSENT = "-"
 
@@ -189,7 +206,8 @@ def load_spec_tables(path):
     return tables, errors
 
 
-def check(matrix_path, spec_path=SPEC_PATH):
+def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
+    posting = set(posting_docs or [])
     spec_tables, errors = load_spec_tables(spec_path)
     if not os.path.isfile(matrix_path):
         errors.append("roles-matrix.json not found: %s" % matrix_path)
@@ -244,10 +262,49 @@ def check(matrix_path, spec_path=SPEC_PATH):
                 errors.append("%s: rights for %r must be a non-empty list" % (pname, key))
                 continue
             for sym in rights:
-                if sym not in VALID_SYMBOLS:
+                if sym not in MATRIX_SYMBOLS:
                     errors.append("%s: %r has invalid symbol %r" % (pname, key, sym))
+                elif sym == POSTING_SYMBOL and not key.startswith(POSTING_PREFIXES):
+                    errors.append(
+                        "%s: %r has %r but key type allows only %s"
+                        % (pname, key, POSTING_SYMBOL, "/".join(POSTING_PREFIXES))
+                    )
             if len(set(rights)) != len(rights):
                 errors.append("%s: %r has duplicate symbols: %r" % (pname, key, rights))
+
+    # (e) инварианты проведения: «Пров» <=> проводимый документ + «Изм»
+    for pname, prof in profiles.items():
+        objects = prof.get("objects")
+        if not isinstance(objects, dict):
+            continue
+        for key, rights in objects.items():
+            if not isinstance(rights, list):
+                continue
+            has_prov = POSTING_SYMBOL in rights
+            if has_prov and pname == NO_POSTING_PROFILE:
+                errors.append(
+                    "%s: %r contains %r but this profile must never have it"
+                    % (pname, key, POSTING_SYMBOL)
+                )
+            if not key.startswith("Document."):
+                continue  # BusinessProcess./Task.: префикс проверен правилом (a)
+            doc = key.split(".", 1)[1]
+            if has_prov and doc not in posting:
+                errors.append(
+                    "%s: %r has %r but document is not posting-enabled (--post)"
+                    % (pname, key, POSTING_SYMBOL)
+                )
+            if doc in posting:
+                has_izm = "Изм" in rights
+                if has_izm and not has_prov:
+                    errors.append(
+                        "%s: %r is a posting document with 'Изм' but lacks %r"
+                        % (pname, key, POSTING_SYMBOL)
+                    )
+                if has_prov and not has_izm:
+                    errors.append(
+                        "%s: %r has %r without 'Изм'" % (pname, key, POSTING_SYMBOL)
+                    )
 
     # (b) таблицы спеки (разобранные из spec.md) воспроизведены дословно
     for key in sorted(spec_tables):
@@ -265,6 +322,14 @@ def check(matrix_path, spec_path=SPEC_PATH):
                     )
             else:
                 expected = parse_cell(cell)
+                # решение контроллера: ячейка спеки + «Пров» на пересечении
+                # (проводимый документ ∩ у профиля есть «Изм»)
+                if (
+                    key.startswith("Document.")
+                    and key.split(".", 1)[1] in posting
+                    and "Изм" in expected
+                ):
+                    expected = expected + [POSTING_SYMBOL]
                 actual = objects.get(key)
                 if actual is None:
                     errors.append("%s: spec cell %r but key %r is absent" % (pname, cell, key))
@@ -276,9 +341,35 @@ def check(matrix_path, spec_path=SPEC_PATH):
     return errors
 
 
+def parse_args(argv):
+    """[--post <csv>] [matrix_path] -> (matrix_path, posting_docs)"""
+    posting = []
+    positional = []
+    i = 0
+    while i < len(argv):
+        arg = argv[i]
+        if arg == "--post":
+            if i + 1 >= len(argv):
+                raise ValueError("--post requires a comma-separated value")
+            posting = [p.strip() for p in argv[i + 1].split(",") if p.strip()]
+            i += 2
+        elif arg.startswith("--post="):
+            posting = [p.strip() for p in arg[len("--post="):].split(",") if p.strip()]
+            i += 1
+        else:
+            positional.append(arg)
+            i += 1
+    matrix_path = positional[0] if positional else DEFAULT_MATRIX
+    return matrix_path, posting
+
+
 def main():
-    matrix_path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_MATRIX
-    errors = check(matrix_path)
+    try:
+        matrix_path, posting = parse_args(sys.argv[1:])
+    except ValueError as exc:
+        sys.stderr.write("FAIL: %s\n" % exc)
+        sys.exit(1)
+    errors = check(matrix_path, posting_docs=posting)
     out = io.open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
     if errors:
         out.write("FAIL: %d violation(s)\n" % len(errors))
@@ -290,7 +381,8 @@ def main():
         keys = sum(len(p.get("objects", {})) for p in json.load(f)["profiles"].values())
     out.write(
         "OK: %d spec rows x 6 profiles parsed from spec.md and verified "
-        "(%d object keys total, metadata files exist)\n" % (len(load_spec_tables(SPEC_PATH)[0]), keys)
+        "(%d object keys total, metadata files exist, %d posting docs via --post)\n"
+        % (len(load_spec_tables(SPEC_PATH)[0]), keys, len(posting))
     )
     out.flush()
     sys.exit(0)
