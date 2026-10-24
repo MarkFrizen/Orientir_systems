@@ -74,11 +74,11 @@
 - Read-only (ИБ data).
 
 **Interfaces:**
-- Consumes: Task 10. Produces: 7 users `test_operator`, `test_koordinator`, `test_gid`, `test_menuver`, `test_rukovoditel`, `test_auditor`, `test_admin` with their single role; `test_operator`/`test_gid` bound to existing demo `Сотрудники`.
+- Consumes: Task 10. Produces: 6 users `test_operator`, `test_koordinator`, `test_gid`, `test_menuver`, `test_rukovoditel`, `test_auditor` with their single profile role + the EXISTING `Администратор` user reused for admin runs (user decision 25.10 — no test_admin); `test_operator`/`test_gid` bound to existing demo `Сотрудники`.
 
-- [ ] **Step 1: Create users** via enterprise client as admin (`db-run`) or `web-test`: one role per user as listed in Interfaces; do not touch `DefaultRoles`.
-- [ ] **Step 2: Bind «свой» subjects** — in `Catalogs.Сотрудники`/`Пользователи` link `test_operator` and `test_gid` to demo employee records (forms logic resolves «свой» through this binding).
-- [ ] **Step 3: Verify** — the 7 users are listed in ИБ, each shows exactly one role. Expected: PASS. No git commit (data, not sources).
+- [ ] **Step 1: Users exist** — created by the user via Configurator («Пользователи информационной базы») per `docs/Инструкция-пользователи-ИБ.md`: 6 `test_*` with one profile role each; admin runs reuse the existing `Администратор`. Controller verifies, does not create. `DefaultRoles` stays empty.
+- [ ] **Step 2: Bind «свой» subjects** — via code (external run under `Администратор`, data layer): fill/extend `Catalogs.Пользователи` records with `ИмяПользователяИБ` = `test_operator`/`test_gid` linked to demo `Сотрудники` (forms logic resolves «свой» through this binding).
+- [ ] **Step 3: Verify** — the 6 test users are listed in ИБ, each shows exactly one role; launch each via `/U test_*` and confirm session starts. Expected: PASS. No git commit (data, not sources).
 
 <!-- openspec-task: 4.2 -->
 ### Task 12: Spec scenario battery
@@ -111,8 +111,8 @@
 
 - [ ] **Step 1: Rights-hidden commands** (`navigation-and-commands` spec): as `test_auditor`, verify commands absent for objects it cannot edit; as `test_operator`, verify its allowed commands work. Expected: matches existing `ПравоДоступа`-driven form logic.
 - [ ] **Step 2: Processors** (`data-processors` spec): `test_koordinator` runs `ПересчётТайминговМаршрутов`; `test_rukovoditel` opens `ПросроченныеСрокиИSLA`; `test_auditor` opens `СводкаСтатусов`. Expected: all succeed; `test_gid` cannot open any of the five.
-- [ ] **Step 3: CSV exchange** (`data-exchange` spec): `test_admin` runs `ОбменСФайлами` import/export as before; `test_operator` does not see the command. Expected: admin workflow unchanged from archived `add-csv-data-exchange` behavior.
-- [ ] **Step 4: Admin full-path smoke**: `test_admin` repeats one full posting chain from `document-posting` spec scenarios and demo data browsing. Expected: no new errors, no fresh `Ошибка_*.zip`.
+- [ ] **Step 3: CSV exchange** (`data-exchange` spec): existing `Администратор` runs `ОбменСФайлами` import/export as before; `test_operator` does not see the command. Expected: admin workflow unchanged from archived `add-csv-data-exchange` behavior.
+- [ ] **Step 4: Admin full-path smoke**: existing `Администратор` user repeats one full posting chain from `document-posting` spec scenarios and demo data browsing. Expected: no new errors, no fresh `Ошибка_*.zip`.
 
 <!-- openspec-task: 5.1 -->
 ### Task 14: Close stage-3 docs
