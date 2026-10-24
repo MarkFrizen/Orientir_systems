@@ -1,18 +1,26 @@
 # -*- coding: utf-8 -*-
 """Проверка roles-matrix.json — единого источника прав (design.md D3).
 
-Правила (Task 1, specs/access-roles/spec.md, три таблицы раздела 6):
+Таблицы прав ЧИТАЮТСЯ ИЗ СПЕКИ at runtime (specs/access-roles/spec.md,
+разделы «Права на справочники», «Права на документы», «Права на регистры») —
+никаких захардкоженных ожиданий: если spec.md изменён, проверяется новая матрица.
+
+Правила:
   (a) каждый ключ объекта "<Тип>.<Имя>" имеет исходник
-      src/КурсоваяРабота/<Тип plural>/<Имя>.xml;
+      src/КурсоваяРабота/<Тип plural>/<Имя>.xml; список прав непустой,
+      без дублей символов, символы только из легенды ТЗ (Ч, П, И, Изм, В);
   (b) ячейки трёх таблиц спеки воспроизведены точно:
       не-«-» ячейка => ключ присутствует в профиле ровно с этими символами;
       «-» ячейка    => ключ ОТСУТСТВУЕТ в профиле (решение контроллера:
-                       «-» побеждает правило «присутствует во всех профилях»).
-Дополнительные ключи (объекты вне матрицы ТЗ, политика спеки) разрешены —
+                       «-» побеждает правило «присутствует во всех профилях»);
+  (c) профилей ровно 6 (spec.md:10 запрещает иные, напр. Профиль_Администратор);
+  (d) каждая строка таблиц спеки содержит ровно 6 ячеек прав — короткая/длинная
+      строка FAIL loudly, а не молча отбрасывается.
+Дополнительные ключи объектов (политика «вне матрицы ТЗ») разрешены —
 они проверяются только правилом (a).
 
 Запуск:  python check-matrix.py [путь к roles-matrix.json]
-Код возврата: 0 — нарушений нет, 1 — есть нарушения / файл не найден.
+Код возврата: 0 — нарушений нет, 1 — есть нарушения / файлы не найдены.
 """
 import io
 import json
@@ -23,6 +31,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 SRC_ROOT = os.path.join(REPO_ROOT, "src", "КурсоваяРабота")
 DEFAULT_MATRIX = os.path.join(SCRIPT_DIR, "roles-matrix.json")
+SPEC_PATH = os.path.join(SCRIPT_DIR, "specs", "access-roles", "spec.md")
 
 # Профили в порядке колонок таблиц спеки (Опер | Коор | Гид | Менедж | Рук | Аудит)
 PROFILES = [
@@ -59,40 +68,22 @@ TYPE_TO_FOLDER = {
 # Условные обозначения ТЗ (design.md D2): Ч, П, И, Изм, В
 VALID_SYMBOLS = ["Ч", "П", "Изм", "И", "В"]
 
-# --- Три таблицы спеки, транскрибированы дословно ---
-# Ключ объекта -> 6 ячеек в порядке PROFILES; "-" = отсутствие прав.
-SPEC_TABLES = {
-    # Права на справочники
-    "Catalog.Туристы":              ["ЧПИИзмВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ЗаявкиНаТур":          ["ЧПИИзмВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ТурыМаршруты":         ["ЧПВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.Поставщики":           ["ЧПВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ДоговорыСПоставщиками": ["ЧПВ", "ЧПВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ОбъектыГостеприимства": ["ЧПВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.НоменклатураУслуг":    ["ЧПВ", "ЧПВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ТипыЗапросовТуристов": ["ЧПВ", "ЧПВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.ТипыИнцидентов":       ["ЧПВ", "ЧПВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Catalog.Сотрудники":           ["ЧПВ", "ЧПВ", "ЧПВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    # Права на документы
-    "Document.ЗаказПоставщику":        ["ЧПИИзмВ", "ЧПВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.ПодтверждениеУслуги":    ["ЧПИИзмВ", "ЧПВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.МаршрутныйЛист":         ["ЧПВ", "ЧПИИзмВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.СобытиеМаршрута":        ["ЧПВ", "ЧПИИзмВ", "ЧВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.КорректировкаМаршрута":  ["ЧПВ", "ЧПИИзмВ", "-", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.ЗаявкаТуристаНаМаршруте": ["ЧПИИзмВ", "ЧПВ", "ЧПИВ", "ЧПВ", "ЧПВ", "ЧПВ"],
-    "Document.Инцидент":               ["ЧПВ", "ЧПВ", "ЧПИВ", "ЧПИИзмВ", "ЧПВ", "ЧПВ"],
-    "Document.ПретензияПоставщику":    ["-", "-", "-", "ЧПИИзмВ", "ЧПВ", "ЧПВ"],
-    "Document.АктОКомпенсации":        ["-", "-", "-", "ЧПИИзмВ", "ЧПВ", "ЧПВ"],
-    # Права на регистры
-    "InformationRegister.СтатусыПодтверждений":      ["Ч", "Ч", "-", "Ч", "Ч", "Ч"],
-    "InformationRegister.ПараметрыУслуг":            ["Ч", "Ч", "-", "Ч", "Ч", "Ч"],
-    "InformationRegister.ГрафикПеремещений":         ["Ч", "Ч", "Ч", "Ч", "Ч", "Ч"],
-    "AccumulationRegister.ВзаиморасчётыПоПретензиям": ["-", "-", "-", "Ч", "Ч", "Ч"],
-    "AccumulationRegister.ШтрафыИКомпенсации":       ["-", "-", "-", "Ч", "Ч", "Ч"],
-    "AccumulationRegister.KPIОператоров":            ["Ч", "Ч", "Ч", "Ч", "Ч", "Ч"],
+ABSENT = "-"
+
+# Заголовки разделов спеки -> тип объектов её таблицы; ожидаемое число строк.
+SPEC_SECTIONS = {
+    "Requirement: Права на справочники": ("Catalog", 10),
+    "Requirement: Права на документы": ("Document", 9),
+    "Requirement: Права на регистры": ("Register", 6),
 }
 
-ABSENT = "-"
+# Префиксы строк таблицы регистров: «Сведения X» / «Накопления X»
+REGISTER_PREFIX = {
+    "Сведения": "InformationRegister",
+    "Накопления": "AccumulationRegister",
+}
+
+HEADER_FIRST_CELLS = ("Справочник", "Документ", "Регистр")
 
 
 def parse_cell(cell):
@@ -110,19 +101,109 @@ def parse_cell(cell):
     return symbols
 
 
-def check(matrix_path, enforce_absent_rule=True):
+def split_row(line):
+    """'| a | b |' -> ['a', 'b']"""
+    return [c.strip() for c in line.strip().strip("|").split("|")]
+
+
+def is_separator_row(line):
+    cells = split_row(line)
+    return bool(cells) and all(c and set(c) <= {"-", ":"} for c in cells)
+
+
+def load_spec_tables(path):
+    """Парсит три markdown-таблицы спеки.
+
+    Возвращает (tables, errors): tables = {"<Тип>.<Имя>": [6 ячеек]},
+    errors — список нарушений формата/состава спеки.
+    """
+    tables = {}
     errors = []
+    if not os.path.isfile(path):
+        return {}, ["spec.md not found: %s" % path]
+    with io.open(path, "r", encoding="utf-8") as f:
+        lines = f.read().splitlines()
+
+    section = None  # (kind, expected_rows)
+    seen_rows = {}
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("### "):
+            section = SPEC_SECTIONS.get(stripped[4:].strip())
+            continue
+        if stripped.startswith("#### "):
+            continue  # сценарии внутри требования — раздел сохраняется
+        if stripped.startswith("#"):
+            section = None
+            continue
+        if not stripped.startswith("|") or is_separator_row(stripped):
+            continue
+        if section is None:
+            errors.append("spec.md: table row outside the three matrix sections: %r" % stripped)
+            continue
+        kind, _ = section
+        cells = split_row(stripped)
+        if cells and cells[0] in HEADER_FIRST_CELLS:
+            if len(cells) != 7:
+                errors.append(
+                    "spec.md: header row must have 7 cells (name + 6 profiles), got %d: %r"
+                    % (len(cells), stripped)
+                )
+            continue
+        if len(cells) != 7:
+            errors.append(
+                "spec.md: %s row must have exactly 7 cells (name + 6 profiles), got %d: %r"
+                % (kind, len(cells), stripped)
+            )
+            continue
+        name = cells[0]
+        row_cells = cells[1:]
+        if kind == "Register":
+            parts = name.split(" ", 1)
+            if len(parts) != 2 or parts[0] not in REGISTER_PREFIX:
+                errors.append("spec.md: register row %r: cannot map type prefix" % name)
+                continue
+            key = "%s.%s" % (REGISTER_PREFIX[parts[0]], parts[1])
+        else:
+            key = "%s.%s" % (kind, name)
+        if key in tables:
+            errors.append("spec.md: duplicate row %r" % key)
+            continue
+        tables[key] = row_cells
+        seen_rows[kind] = seen_rows.get(kind, 0) + 1
+
+    for heading, (kind, expected) in SPEC_SECTIONS.items():
+        actual = seen_rows.get(kind, 0)
+        if actual != expected:
+            errors.append(
+                "spec.md: section %r: expected %d table rows, parsed %d"
+                % (heading, expected, actual)
+            )
+    for key, row_cells in sorted(tables.items()):
+        for cell in row_cells:
+            if cell != ABSENT:
+                try:
+                    parse_cell(cell)
+                except ValueError as exc:
+                    errors.append("spec.md: %s: %s" % (key, exc))
+    return tables, errors
+
+
+def check(matrix_path, spec_path=SPEC_PATH):
+    spec_tables, errors = load_spec_tables(spec_path)
     if not os.path.isfile(matrix_path):
-        return ["roles-matrix.json not found: %s" % matrix_path]
+        errors.append("roles-matrix.json not found: %s" % matrix_path)
+        return errors
 
     with io.open(matrix_path, "r", encoding="utf-8") as f:
         matrix = json.load(f)
 
     profiles = matrix.get("profiles")
     if not isinstance(profiles, dict):
-        return ["matrix has no 'profiles' object"]
+        errors.append("matrix has no 'profiles' object")
+        return errors
 
-    # Структура: 6 профилей с синонимами
+    # (c) профилей ровно 6: требуемые присутствуют, посторонних нет
     for name in PROFILES:
         prof = profiles.get(name)
         if prof is None:
@@ -136,8 +217,13 @@ def check(matrix_path, enforce_absent_rule=True):
             )
         if not isinstance(prof.get("objects"), dict):
             errors.append("profile %s has no 'objects' map" % name)
+    for stray in sorted(set(profiles.keys()) - set(PROFILES)):
+        errors.append(
+            "unexpected profile %r: spec allows exactly 6 profiles "
+            "(Профиль_Администратор forbidden)" % stray
+        )
 
-    # (a) каждый ключ объекта -> реальный исходник метаданных
+    # (a) каждый ключ объекта -> реальный исходник метаданных; права валидны
     for pname, prof in profiles.items():
         objects = prof.get("objects")
         if not isinstance(objects, dict):
@@ -160,16 +246,19 @@ def check(matrix_path, enforce_absent_rule=True):
             for sym in rights:
                 if sym not in VALID_SYMBOLS:
                     errors.append("%s: %r has invalid symbol %r" % (pname, key, sym))
+            if len(set(rights)) != len(rights):
+                errors.append("%s: %r has duplicate symbols: %r" % (pname, key, rights))
 
-    # (b) таблицы спеки воспроизведены дословно
-    for key, cells in SPEC_TABLES.items():
+    # (b) таблицы спеки (разобранные из spec.md) воспроизведены дословно
+    for key in sorted(spec_tables):
+        cells = spec_tables[key]
         for pname, cell in zip(PROFILES, cells):
             prof = profiles.get(pname)
             if not isinstance(prof, dict) or not isinstance(prof.get("objects"), dict):
                 continue
             objects = prof["objects"]
             if cell == ABSENT:
-                if enforce_absent_rule and key in objects:
+                if key in objects:
                     errors.append(
                         "%s: spec cell is '-' but key %r is present (%r)"
                         % (pname, key, objects[key])
@@ -197,12 +286,11 @@ def main():
             out.write("  - %s\n" % e)
         out.flush()
         sys.exit(1)
-    keys = sum(
-        len(p.get("objects", {})) for p in json.load(io.open(matrix_path, encoding="utf-8"))["profiles"].values()
-    )
+    with io.open(matrix_path, encoding="utf-8") as f:
+        keys = sum(len(p.get("objects", {})) for p in json.load(f)["profiles"].values())
     out.write(
-        "OK: 25 spec objects x 6 profiles verified against spec tables "
-        "(%d object keys total, metadata files exist)\n" % keys
+        "OK: %d spec rows x 6 profiles parsed from spec.md and verified "
+        "(%d object keys total, metadata files exist)\n" % (len(load_spec_tables(SPEC_PATH)[0]), keys)
     )
     out.flush()
     sys.exit(0)
