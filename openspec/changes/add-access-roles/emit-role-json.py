@@ -10,6 +10,20 @@ Frozen symbol -> DSL mapping (dsl-reference.md is authoritative; design D2/D5):
   Пров -> Document: Posting, InteractivePosting, InteractivePostingRegular
           BusinessProcess/Task: Update (Update-equivalent per dispatch)
   Use  -> Use                        (DataProcessor/Report)
+Accepted compiler closure (documented, NOT re-emitted by this script):
+  role-compile closes right dependencies the same way the platform does at load:
+  InteractiveInsert -> Edit, Insert, Read, Update, View; Edit -> Read, Update, View;
+  Update is a prerequisite of the save-in-add flow, so `Update` appears on cells with
+  И/Изм even though the matrix symbol only names one intent. For cells WITH Изм the
+  resulting `Edit` is desired (matrix Изм = editing semantics; design D2's
+  «Изм -> InteractionUpdate» name is obsolete — the real platform gate is `Edit`;
+  both remain one-symbol-per-intent). No XML change for those profiles.
+Profile-level suppression (controller ruling, review of Task 4): BLOCKED —
+  suppressing `Edit` for Профиль_Гид on Document.Инцидент/ЗаявкаТуристаНаМаршруте
+  while keeping InteractiveInsert is impossible via role-compile (dependency
+  closure flips the explicit deny back to true; the platform reportedly does the
+  same at load). See the BLOCKED note below and task-4-report.md §8. The matrix
+  stays untouched; checker stays green.
 setForAttributesByDefault: DSL default (true) — not emitted (controller ruling).
 setForNewObjects: never emitted (default false).
 Presets are NOT used — explicit right lists everywhere.
@@ -63,7 +77,22 @@ def table_for(obj_type):
     return COMMON  # Catalog, ChartOfCharacteristicTypes, etc.
 
 
-def convert(key, symbols):
+# BLOCKED ruling (Task 4 review, CRITICAL 1) — NOT implemented, intentionally:
+# The controller asked to suppress `Edit` for Профиль_Гид on Document.Инцидент and
+# Document.ЗаявкаТуристаНаМаршруте via the DSL full form {"rights": {..., "Edit": false}},
+# keeping InteractiveInsert. role-compile (and, per its measured comment, the platform
+# at load) closes dependencies forward: InteractiveInsert -> [Edit, Insert, Read,
+# Update, View], and "Разрешение перебивает запрет" — an explicit Edit=false is flipped
+# back to true ("по зависимости добавлено — Edit"). The alternative deny syntax
+# {"Edit": {"value": false}} parses to the identical Value:'false' structure
+# (parse_object_entry: bool_val = 'true' if p_value is True or str(p_value) == 'True'
+# else 'false'), so it is overridden the same way. Edit suppression while keeping
+# InteractiveInsert is therefore NOT achievable through role-compile; hand-editing
+# Rights.xml is forbidden by the dispatch (and would diverge from the DB at load).
+# Awaiting controller re-ruling — options in task-4-report.md §8.
+
+
+def convert(key, symbols, profile):
     obj_type = key.split(".", 1)[0]
     table = table_for(obj_type)
     rights = []
@@ -86,7 +115,7 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     ok = True
     for profile, data in matrix["profiles"].items():
-        objects = [convert(k, v) for k, v in data["objects"].items()]
+        objects = [convert(k, v, profile) for k, v in data["objects"].items()]
         doc = {
             "name": profile,
             "synonym": data["synonym"],
