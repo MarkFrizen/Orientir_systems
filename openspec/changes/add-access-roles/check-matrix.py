@@ -23,8 +23,15 @@
       Профиль_Гид не содержит «Пров» нигде.
       Правило (b) при этом усиливается: ожидаемый список прав ячейки спеки =
       символы ячейки + «Пров», если документ проводимый и в ячейке есть «Изм».
-Дополнительные ключи объектов (политика «вне матрицы ТЗ») разрешены —
-они проверяются только правилами (a) и (e).
+Правило (f): политика «Объекты вне матрицы ТЗ» (spec.md, пункты 1–6) и
+сопоставления «Права на ролевые подсистемы» воспроизведены точно
+(OFF_MATRIX_POLICY): права по профилям совпадают, незадействованному профилю
+ключ запрещён, каждый объект политики присутствует хотя бы в одном профиле
+(покрытие); НастройкиИнтеграций/ОбменСФайлами/АдминистраторИС запрещены везде;
+Профиль_Аудитор не содержит ключей BusinessProcess.*/Task.*; символ «Use»
+допустим только у ключей DataProcessor.*.
+Прочие дополнительные ключи объектов разрешены — они проверяются правилами
+(a) и (e).
 
 Запуск:  python check-matrix.py [--post <csv имён проводимых документов>]
                                  [путь к roles-matrix.json]
@@ -80,12 +87,108 @@ VALID_SYMBOLS = ["Ч", "П", "Изм", "И", "В"]
 # бизнес-процессов и задач; в таблицах спеки не встречается.
 POSTING_SYMBOL = "Пров"
 POSTING_PREFIXES = ("Document.", "BusinessProcess.", "Task.")
-MATRIX_SYMBOLS = VALID_SYMBOLS + [POSTING_SYMBOL]
+
+# «Использование» обработок (spec «Объекты вне матрицы ТЗ» п.6: Use) —
+# символ вне алфавита таблиц спеки, допустим только у DataProcessor.*.
+USE_SYMBOL = "Use"
+USE_PREFIXES = ("DataProcessor.",)
+
+MATRIX_SYMBOLS = VALID_SYMBOLS + [POSTING_SYMBOL, USE_SYMBOL]
 
 # Профиль, которому «Пров» запрещён всегда (только чтение/создание, без правки).
 NO_POSTING_PROFILE = "Профиль_Гид"
 
 ABSENT = "-"
+
+# ---------------------------------------------------------------------------
+# Правило (f): политика «Объекты вне матрицы ТЗ» (spec.md, одноимённое
+# требование, пункты 1–6) и «Права на ролевые подсистемы» (сопоставления после
+# сценариев). Это проза, а не таблицы спеки, поэтому ожидания кодируются здесь
+# явно; при изменении spec.md блок нужно синхронно править.
+# Значение None / отсутствующий профиль = ключ обязан ОТСУТСТВОВАТЬ в профиле.
+# ---------------------------------------------------------------------------
+_P_OP = "Профиль_Оператор"
+_P_KO = "Профиль_Координатор"
+_P_GID = "Профиль_Гид"
+_P_ME = "Профиль_МенеджерПретензий"
+_P_RUK = "Профиль_Руководитель"
+_P_AU = "Профиль_Аудитор"
+
+# п.4: БП и задача — Update (в DSL «Пров») Оператору/Координатору/
+# МенеджерПретензий/Руководителю; Гиду View+Presentation; Аудитору ничего.
+_BP_TASK_RIGHTS = {
+    _P_OP: ["Ч", "П", POSTING_SYMBOL],
+    _P_KO: ["Ч", "П", POSTING_SYMBOL],
+    _P_GID: ["Ч", "П"],
+    _P_ME: ["Ч", "П", POSTING_SYMBOL],
+    _P_RUK: ["Ч", "П", POSTING_SYMBOL],
+}
+
+# п.6: Use-обработки по рабочим местам.
+_PROC_RIGHTS = ["Ч", "П", USE_SYMBOL]
+
+OFF_MATRIX_POLICY = {
+    # п.1: ЧХ и техническая НСИ — View+Presentation+ItemInput всем профилям
+    "ChartOfCharacteristicTypes.ДополнительныеРеквизитыТуриста": {p: ["Ч", "П", "В"] for p in PROFILES},
+    "ChartOfCharacteristicTypes.ДополнительныеРеквизитыУслуг": {p: ["Ч", "П", "В"] for p in PROFILES},
+    "Catalog.Валюты": {p: ["Ч", "П", "В"] for p in PROFILES},
+    "Catalog.ЕдиницыИзмерения": {p: ["Ч", "П", "В"] for p in PROFILES},
+    "Catalog.СтраныМира": {p: ["Ч", "П", "В"] for p in PROFILES},
+    # п.2: Пользователи — View+Presentation всем (автор/ответственный)
+    "Catalog.Пользователи": {p: ["Ч", "П"] for p in PROFILES},
+    # п.3: константа — View всем
+    "Constant.ПорогСогласованияРуководителем": {p: ["Ч"] for p in PROFILES},
+    # п.4: бизнес-процессы (4) и задача
+    "BusinessProcess.КонтрольПодтверждений": dict(_BP_TASK_RIGHTS),
+    "BusinessProcess.КоординацияМаршрута": dict(_BP_TASK_RIGHTS),
+    "BusinessProcess.ОбработкаЗапросаТуриста": dict(_BP_TASK_RIGHTS),
+    "BusinessProcess.УрегулированиеИнцидента": dict(_BP_TASK_RIGHTS),
+    "Task.ЗадачаИсполнителя": dict(_BP_TASK_RIGHTS),
+    # п.5: регистры сведений
+    "InformationRegister.АдресацияЗадач": {
+        _P_OP: ["Ч"], _P_KO: ["Ч"], _P_GID: ["Ч"], _P_ME: ["Ч"], _P_RUK: ["Ч"],
+    },
+    "InformationRegister.СтатусыИнцидентов": {
+        _P_OP: ["Ч"], _P_KO: ["Ч"], _P_GID: ["Ч"], _P_ME: ["Ч"], _P_RUK: ["Ч"],
+    },
+    "InformationRegister.ИсторияОбработокЗапросов": {
+        _P_OP: ["Ч"], _P_ME: ["Ч"], _P_RUK: ["Ч"], _P_AU: ["Ч"],
+    },
+    "InformationRegister.СрокиКонтроля": {
+        _P_OP: ["Ч"], _P_KO: ["Ч"], _P_RUK: ["Ч"], _P_AU: ["Ч"],
+    },
+    # п.6: обработки
+    "DataProcessor.ПросроченныеСрокиИSLA": {_P_OP: list(_PROC_RIGHTS), _P_RUK: list(_PROC_RIGHTS)},
+    "DataProcessor.ПересчётТайминговМаршрутов": {_P_KO: list(_PROC_RIGHTS)},
+    "DataProcessor.ФормированиеЗапросовПоставщикам": {_P_OP: list(_PROC_RIGHTS)},
+    "DataProcessor.СводкаСтатусов": {
+        _P_OP: list(_PROC_RIGHTS), _P_KO: list(_PROC_RIGHTS), _P_ME: list(_PROC_RIGHTS),
+        _P_RUK: list(_PROC_RIGHTS), _P_AU: list(_PROC_RIGHTS),
+    },
+    # «Права на ролевые подсистемы»: своё рабочее место + Аудитору все пять
+    # бизнес-подсистем. Вложенные подсистемы в этой конфигурации не являются
+    # отдельными объектами метаданных (Subsystems/*.xml не содержат
+    # ChildSubsystems) — достаточно одного ключа на подсистему верхнего уровня.
+    "Subsystem.ОператорСопровождения": {_P_OP: ["Ч"], _P_AU: ["Ч"]},
+    "Subsystem.КоординаторЛогистики": {_P_KO: ["Ч"], _P_AU: ["Ч"]},
+    "Subsystem.ГидНаМаршруте": {_P_GID: ["Ч"], _P_AU: ["Ч"]},
+    "Subsystem.МенеджерПоПретензиям": {_P_ME: ["Ч"], _P_AU: ["Ч"]},
+    "Subsystem.РуководительНаправления": {_P_RUK: ["Ч"], _P_AU: ["Ч"]},
+}
+
+# Ключи, запрещённые во ВСЕХ шести профилях (права имеет только роль
+# Администратор: spec сценарии «Настройки интеграций закрыты для профилей»,
+# п.5 НастройкиИнтеграций, п.6 ОбменСФайлами, подсистема АдминистраторИС).
+FORBIDDEN_EVERYWHERE = [
+    "InformationRegister.НастройкиИнтеграций",
+    "DataProcessor.ОбменСФайлами",
+    "Subsystem.АдминистраторИС",
+]
+
+# Профиль, которому запрещены любые ключи BusinessProcess.*/Task.* (п.4:
+# «Аудитору — ничего по процессам») и подсистема АдминистраторИС с детьми.
+NO_BP_TASK_PROFILE = _P_AU
+ADMIN_SUBSYSTEM_PREFIX = "Subsystem.АдминистраторИС"
 
 # Заголовки разделов спеки -> тип объектов её таблицы; ожидаемое число строк.
 SPEC_SECTIONS = {
@@ -221,6 +324,14 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
         errors.append("matrix has no 'profiles' object")
         return errors
 
+    # служебные ключи верхнего уровня допустимы только с префиксом «$»
+    for extra in sorted(set(matrix.keys()) - {"profiles"}):
+        if not extra.startswith("$"):
+            errors.append(
+                "unexpected top-level matrix key %r (only 'profiles' and '$'-notes allowed)"
+                % extra
+            )
+
     # (c) профилей ровно 6: требуемые присутствуют, посторонних нет
     for name in PROFILES:
         prof = profiles.get(name)
@@ -268,6 +379,11 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                     errors.append(
                         "%s: %r has %r but key type allows only %s"
                         % (pname, key, POSTING_SYMBOL, "/".join(POSTING_PREFIXES))
+                    )
+                elif sym == USE_SYMBOL and not key.startswith(USE_PREFIXES):
+                    errors.append(
+                        "%s: %r has %r but key type allows only %s"
+                        % (pname, key, USE_SYMBOL, "/".join(USE_PREFIXES))
                     )
             if len(set(rights)) != len(rights):
                 errors.append("%s: %r has duplicate symbols: %r" % (pname, key, rights))
@@ -338,6 +454,66 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                         "%s: %r rights %r != spec %r (cell %r)"
                         % (pname, key, actual, expected, cell)
                     )
+
+    # (f) политика объектов вне матрицы ТЗ (пункты 1–6) и ролевые подсистемы:
+    # точное совпадение прав по профилям; покрытие — каждый объект политики
+    # присутствует хотя бы в одном профиле; запрещённые ключи отсутствуют везде.
+    def _objects_of(pname):
+        prof = profiles.get(pname)
+        if isinstance(prof, dict) and isinstance(prof.get("objects"), dict):
+            return prof["objects"]
+        return {}
+
+    for key in sorted(OFF_MATRIX_POLICY):
+        expected_map = OFF_MATRIX_POLICY[key]
+        present_in = []
+        for pname in PROFILES:
+            objects = _objects_of(pname)
+            expected = expected_map.get(pname)
+            actual = objects.get(key)
+            if actual is not None:
+                present_in.append(pname)
+            if expected is None:
+                if actual is not None:
+                    errors.append(
+                        "%s: off-matrix policy does not grant %r to this profile "
+                        "but it is present (%r)" % (pname, key, actual)
+                    )
+            elif actual is None:
+                errors.append(
+                    "%s: off-matrix policy requires %r = %r but key is absent"
+                    % (pname, key, expected)
+                )
+            elif actual != expected:
+                errors.append(
+                    "%s: %r rights %r != off-matrix policy %r"
+                    % (pname, key, actual, expected)
+                )
+        if not present_in:
+            errors.append(
+                "spec coverage: off-matrix object %r appears in no profile" % key
+            )
+
+    for key in FORBIDDEN_EVERYWHERE:
+        for pname in PROFILES:
+            if key in _objects_of(pname):
+                errors.append(
+                    "%s: key %r is forbidden in all 6 profiles "
+                    "(rights belong to role Администратор only)" % (pname, key)
+                )
+
+    for key in _objects_of(NO_BP_TASK_PROFILE):
+        if key.startswith(("BusinessProcess.", "Task.")):
+            errors.append(
+                "%s: %r forbidden — auditor gets no rights on business "
+                "processes/tasks (spec, Объекты вне матрицы п.4)"
+                % (NO_BP_TASK_PROFILE, key)
+            )
+        if key.startswith(ADMIN_SUBSYSTEM_PREFIX):
+            errors.append(
+                "%s: %r forbidden — АдминистраторИС belongs to role "
+                "Администратор" % (NO_BP_TASK_PROFILE, key)
+            )
     return errors
 
 
