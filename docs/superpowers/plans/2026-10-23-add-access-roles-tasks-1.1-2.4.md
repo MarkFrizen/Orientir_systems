@@ -146,6 +146,6 @@
 
 - [x] **Step 1:** `git diff HEAD~N -- src/КурсоваяРабота/Roles/Администратор.xml src/КурсоваяРабота/Roles/Администратор` (N = commits of this plan) — expected: EMPTY diff.
 - [x] **Step 2:** `Select-String -Path src\КурсоваяРабота\Roles\Администратор.xml -Pattern '527785c9-76dd-4423-a179-dd3d73bb9a2a'` — expected: match.
-- [ ] **Step 3:** `Select-String -Path src\КурсоваяРабота\Configuration.xml -Pattern '<DefaultRoles/>'` — expected: empty tag (no auto-role assignment).
-- [ ] **Step 4:** If any check failed: revert the offending tooling change (regenerate from matrix / `git checkout` the `Администратор` paths), re-run Tasks 6–7, and only then proceed to the commit below.
-- [ ] **Step 5: Commit** (only if step 4 produced changes) — `git commit -am "fix(roles): restore administrator role immutability"`.
+- [x] **Step 3:** `Select-String -Path src\КурсоваяРабота\Configuration.xml -Pattern '<DefaultRoles/>'` — expected: empty tag (no auto-role assignment).
+- [x] **Step 4:** If any check failed: revert the offending tooling change (regenerate from matrix / `git checkout` the `Администратор` paths), re-run Tasks 6–7, and only then proceed to the commit below.
+- [x] **Step 5: Commit** (only if step 4 produced changes) — `git commit -am "fix(roles): restore administrator role immutability"`.
