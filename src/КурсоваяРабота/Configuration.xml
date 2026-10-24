@@ -257,6 +257,12 @@
 			<Subsystem>ОператорСопровождения</Subsystem>
 			<Subsystem>РуководительНаправления</Subsystem>
 			<Role>Администратор</Role>
+			<Role>Профиль_Оператор</Role>
+			<Role>Профиль_Координатор</Role>
+			<Role>Профиль_Гид</Role>
+			<Role>Профиль_МенеджерПретензий</Role>
+			<Role>Профиль_Руководитель</Role>
+			<Role>Профиль_Аудитор</Role>
 			<CommonModule>РасчётКомпенсаций</CommonModule>
 			<CommonModule>КонтрольСроков</CommonModule>
 			<CommonModule>РаботаСДатамиИЧасовымиЗонами</CommonModule>
