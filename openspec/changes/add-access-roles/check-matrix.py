@@ -27,7 +27,8 @@
 сопоставления «Права на ролевые подсистемы» воспроизведены точно
 (OFF_MATRIX_POLICY): права по профилям совпадают, незадействованному профилю
 ключ запрещён, каждый объект политики присутствует хотя бы в одном профиле
-(покрытие); НастройкиИнтеграций/ОбменСФайлами/АдминистраторИС запрещены везде;
+(покрытие); НастройкиИнтеграций/ОбменСФайлами и подсистема АдминистраторИС
+со всем деревом вложенных подсистем запрещены везде;
 Профиль_Аудитор не содержит ключей BusinessProcess.*/Task.*; символ «Use»
 допустим только у ключей DataProcessor.*.
 Прочие дополнительные ключи объектов разрешены — они проверяются правилами
@@ -166,23 +167,36 @@ OFF_MATRIX_POLICY = {
         _P_RUK: list(_PROC_RIGHTS), _P_AU: list(_PROC_RIGHTS),
     },
     # «Права на ролевые подсистемы»: своё рабочее место + Аудитору все пять
-    # бизнес-подсистем. Вложенные подсистемы в этой конфигурации не являются
-    # отдельными объектами метаданных (Subsystems/*.xml не содержат
-    # ChildSubsystems) — достаточно одного ключа на подсистему верхнего уровня.
-    "Subsystem.ОператорСопровождения": {_P_OP: ["Ч"], _P_AU: ["Ч"]},
-    "Subsystem.КоординаторЛогистики": {_P_KO: ["Ч"], _P_AU: ["Ч"]},
-    "Subsystem.ГидНаМаршруте": {_P_GID: ["Ч"], _P_AU: ["Ч"]},
-    "Subsystem.МенеджерПоПретензиям": {_P_ME: ["Ч"], _P_AU: ["Ч"]},
-    "Subsystem.РуководительНаправления": {_P_RUK: ["Ч"], _P_AU: ["Ч"]},
+    # бизнес-подсистем. Вложенные подсистемы — отдельные объекты метаданных
+    # (Subsystems/<Родитель>/Subsystems/<Ребёнок>.xml), поэтому на каждую
+    # нужен собственный ключ (spec.md: View на подсистему и все её вложенные).
+    # Заполняется циклом ниже из _SUBSYSTEM_GRANTS.
 }
+
+# Родительская подсистема -> (профиль-владелец, вложенные подсистемы).
+# Список детей сверен с диском: src/КурсоваяРабота/Subsystems/*/Subsystems/*.xml.
+_SUBSYSTEM_GRANTS = {
+    "ОператорСопровождения": (_P_OP, ["ЗаказыПоставщикам", "ЗапросыТуристов", "МоиЗаявки", "Подтверждения"]),
+    "КоординаторЛогистики": (_P_KO, ["Корректировки", "МаршрутныеЛисты"]),
+    "ГидНаМаршруте": (_P_GID, ["МоиОбращения", "МойМаршрут", "НоваяЗаявка", "НовыйИнцидент"]),
+    "МенеджерПоПретензиям": (_P_ME, ["АктыКомпенсаций", "Инциденты", "Претензии"]),
+    "РуководительНаправления": (_P_RUK, ["KPIОтчеты", "Согласования", "Эскалации"]),
+}
+for _parent, (_owner, _children) in _SUBSYSTEM_GRANTS.items():
+    OFF_MATRIX_POLICY["Subsystem." + _parent] = {_owner: ["Ч"], _P_AU: ["Ч"]}
+    for _child in _children:
+        OFF_MATRIX_POLICY["Subsystem." + _child] = {_owner: ["Ч"], _P_AU: ["Ч"]}
 
 # Ключи, запрещённые во ВСЕХ шести профилях (права имеет только роль
 # Администратор: spec сценарии «Настройки интеграций закрыты для профилей»,
-# п.5 НастройкиИнтеграций, п.6 ОбменСФайлами, подсистема АдминистраторИС).
+# п.5 НастройкиИнтеграций, п.6 ОбменСФайлами, подсистема АдминистраторИС
+# вместе со всем её деревом вложенных подсистем).
 FORBIDDEN_EVERYWHERE = [
     "InformationRegister.НастройкиИнтеграций",
     "DataProcessor.ОбменСФайлами",
     "Subsystem.АдминистраторИС",
+    "Subsystem.СправочникиНСИ",
+    "Subsystem.НастройкиИнтеграций",
 ]
 
 # Профиль, которому запрещены любые ключи BusinessProcess.*/Task.* (п.4:
@@ -204,6 +218,26 @@ REGISTER_PREFIX = {
 }
 
 HEADER_FIRST_CELLS = ("Справочник", "Документ", "Регистр")
+
+
+def find_metadata_xml(folder, name):
+    """Путь к исходнику метаданных или None.
+
+    Прямой путь: <SRC_ROOT>/<folder>/<name>.xml. Вложенные подсистемы —
+    отдельные объекты метаданных и лежат в
+    <SRC_ROOT>/Subsystems/<Parent>/Subsystems/<Child>.xml — проверяем и там.
+    """
+    direct = os.path.join(SRC_ROOT, folder, name + ".xml")
+    if os.path.isfile(direct):
+        return direct
+    if folder == "Subsystems":
+        base = os.path.join(SRC_ROOT, folder)
+        if os.path.isdir(base):
+            for parent in os.listdir(base):
+                nested = os.path.join(base, parent, "Subsystems", name + ".xml")
+                if os.path.isfile(nested):
+                    return nested
+    return None
 
 
 def parse_cell(cell):
@@ -366,9 +400,19 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
             if folder is None:
                 errors.append("%s: unknown metadata type %r in key %r" % (pname, mtype, key))
                 continue
-            xml = os.path.join(SRC_ROOT, folder, mname + ".xml")
-            if not os.path.isfile(xml):
-                errors.append("%s: metadata file not found for key %r (%s)" % (pname, key, xml))
+            xml = find_metadata_xml(folder, mname)
+            if xml is None:
+                errors.append(
+                    "%s: metadata file not found for key %r (expected %s%s)"
+                    % (
+                        pname,
+                        key,
+                        os.path.join(SRC_ROOT, folder, mname + ".xml"),
+                        " or Subsystems/<Parent>/Subsystems/%s.xml" % mname
+                        if folder == "Subsystems"
+                        else "",
+                    )
+                )
             if not isinstance(rights, list) or not rights:
                 errors.append("%s: rights for %r must be a non-empty list" % (pname, key))
                 continue
