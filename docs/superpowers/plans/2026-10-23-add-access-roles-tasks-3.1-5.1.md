@@ -37,9 +37,9 @@
 **Interfaces:**
 - Produces: fresh `.dt` dump file path (rollback point for Tasks 9–12).
 
-- [ ] **Step 1: Run skill `db-dump-dt`** per its SKILL.md. Expected: dump completes without error.
-- [ ] **Step 2: Verify freshness** — `Get-ChildItem *.dt | Sort-Object LastWriteTime | Select-Object -Last 1`; expected: `LastWriteTime` within the last 15 minutes, non-zero size. Record the path as the rollback point.
-- [ ] **Step 3: Commit nothing** (data file stays out of git); if `.dt` lands inside the repo and `git status` shows it, add the file name to `.gitignore` locally ONLY if the repo already ignores dumps; otherwise move the dump to the skill's default backup location.
+- [x] **Step 1: Run skill `db-dump-dt`** per its SKILL.md. Expected: dump completes without error.
+- [x] **Step 2: Verify freshness** — `Get-ChildItem *.dt | Sort-Object LastWriteTime | Select-Object -Last 1`; expected: `LastWriteTime` within the last 15 minutes, non-zero size. Record the path as the rollback point.
+- [x] **Step 3: Commit nothing** (data file stays out of git); if `.dt` lands inside the repo and `git status` shows it, add the file name to `.gitignore` locally ONLY if the repo already ignores dumps; otherwise move the dump to the skill's default backup location.
 
 <!-- openspec-task: 3.2 -->
 ### Task 9: Load XML + update DB
@@ -50,10 +50,10 @@
 **Interfaces:**
 - Consumes: validated roles (Part 1). Produces: live ИБ with 7 roles.
 
-- [ ] **Step 1: Preflight** — no `1cv8*` processes running; no `Ошибка_*.zip` newer than Part 1's last 1C action; re-run Part 1 Task 7 checks (git diff `Администратор` empty, `<DefaultRoles/>` present).
-- [ ] **Step 2: Run skill `db-load-xml`** then skill `db-update` per their SKILL.md. Expected: both complete without syntax errors.
-- [ ] **Step 3: Dump check** — `Get-ChildItem Ошибка_*.zip` newest timestamp newer than step 2 start? Expected: NO. If YES: unzip, read `report.json` → `errorInfo.applicationErrorInfo.errors`, fix the root cause in matrix → regenerate (Part 1 Task 4) → retry from step 1. Do not blind-retry.
-- [ ] **Step 4: Verify in ИБ** (Configurator tree via `db-run` in designer mode or the load output): 7 roles present. Expected: list matches `Профиль_*`×6 + `Администратор`.
+- [x] **Step 1: Preflight** — no `1cv8*` processes running; no `Ошибка_*.zip` newer than Part 1's last 1C action; re-run Part 1 Task 7 checks (git diff `Администратор` empty, `<DefaultRoles/>` present).
+- [x] **Step 2: Run skill `db-load-xml`** then skill `db-update` per their SKILL.md. Expected: both complete without syntax errors.
+- [x] **Step 3: Dump check** — `Get-ChildItem Ошибка_*.zip` newest timestamp newer than step 2 start? Expected: NO. If YES: unzip, read `report.json` → `errorInfo.applicationErrorInfo.errors`, fix the root cause in matrix → regenerate (Part 1 Task 4) → retry from step 1. Do not blind-retry.
+- [x] **Step 4: Verify in ИБ** (Configurator tree via `db-run` in designer mode or the load output): 7 roles present. Expected: list matches `Профиль_*`×6 + `Администратор`.
 
 <!-- openspec-task: 3.3 -->
 ### Task 10: Spot-check rights inside the loaded ИБ
@@ -64,8 +64,8 @@
 **Interfaces:**
 - Consumes: Task 9 live ИБ; `/role-info` skill. Produces: confidence to proceed to user scenarios.
 
-- [ ] **Step 1: `/role-info` on the loaded `Профиль_Гид`** (from `src/КурсоваяРабота/Roles/Профиль_Гид/Ext/Rights.xml`, same file the ИБ now uses). Expected rows: `Document.Инцидент` = чтение/просмотр/интерактивное добавление/ввод по строке and NO редактирование/проведение; `Document.ПретензияПоставщику` — absent entirely; `Subsystem.ГидНаМаршруте` — visible; `DataProcessor.ПересчётТайминговМаршрутов` — absent.
-- [ ] **Step 2: `/role-info` on `Профиль_Оператор`**: `Document.ПодтверждениеУслуги` includes проведение (Пров/Update). Expected: PASS. Any mismatch → matrix defect: fix in `roles-matrix.json`, regenerate (Part 1 Task 4), reload (Task 9), re-check.
+- [x] **Step 1: `/role-info` on the loaded `Профиль_Гид`** (from `src/КурсоваяРабота/Roles/Профиль_Гид/Ext/Rights.xml`, same file the ИБ now uses). Expected rows: `Document.Инцидент` = чтение/просмотр/интерактивное добавление/ввод по строке and NO редактирование/проведение; `Document.ПретензияПоставщику` — absent entirely; `Subsystem.ГидНаМаршруте` — visible; `DataProcessor.ПересчётТайминговМаршрутов` — absent.
+- [x] **Step 2: `/role-info` on `Профиль_Оператор`**: `Document.ПодтверждениеУслуги` includes проведение (Пров/Update). Expected: PASS. Any mismatch → matrix defect: fix in `roles-matrix.json`, regenerate (Part 1 Task 4), reload (Task 9), re-check.
 
 <!-- openspec-task: 4.1 -->
 ### Task 11: Test users
