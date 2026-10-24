@@ -22,7 +22,7 @@
 
 1. Silent load failure: `db-update` exits «успешно» but a crash dump exists → roles half-applied (pinned in Task 9).
 2. Wrong profile section visible (subsystem View leak, e.g. Оператор sees `КоординаторЛогистики`) (pinned in Task 12).
-3. Гид can edit a saved `Инцидент` (matrix `Изм` leak) (pinned in Task 12).
+3. Гид gains `Пров`/posting or deletion rights beyond the closure `Edit`+`Update` (matrix leak) (pinned in Task 12); Аудитор gains any `Edit`/`Insert` (it has none — rights honestly block editing) (pinned in Task 12).
 4. Оператор's posting of `ПодтверждениеУслуги` fails due to missing Update/Пров (pinned in Task 12).
 5. Regression: `Администратор` loses a previously working command because a profile changed shared metadata expectations (pinned in Task 13).
 
@@ -91,7 +91,7 @@
 
 - [ ] **Step 1: Run the scenario battery** and record PASS/FAIL per line:
   1. `test_koordinator`: командный интерфейс shows `КоординаторЛогистики`, does NOT show `ОператорСопровождения` (spec «Рабочее место…»).
-  2. `test_gid`: creates `Инцидент`, saves; edit command on the saved doc is unavailable; `ДоговорыСПоставщиками` not openable (spec «Гид создаёт, но не правит», «Нет прав — нет доступа»).
+  2. `test_gid`: creates `Инцидент`, saves (closure `Edit`+`Update` makes save possible; no independent `Изм`, no `Пров` — posting command unavailable); `ДоговорыСПоставщиками` not openable (spec «Гид создаёт, редактирование идёт платформенным замыканием», «Нет прав — нет доступа»).
   3. `test_operator`: posts `ПодтверждениеУслуги` successfully (spec «Оператор проводит…»).
   4. `test_operator`: `ПретензияПоставщику` and `InformationRegister.НастройкиИнтеграций` inaccessible (spec matrices + «Настройки интеграций закрыты…»).
   5. `test_auditor`: reads `Catalog.СтраныМира`, cannot add/change; reads `ШтрафыИКомпенсации`; `ПересчётТайминговМаршрутов` unavailable for `test_gid` but available for `test_koordinator` (spec off-matrix scenarios).

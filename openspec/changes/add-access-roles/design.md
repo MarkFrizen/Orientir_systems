@@ -33,7 +33,7 @@
 | Ч | `View` |
 | П | `Presentation` |
 | И | `InteractionAdd` |
-| Изм | `InteractionUpdate` |
+| Изм | `Edit` — отдельного «InteractiveUpdate» в платформе нет; для ролей с `И` `Edit`+`Update` приходят замыканием зависимостей независимо от `Изм` (поправка 2026-10-24, см. примечание о замыкании в спеке) |
 | В | `ItemInput` |
 | Р | `InteractionDeleteMarked`/`InteractionDeletionMarking` — в 6 профилях не встречается (только в колонке Администратор) |
 | Д | `InteractionDelete` — там же, не встречается в профилях |
