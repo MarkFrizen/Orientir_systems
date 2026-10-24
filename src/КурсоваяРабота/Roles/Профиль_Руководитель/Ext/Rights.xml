@@ -549,6 +549,25 @@
 		</right>
 	</object>
 	<object>
+		<name>Configuration.КурсоваяРабота</name>
+		<right>
+			<name>ThinClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>WebClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>SaveUserData</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Output</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>InformationRegister.ГрафикПеремещений</name>
 		<right>
 			<name>Read</name>

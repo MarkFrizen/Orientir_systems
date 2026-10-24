@@ -8,7 +8,11 @@
 Правила:
   (a) каждый ключ объекта "<Тип>.<Имя>" имеет исходник
       src/КурсоваяРабота/<Тип plural>/<Имя>.xml; список прав непустой,
-      без дублей символов, символы только из легенды ТЗ (Ч, П, И, Изм, В);
+      без дублей символов, символы только из легенды ТЗ (Ч, П, И, Изм, В).
+      Особый случай — ключи Configuration.*: единственный источник —
+      Configuration.xml (имя обязано совпасть с именем конфигурации), а вместо
+      символов ТЗ несут только клиентские токены запуска (ThinClient, WebClient,
+      SaveUserData, Output — spec «Объекты вне матрицы» п.7, dsl-reference:12);
   (b) ячейки трёх таблиц спеки воспроизведены точно:
       не-«-» ячейка => ключ присутствует в профиле ровно с этими символами;
       «-» ячейка    => ключ ОТСУТСТВУЕТ в профиле (решение контроллера:
@@ -19,35 +23,57 @@
   (e) инварианты проведения (design.md D5, «Право обновления при проведении»):
       символ «Пров» допустим только у ключей Document./BusinessProcess./Task.;
       для Document.* «Пров» обязан присутствовать тогда и только тогда, когда
-      документ проводимый (--post) и у профиля есть «Изм»;
+      документ проводимый и у профиля есть «Изм»;
       Профиль_Гид не содержит «Пров» нигде.
       Правило (b) при этом усиливается: ожидаемый список прав ячейки спеки =
       символы ячейки + «Пров», если документ проводимый и в ячейке есть «Изм».
-Правило (f): политика «Объекты вне матрицы ТЗ» (spec.md, пункты 1–6) и
+      Набор проводимых документов ПО УМОЛЧАНИЮ ВЫВОДИТСЯ из
+      src/КурсоваяРабота/Documents/*.xml (<Posting>Allow</Posting>);
+      --post переопределяет его, но каждый токен валидируется (см. USAGE).
+Правило (f): политика «Объекты вне матрицы ТЗ» (spec.md, пункты 1–7) и
 сопоставления «Права на ролевые подсистемы» воспроизведены точно
 (OFF_MATRIX_POLICY): права по профилям совпадают, незадействованному профилю
 ключ запрещён, каждый объект политики присутствует хотя бы в одном профиле
 (покрытие); НастройкиИнтеграций/ОбменСФайлами и подсистема АдминистраторИС
 со всем деревом вложенных подсистем запрещены везде;
 Профиль_Аудитор не содержит ключей BusinessProcess.*/Task.*; символ «Use»
-допустим только у ключей DataProcessor.*.
+допустим только у ключей DataProcessor.*; Configuration.<имя> присутствует
+во всех шести профилях ровно с токенами запуска клиента (п.7).
 Прочие дополнительные ключи объектов разрешены — они проверяются правилами
 (a) и (e).
+Правило (g): def<->матрица — сгенерированные roles/Профиль_*.json совпадают
+ с конверсией матрицы через общий модуль rights_map.py (тот же модуль использует
+ emit-role-json.py — политика конвертации существует в одном экземпляре);
+ для каждого ключа матрицы ожидаемые DSL-права == права в def-е.
+Правило (h): def<->XML — для каждой роли наборы прав в def-е и в
+ src/КурсоваяРабота/Roles/Профиль_*/Ext/Rights.xml совпадают в обе стороны
+ (def ⊆ XML и XML ⊆ def): замыкание зависимостей прав применяется заранее в
+ rights_map.closed_rights, поэтому сгенерированные артефакты доказуемо
+ воспроизводимы из матрицы (с точностью до порядка узлов).
 
-Запуск:  python check-matrix.py [--post <csv имён проводимых документов>]
-                                 [путь к roles-matrix.json]
-Код возврата: 0 — нарушений нет, 1 — есть нарушения / файлы не найдены.
+Запуск (канонический — без аргументов, из каталога change):
+    python check-matrix.py
+Полная справка: python check-matrix.py --help
+Код возврата: 0 — нарушений нет, 1 — есть нарушения / файлы не найдены,
+2 — ошибка аргументов командной строки.
 """
 import io
 import json
 import os
+import re
 import sys
+import xml.etree.ElementTree as ET
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+import rights_map  # noqa: E402  — общий модуль конвертации (emit + checker)
+
 REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 SRC_ROOT = os.path.join(REPO_ROOT, "src", "КурсоваяРабота")
 DEFAULT_MATRIX = os.path.join(SCRIPT_DIR, "roles-matrix.json")
 SPEC_PATH = os.path.join(SCRIPT_DIR, "specs", "access-roles", "spec.md")
+ROLES_DEF_DIR = os.path.join(SCRIPT_DIR, "roles")
+XML_ROLES_DIR = os.path.join(SRC_ROOT, "Roles")
 
 # Профили в порядке колонок таблиц спеки (Опер | Коор | Гид | Менедж | Рук | Аудит)
 PROFILES = [
@@ -96,6 +122,16 @@ USE_PREFIXES = ("DataProcessor.",)
 
 MATRIX_SYMBOLS = VALID_SYMBOLS + [POSTING_SYMBOL, USE_SYMBOL]
 
+# Configuration.* (spec «Объекты вне матрицы ТЗ» п.7 — права запуска клиента):
+# несут ТОЛЬКО клиентские токены из rights_map.CONFIGURATION_TOKENS, символы ТЗ
+# у них недопустимы; у прочих ключей клиентские токены недопустимы (не входят в
+# MATRIX_SYMBOLS и падают на проверке «invalid symbol»).
+CONFIGURATION_TYPE = "Configuration"
+CONFIGURATION_NAME = "КурсоваяРабота"
+CONFIGURATION_KEY = "%s.%s" % (CONFIGURATION_TYPE, CONFIGURATION_NAME)
+CONFIGURATION_XML = os.path.join(SRC_ROOT, "Configuration.xml")
+CONFIGURATION_TOKENS = list(rights_map.CONFIGURATION_TOKENS)
+
 # Профиль, которому «Пров» запрещён всегда (только чтение/создание, без правки).
 NO_POSTING_PROFILE = "Профиль_Гид"
 
@@ -103,7 +139,7 @@ ABSENT = "-"
 
 # ---------------------------------------------------------------------------
 # Правило (f): политика «Объекты вне матрицы ТЗ» (spec.md, одноимённое
-# требование, пункты 1–6) и «Права на ролевые подсистемы» (сопоставления после
+# требование, пункты 1–7) и «Права на ролевые подсистемы» (сопоставления после
 # сценариев). Это проза, а не таблицы спеки, поэтому ожидания кодируются здесь
 # явно; при изменении spec.md блок нужно синхронно править.
 # Значение None / отсутствующий профиль = ключ обязан ОТСУТСТВОВАТЬ в профиле.
@@ -129,6 +165,11 @@ _BP_TASK_RIGHTS = {
 _PROC_RIGHTS = ["Ч", "П", USE_SYMBOL]
 
 OFF_MATRIX_POLICY = {
+    # п.7: права запуска клиента — Configuration.<имя конфигурации> ровно с этим
+    # набором токенов всем шести профилям. Без ThinClient/WebClient/
+    # SaveUserData/Output платформа отказывает в сеансе пользователю, которому
+    # назначена только профиль-роль (spec «Объекты вне матрицы» п.7).
+    CONFIGURATION_KEY: {p: list(CONFIGURATION_TOKENS) for p in PROFILES},
     # п.1: ЧХ и техническая НСИ — View+Presentation+ItemInput всем профилям
     "ChartOfCharacteristicTypes.ДополнительныеРеквизитыТуриста": {p: ["Ч", "П", "В"] for p in PROFILES},
     "ChartOfCharacteristicTypes.ДополнительныеРеквизитыУслуг": {p: ["Ч", "П", "В"] for p in PROFILES},
@@ -219,6 +260,34 @@ REGISTER_PREFIX = {
 
 HEADER_FIRST_CELLS = ("Справочник", "Документ", "Регистр")
 
+USAGE = """check-matrix.py — проверка roles-matrix.json и сгенерированных артефактов.
+
+Канонический запуск (без аргументов, из каталога change):
+    python check-matrix.py
+
+Формы запуска:
+    python check-matrix.py                      все проверки; набор проводимых
+                                                документов ВЫВОДИТСЯ из
+                                                src/КурсоваяРабота/Documents/*.xml
+                                                (<Posting>Allow</Posting>)
+    python check-matrix.py --post Имя1,Имя2     переопределить набор проводимых
+                                                документов; допустимы ТОЛЬКО голые
+                                                имена проводимых документов из
+                                                Documents/ (без префикса
+                                                "Document.") — неизвестное имя или
+                                                токен с префиксом -> выход с кодом 2
+    python check-matrix.py путь/к/roles-matrix.json
+                                                альтернативный путь к матрице
+    python check-matrix.py --help               эта справка
+
+Коды возврата: 0 — нарушений нет; 1 — нарушения/файлы не найдены;
+2 — ошибка аргументов командной строки.
+"""
+
+
+class UsageError(Exception):
+    """Ошибка аргументов командной строки (выход с кодом 2)."""
+
 
 def find_metadata_xml(folder, name):
     """Путь к исходнику метаданных или None.
@@ -238,6 +307,32 @@ def find_metadata_xml(folder, name):
                 if os.path.isfile(nested):
                     return nested
     return None
+
+
+def actual_configuration_name():
+    """Имя корневого объекта конфигурации из Configuration.xml или None."""
+    if not os.path.isfile(CONFIGURATION_XML):
+        return None
+    with io.open(CONFIGURATION_XML, encoding="utf-8-sig") as f:
+        head = f.read(8000)
+    m = re.search(r"<Name>([^<]+)</Name>", head)
+    return m.group(1) if m else None
+
+
+def derive_posting_docs():
+    """Проводимые документы: Documents/*.xml c <Posting>Allow</Posting> (design D5)."""
+    docs_dir = os.path.join(SRC_ROOT, "Documents")
+    posting = []
+    if not os.path.isdir(docs_dir):
+        return posting
+    for fname in sorted(os.listdir(docs_dir)):
+        if not fname.endswith(".xml"):
+            continue
+        with io.open(os.path.join(docs_dir, fname), encoding="utf-8-sig") as f:
+            text = f.read()
+        if "<Posting>Allow</Posting>" in text:
+            posting.append(fname[: -len(".xml")])
+    return posting
 
 
 def parse_cell(cell):
@@ -343,6 +438,158 @@ def load_spec_tables(path):
     return tables, errors
 
 
+def _parse_def_file(def_path, pname, errors):
+    """roles/<Профиль>.json -> {key: [rights]} или None."""
+    try:
+        with io.open(def_path, encoding="utf-8") as f:
+            doc = json.load(f)
+    except (OSError, ValueError) as exc:
+        errors.append("%s: cannot read def %s: %s" % (pname, def_path, exc))
+        return None
+    entries = {}
+    for item in doc.get("objects", []):
+        if not isinstance(item, str):
+            errors.append(
+                "%s: def %s: object-form entry %r is not supported by the pipeline "
+                "(emit-role-json.py writes shorthand strings only)" % (pname, def_path, item)
+            )
+            continue
+        key, sep, rest = item.partition(":")
+        if not sep:
+            errors.append("%s: def %s: malformed object string %r" % (pname, def_path, item))
+            continue
+        rights = [r.strip() for r in rest.split(",") if r.strip()]
+        key = key.strip()
+        if key in entries:
+            errors.append("%s: def %s: duplicate object %r" % (pname, def_path, key))
+        entries[key] = rights
+    return entries
+
+
+def _parse_rights_xml(rights_path, pname, errors):
+    """Roles/<Профиль>/Ext/Rights.xml -> {object name: set(rights со value=true)}."""
+    ns = "{http://v8.1c.ru/8.2/roles}"
+    try:
+        root = ET.parse(rights_path).getroot()
+    except (OSError, ET.ParseError) as exc:
+        errors.append("%s: cannot parse %s: %s" % (pname, rights_path, exc))
+        return None
+    xml_map = {}
+    for obj in root.findall(ns + "object"):
+        name = (obj.findtext(ns + "name") or "").strip()
+        rights = set()
+        for rt in obj.findall(ns + "right"):
+            rname = (rt.findtext(ns + "name") or "").strip()
+            rvalue = (rt.findtext(ns + "value") or "").strip()
+            if rvalue != "true":
+                errors.append(
+                    "%s: %s: object %r carries a deny entry %r=%r — the pipeline "
+                    "never emits denies (dependency closure flips them anyway)"
+                    % (pname, os.path.basename(rights_path), name, rname, rvalue)
+                )
+                continue
+            rights.add(rname)
+        if name in xml_map:
+            errors.append("%s: %s: duplicate object %r" % (pname, rights_path, name))
+        xml_map[name] = rights
+    return xml_map
+
+
+def check_generated_artifacts(profiles, errors):
+    """Правила (g) и (h): def<->матрица и def<->XML (наборы прав, обе стороны).
+
+    (g) expected DSL-права каждого ключа матрицы считаются общим модулем
+        rights_map (его же использует emit-role-json.py) и сравниваются с
+        roles/Профиль_*.json;
+    (h) тот же набор сравнивается с Roles/Профиль_*/Ext/Rights.xml:
+        def ⊆ XML и XML ⊆ def — сгенерированные артефакты доказуемо
+        воспроизводимы из матрицы (rights_map предварительно применяет
+        платформенное замыкание зависимостей прав).
+    """
+    for pname in PROFILES:
+        prof = profiles.get(pname)
+        objects = prof.get("objects") if isinstance(prof, dict) else None
+        if not isinstance(objects, dict):
+            continue
+
+        # expected: матрица -> DSL через общий модуль конвертации
+        expected = {}
+        for key, syms in objects.items():
+            if not isinstance(syms, list):
+                continue
+            try:
+                expected[key] = rights_map.closed_rights(key, syms)
+            except rights_map.ConversionError as exc:
+                errors.append("%s: matrix->DSL conversion failed for %r: %s" % (pname, key, exc))
+
+        # (g) def-файл
+        def_path = os.path.join(ROLES_DEF_DIR, pname + ".json")
+        def_entries = None
+        if not os.path.isfile(def_path):
+            errors.append(
+                "%s: generated def not found: %s (run emit-role-json.py)" % (pname, def_path)
+            )
+        else:
+            def_entries = _parse_def_file(def_path, pname, errors)
+        if def_entries is not None:
+            for key in sorted(set(expected) | set(def_entries)):
+                exp = expected.get(key)
+                act = def_entries.get(key)
+                if exp is None:
+                    errors.append(
+                        "%s: def has object %r that is absent from the matrix — "
+                        "def is not regenerable from roles-matrix.json" % (pname, key)
+                    )
+                elif act is None:
+                    errors.append(
+                        "%s: def lacks matrix key %r (expected rights %r) — "
+                        "run emit-role-json.py" % (pname, key, exp)
+                    )
+                elif set(act) != set(exp):
+                    errors.append(
+                        "%s: def rights for %r %r != matrix conversion %r "
+                        "(missing: %r, extra: %r)"
+                        % (
+                            pname, key, sorted(act), sorted(exp),
+                            sorted(set(exp) - set(act)), sorted(set(act) - set(exp)),
+                        )
+                    )
+
+        # (h) Rights.xml
+        rights_path = os.path.join(XML_ROLES_DIR, pname, "Ext", "Rights.xml")
+        if not os.path.isfile(rights_path):
+            errors.append(
+                "%s: compiled rights not found: %s (run role-compile)" % (pname, rights_path)
+            )
+            continue
+        xml_map = _parse_rights_xml(rights_path, pname, errors)
+        if xml_map is None:
+            continue
+        reference = def_entries if def_entries is not None else {k: list(v) for k, v in expected.items()}
+        for key in sorted(set(reference) | set(xml_map)):
+            exp = set(reference.get(key, []))
+            act = xml_map.get(key)
+            if act is None:
+                errors.append(
+                    "%s: Rights.xml lacks object %r present in def (%r) — recompile "
+                    "the role from the regenerated def" % (pname, key, sorted(exp))
+                )
+            elif key not in reference:
+                errors.append(
+                    "%s: Rights.xml has object %r absent from def (%r) — XML is not "
+                    "regenerable from the matrix" % (pname, key, sorted(act))
+                )
+            elif act != exp:
+                errors.append(
+                    "%s: Rights.xml rights for %r %r != def %r (missing in XML: %r, "
+                    "extra in XML: %r)"
+                    % (
+                        pname, key, sorted(act), sorted(exp),
+                        sorted(exp - act), sorted(act - exp),
+                    )
+                )
+
+
 def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
     posting = set(posting_docs or [])
     spec_tables, errors = load_spec_tables(spec_path)
@@ -396,6 +643,34 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                 errors.append("%s: key %r has no type prefix" % (pname, key))
                 continue
             mtype, mname = key.split(".", 1)
+            if not isinstance(rights, list) or not rights:
+                errors.append("%s: rights for %r must be a non-empty list" % (pname, key))
+                continue
+            if mtype == CONFIGURATION_TYPE:
+                # Configuration.*: источник — Configuration.xml, имя обязано
+                # совпасть с именем корневого объекта; права — только клиентские
+                # токены запуска (spec п.7), символы ТЗ недопустимы.
+                cfg_name = actual_configuration_name()
+                if cfg_name is None:
+                    errors.append(
+                        "%s: Configuration.xml not found at %s" % (pname, CONFIGURATION_XML)
+                    )
+                elif mname != cfg_name:
+                    errors.append(
+                        "%s: key %r does not match the configuration root name %r "
+                        "(expected key %r)"
+                        % (pname, key, cfg_name, "%s.%s" % (CONFIGURATION_TYPE, cfg_name))
+                    )
+                for sym in rights:
+                    if sym not in CONFIGURATION_TOKENS:
+                        errors.append(
+                            "%s: %r token %r invalid — Configuration.* keys carry only "
+                            "the client-level launch tokens %r (spec п.7, "
+                            "dsl-reference.md:12)" % (pname, key, sym, CONFIGURATION_TOKENS)
+                        )
+                if len(set(rights)) != len(rights):
+                    errors.append("%s: %r has duplicate tokens: %r" % (pname, key, rights))
+                continue
             folder = TYPE_TO_FOLDER.get(mtype)
             if folder is None:
                 errors.append("%s: unknown metadata type %r in key %r" % (pname, mtype, key))
@@ -413,9 +688,6 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                         else "",
                     )
                 )
-            if not isinstance(rights, list) or not rights:
-                errors.append("%s: rights for %r must be a non-empty list" % (pname, key))
-                continue
             for sym in rights:
                 if sym not in MATRIX_SYMBOLS:
                     errors.append("%s: %r has invalid symbol %r" % (pname, key, sym))
@@ -499,7 +771,7 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                         % (pname, key, actual, expected, cell)
                     )
 
-    # (f) политика объектов вне матрицы ТЗ (пункты 1–6) и ролевые подсистемы:
+    # (f) политика объектов вне матрицы ТЗ (пункты 1–7) и ролевые подсистемы:
     # точное совпадение прав по профилям; покрытие — каждый объект политики
     # присутствует хотя бы в одном профиле; запрещённые ключи отсутствуют везде.
     def _objects_of(pname):
@@ -558,51 +830,94 @@ def check(matrix_path, spec_path=SPEC_PATH, posting_docs=None):
                 "%s: %r forbidden — АдминистраторИС belongs to role "
                 "Администратор" % (NO_BP_TASK_PROFILE, key)
             )
+
+    # (g)+(h) сгенерированные артефакты: def<->матрица, def<->XML
+    check_generated_artifacts(profiles, errors)
     return errors
 
 
 def parse_args(argv):
-    """[--post <csv>] [matrix_path] -> (matrix_path, posting_docs)"""
-    posting = []
+    """argv -> (matrix_path, posting_docs, posting_source, want_help).
+
+    Ошибки аргументов — UsageError (main выходит с кодом 2 и печатает USAGE).
+    """
+    derived = derive_posting_docs()
+    posting = list(derived)
+    posting_source = "derived from Documents/*.xml (<Posting>Allow</Posting>)"
     positional = []
     i = 0
     while i < len(argv):
         arg = argv[i]
+        if arg in ("-h", "--help", "help"):
+            return None, None, None, True
         if arg == "--post":
             if i + 1 >= len(argv):
-                raise ValueError("--post requires a comma-separated value")
-            posting = [p.strip() for p in argv[i + 1].split(",") if p.strip()]
+                raise UsageError("--post requires a comma-separated value")
+            raw = argv[i + 1]
             i += 2
         elif arg.startswith("--post="):
-            posting = [p.strip() for p in arg[len("--post="):].split(",") if p.strip()]
+            raw = arg[len("--post="):]
             i += 1
+        elif arg.startswith("-"):
+            raise UsageError("unknown option %r" % arg)
         else:
             positional.append(arg)
             i += 1
+            continue
+        tokens = [p.strip() for p in raw.split(",") if p.strip()]
+        if not tokens:
+            raise UsageError("--post value is empty")
+        for tok in tokens:
+            if "." in tok:
+                raise UsageError(
+                    "--post token %r looks prefixed (e.g. 'Document.%s'): pass bare "
+                    "document names only" % (tok, tok)
+                )
+            if tok not in derived:
+                raise UsageError(
+                    "--post token %r is unknown or not posting-enabled; derived set "
+                    "(<Posting>Allow</Posting>): %s" % (tok, ", ".join(derived) or "<empty>")
+                )
+        posting = tokens
+        posting_source = "--post override"
+    if len(positional) > 1:
+        raise UsageError(
+            "expected at most one positional argument (path to roles-matrix.json), "
+            "got %d: %r" % (len(positional), positional)
+        )
     matrix_path = positional[0] if positional else DEFAULT_MATRIX
-    return matrix_path, posting
+    return matrix_path, posting, posting_source, False
 
 
 def main():
-    try:
-        matrix_path, posting = parse_args(sys.argv[1:])
-    except ValueError as exc:
-        sys.stderr.write("FAIL: %s\n" % exc)
-        sys.exit(1)
-    errors = check(matrix_path, posting_docs=posting)
     out = io.open(sys.stdout.fileno(), "w", encoding="utf-8", closefd=False)
+    try:
+        matrix_path, posting, posting_source, want_help = parse_args(sys.argv[1:])
+    except UsageError as exc:
+        sys.stderr.write("USAGE ERROR: %s\n\n%s" % (exc, USAGE))
+        sys.exit(2)
+    if want_help:
+        out.write(USAGE)
+        out.flush()
+        sys.exit(0)
+    errors = check(matrix_path, posting_docs=posting)
     if errors:
         out.write("FAIL: %d violation(s)\n" % len(errors))
         for e in errors:
             out.write("  - %s\n" % e)
+        out.write(
+            "canonical invocation: python check-matrix.py   (from %s)\n" % SCRIPT_DIR
+        )
         out.flush()
         sys.exit(1)
     with io.open(matrix_path, encoding="utf-8") as f:
         keys = sum(len(p.get("objects", {})) for p in json.load(f)["profiles"].values())
     out.write(
         "OK: %d spec rows x 6 profiles parsed from spec.md and verified "
-        "(%d object keys total, metadata files exist, %d posting docs via --post)\n"
-        % (len(load_spec_tables(SPEC_PATH)[0]), keys, len(posting))
+        "(%d object keys total, metadata files exist, %d posting docs %s); "
+        "defs match the matrix conversion and Rights.xml matches defs "
+        "(rules g/h via rights_map)\n"
+        % (len(load_spec_tables(SPEC_PATH)[0]), keys, len(posting), posting_source)
     )
     out.flush()
     sys.exit(0)

@@ -28,11 +28,11 @@
     "Document.Инцидент: Read, View, InputByString",
     "Document.ПретензияПоставщику: Read, View, InputByString",
     "Document.АктОКомпенсации: Read, View, InputByString",
-    "BusinessProcess.КонтрольПодтверждений: Read, View, Update",
-    "BusinessProcess.КоординацияМаршрута: Read, View, Update",
-    "BusinessProcess.ОбработкаЗапросаТуриста: Read, View, Update",
-    "BusinessProcess.УрегулированиеИнцидента: Read, View, Update",
-    "Task.ЗадачаИсполнителя: Read, View, Update",
+    "BusinessProcess.КонтрольПодтверждений: Read, Update, View",
+    "BusinessProcess.КоординацияМаршрута: Read, Update, View",
+    "BusinessProcess.ОбработкаЗапросаТуриста: Read, Update, View",
+    "BusinessProcess.УрегулированиеИнцидента: Read, Update, View",
+    "Task.ЗадачаИсполнителя: Read, Update, View",
     "InformationRegister.СтатусыПодтверждений: Read",
     "InformationRegister.ПараметрыУслуг: Read",
     "InformationRegister.ГрафикПеремещений: Read",
@@ -43,11 +43,12 @@
     "AccumulationRegister.ВзаиморасчётыПоПретензиям: Read",
     "AccumulationRegister.ШтрафыИКомпенсации: Read",
     "AccumulationRegister.KPIОператоров: Read",
-    "DataProcessor.ПросроченныеСрокиИSLA: View, Use",
-    "DataProcessor.СводкаСтатусов: View, Use",
+    "DataProcessor.ПросроченныеСрокиИSLA: Use, View",
+    "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.РуководительНаправления: View",
     "Subsystem.KPIОтчеты: View",
     "Subsystem.Согласования: View",
-    "Subsystem.Эскалации: View"
+    "Subsystem.Эскалации: View",
+    "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

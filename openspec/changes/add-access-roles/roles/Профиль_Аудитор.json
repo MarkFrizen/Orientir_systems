@@ -36,7 +36,7 @@
     "AccumulationRegister.ВзаиморасчётыПоПретензиям: Read",
     "AccumulationRegister.ШтрафыИКомпенсации: Read",
     "AccumulationRegister.KPIОператоров: Read",
-    "DataProcessor.СводкаСтатусов: View, Use",
+    "DataProcessor.СводкаСтатусов: Use, View",
     "Subsystem.ОператорСопровождения: View",
     "Subsystem.ЗаказыПоставщикам: View",
     "Subsystem.ЗапросыТуристов: View",
@@ -57,6 +57,7 @@
     "Subsystem.РуководительНаправления: View",
     "Subsystem.KPIОтчеты: View",
     "Subsystem.Согласования: View",
-    "Subsystem.Эскалации: View"
+    "Subsystem.Эскалации: View",
+    "Configuration.КурсоваяРабота: ThinClient, WebClient, SaveUserData, Output"
   ]
 }

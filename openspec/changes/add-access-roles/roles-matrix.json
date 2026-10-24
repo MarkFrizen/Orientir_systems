@@ -48,7 +48,8 @@
         "Subsystem.ЗаказыПоставщикам": ["Ч"],
         "Subsystem.ЗапросыТуристов": ["Ч"],
         "Subsystem.МоиЗаявки": ["Ч"],
-        "Subsystem.Подтверждения": ["Ч"]
+        "Subsystem.Подтверждения": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     },
     "Профиль_Координатор": {
@@ -94,7 +95,8 @@
         "DataProcessor.СводкаСтатусов": ["Ч", "П", "Use"],
         "Subsystem.КоординаторЛогистики": ["Ч"],
         "Subsystem.Корректировки": ["Ч"],
-        "Subsystem.МаршрутныеЛисты": ["Ч"]
+        "Subsystem.МаршрутныеЛисты": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     },
     "Профиль_Гид": {
@@ -131,7 +133,8 @@
         "Subsystem.МоиОбращения": ["Ч"],
         "Subsystem.МойМаршрут": ["Ч"],
         "Subsystem.НоваяЗаявка": ["Ч"],
-        "Subsystem.НовыйИнцидент": ["Ч"]
+        "Subsystem.НовыйИнцидент": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     },
     "Профиль_МенеджерПретензий": {
@@ -181,7 +184,8 @@
         "Subsystem.МенеджерПоПретензиям": ["Ч"],
         "Subsystem.АктыКомпенсаций": ["Ч"],
         "Subsystem.Инциденты": ["Ч"],
-        "Subsystem.Претензии": ["Ч"]
+        "Subsystem.Претензии": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     },
     "Профиль_Руководитель": {
@@ -233,7 +237,8 @@
         "Subsystem.РуководительНаправления": ["Ч"],
         "Subsystem.KPIОтчеты": ["Ч"],
         "Subsystem.Согласования": ["Ч"],
-        "Subsystem.Эскалации": ["Ч"]
+        "Subsystem.Эскалации": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     },
     "Профиль_Аудитор": {
@@ -294,7 +299,8 @@
         "Subsystem.РуководительНаправления": ["Ч"],
         "Subsystem.KPIОтчеты": ["Ч"],
         "Subsystem.Согласования": ["Ч"],
-        "Subsystem.Эскалации": ["Ч"]
+        "Subsystem.Эскалации": ["Ч"],
+        "Configuration.КурсоваяРабота": ["ThinClient", "WebClient", "SaveUserData", "Output"]
       }
     }
   }
