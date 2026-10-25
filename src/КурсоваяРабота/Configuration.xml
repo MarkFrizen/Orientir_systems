@@ -263,6 +263,7 @@
 			<Role>Профиль_МенеджерПретензий</Role>
 			<Role>Профиль_Руководитель</Role>
 			<Role>Профиль_Аудитор</Role>
+			<Role>ТестоваяИнфраструктура</Role>
 			<CommonModule>РасчётКомпенсаций</CommonModule>
 			<CommonModule>КонтрольСроков</CommonModule>
 			<CommonModule>РаботаСДатамиИЧасовымиЗонами</CommonModule>
