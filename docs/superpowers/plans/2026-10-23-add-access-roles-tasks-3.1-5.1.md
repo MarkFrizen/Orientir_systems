@@ -76,9 +76,9 @@
 **Interfaces:**
 - Consumes: Task 10. Produces: 6 users `test_operator`, `test_koordinator`, `test_gid`, `test_menuver`, `test_rukovoditel`, `test_auditor` with their single profile role + the EXISTING `Администратор` user reused for admin runs (user decision 25.10 — no test_admin); `test_operator`/`test_gid` bound to existing demo `Сотрудники`.
 
-- [ ] **Step 1: Users exist** — created by the user via Configurator («Пользователи информационной базы») per `docs/Инструкция-пользователи-ИБ.md`: 6 `test_*` with one profile role each; admin runs reuse the existing `Администратор`. Controller verifies, does not create. `DefaultRoles` stays empty.
-- [ ] **Step 2: Bind «свой» subjects** — via code (external run under `Администратор`, data layer): fill/extend `Catalogs.Пользователи` records with `ИмяПользователяИБ` = `test_operator`/`test_gid` linked to demo `Сотрудники` (forms logic resolves «свой» through this binding).
-- [ ] **Step 3: Verify** — the 6 test users are listed in ИБ, each shows exactly one role; launch each via `/U test_*` and confirm session starts. Expected: PASS. No git commit (data, not sources).
+- [x] **Step 1: Users exist** — created by the user via Configurator («Пользователи информационной базы») per `docs/Инструкция-пользователи-ИБ.md`: 6 `test_*` with one profile role each; admin runs reuse the existing `Администратор`. Controller verifies, does not create. `DefaultRoles` stays empty.
+- [x] **Step 2: Bind «свой» subjects** — via code (external run under `Администратор`, data layer): fill/extend `Catalogs.Пользователи` records with `ИмяПользователяИБ` = `test_operator`/`test_gid` linked to demo `Сотрудники` (forms logic resolves «свой» through this binding).
+- [x] **Step 3: Verify** — the 6 test users are listed in ИБ, each shows exactly one role; launch each via `/U test_*` and confirm session starts. Expected: PASS. No git commit (data, not sources).
 
 <!-- openspec-task: 4.2 -->
 ### Task 12: Spec scenario battery
@@ -89,7 +89,7 @@
 **Interfaces:**
 - Consumes: Task 11 users; `roles-matrix.json` (fix target). Produces: recorded PASS per scenario; committed matrix fixes if any failed.
 
-- [ ] **Step 1: Run the scenario battery** and record PASS/FAIL per line:
+- [x] **Step 1: Run the scenario battery** and record PASS/FAIL per line:
   1. `test_koordinator`: командный интерфейс shows `КоординаторЛогистики`, does NOT show `ОператорСопровождения` (spec «Рабочее место…»).
   2. `test_gid`: creates `Инцидент`, saves (closure `Edit`+`Update` makes save possible; no independent `Изм`, no `Пров` — posting command unavailable); `ДоговорыСПоставщиками` not openable (spec «Гид создаёт, редактирование идёт платформенным замыканием», «Нет прав — нет доступа»).
   3. `test_operator`: posts `ПодтверждениеУслуги` successfully (spec «Оператор проводит…»).
@@ -97,8 +97,8 @@
   5. `test_auditor`: reads `Catalog.СтраныМира`, cannot add/change; reads `ШтрафыИКомпенсации`; `ПересчётТайминговМаршрутов` unavailable for `test_gid` but available for `test_koordinator` (spec off-matrix scenarios).
   6. `test_operator` on the KPI summary (`СводкаСтатусов`/KPI form of subsystem `ОператорСопровождения`): list filtered to the bound `Сотрудник` («Чтение (своих)» requirement).
   7. `test_menuver` reads `ВзаиморасчётыПоПретензиям`; `test_operator` — access denied (spec «Менеджер видит взаиморасчёты…»).
-- [ ] **Step 2: On any FAIL** — diagnose as matrix defect, fix `roles-matrix.json` + role JSONs, regenerate (Part 1 Task 4), validate (Task 6), reload (Task 9), re-run the failed scenario only, then full battery once. Expected: battery all-PASS.
-- [ ] **Step 3: Commit** fixes if produced: `git commit -am "fix(roles): matrix corrections from scenario verification"`.
+- [x] **Step 2: On any FAIL** — diagnose as matrix defect, fix `roles-matrix.json` + role JSONs, regenerate (Part 1 Task 4), validate (Task 6), reload (Task 9), re-run the failed scenario only, then full battery once. Expected: battery all-PASS.
+- [x] **Step 3: Commit** fixes if produced: `git commit -am "fix(roles): matrix corrections from scenario verification"`.
 
 <!-- openspec-task: 4.3 -->
 ### Task 13: Regression of neighboring specs
