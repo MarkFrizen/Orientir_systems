@@ -109,10 +109,10 @@
 **Interfaces:**
 - Consumes: Task 12 PASS battery. Produces: evidence that `navigation-and-commands`, `data-processors`, `data-exchange` behavior and admin workflows are intact.
 
-- [ ] **Step 1: Rights-hidden commands** (`navigation-and-commands` spec): as `test_auditor`, verify commands absent for objects it cannot edit; as `test_operator`, verify its allowed commands work. Expected: matches existing `ПравоДоступа`-driven form logic.
-- [ ] **Step 2: Processors** (`data-processors` spec): `test_koordinator` runs `ПересчётТайминговМаршрутов`; `test_rukovoditel` opens `ПросроченныеСрокиИSLA`; `test_auditor` opens `СводкаСтатусов`. Expected: all succeed; `test_gid` cannot open any of the five.
-- [ ] **Step 3: CSV exchange** (`data-exchange` spec): existing `Администратор` runs `ОбменСФайлами` import/export as before; `test_operator` does not see the command. Expected: admin workflow unchanged from archived `add-csv-data-exchange` behavior.
-- [ ] **Step 4: Admin full-path smoke**: existing `Администратор` user repeats one full posting chain from `document-posting` spec scenarios and demo data browsing. Expected: no new errors, no fresh `Ошибка_*.zip`.
+- [x] **Step 1: Rights-hidden commands** (`navigation-and-commands` spec): as `test_auditor`, verify commands absent for objects it cannot edit; as `test_operator`, verify its allowed commands work. Expected: matches existing `ПравоДоступа`-driven form logic.
+- [x] **Step 2: Processors** (`data-processors` spec): `test_koordinator` runs `ПересчётТайминговМаршрутов`; `test_rukovoditel` opens `ПросроченныеСрокиИSLA`; `test_auditor` opens `СводкаСтатусов`. Expected: all succeed; `test_gid` cannot open any of the five.
+- [x] **Step 3: CSV exchange** (`data-exchange` spec): existing `Администратор` runs `ОбменСФайлами` import/export as before; `test_operator` does not see the command. Expected: admin workflow unchanged from archived `add-csv-data-exchange` behavior.
+- [x] **Step 4: Admin full-path smoke**: existing `Администратор` user repeats one full posting chain from `document-posting` spec scenarios and demo data browsing. Expected: no new errors, no fresh `Ошибка_*.zip`.
 
 <!-- openspec-task: 5.1 -->
 ### Task 14: Close stage-3 docs
