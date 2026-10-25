@@ -123,6 +123,6 @@
 **Interfaces:**
 - Consumes: all previous tasks. Produces: documentation matching delivered state.
 
-- [ ] **Step 1: Update `docs/Оставшиеся-задачи.md`**: mark этап 3 «роли и профили» done with capability pointer `access-roles` (openspec spec) and plan file names; append the 7 accepted ТЗ deviations from `proposal.md` («Расхождения с Дополнением к ТЗ») as a short list; remove the stale planned-roles list (`Профиль_Администратор` note: not created, `Администратор` used).
-- [ ] **Step 2: Verify** — `Select-String docs\Оставшиеся-задачи.md -Pattern 'роли'` shows no open stage-3 checkbox/item about roles.
-- [ ] **Step 3: Commit** — `git add docs/Оставшиеся-задачи.md && git commit -m "docs: close stage 3 roles after access-roles delivery"`.
+- [x] **Step 1: Update `docs/Оставшиеся-задачи.md`**: mark этап 3 «роли и профили» done with capability pointer `access-roles` (openspec spec) and plan file names; append the 7 accepted ТЗ deviations from `proposal.md` («Расхождения с Дополнением к ТЗ») as a short list; remove the stale planned-roles list (`Профиль_Администратор` note: not created, `Администратор` used).
+- [x] **Step 2: Verify** — `Select-String docs\Оставшиеся-задачи.md -Pattern 'роли'` shows no open stage-3 checkbox/item about roles.
+- [x] **Step 3: Commit** — `git add docs/Оставшиеся-задачи.md && git commit -m "docs: close stage 3 roles after access-roles delivery"`.
