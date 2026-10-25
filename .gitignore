@@ -17,3 +17,6 @@ db/backup/
 .opencode
 .env
 .git_credentials_for_repo
+__pycache__/
+Ошибка_*.zip
+db/backup-*.dt
