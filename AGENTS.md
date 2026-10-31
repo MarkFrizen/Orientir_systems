@@ -18,6 +18,7 @@
    - **A missing dump does not prove the run succeeded** — a compile error, a hang on a lock, or a killed process may leave nothing behind. Absence only means this signal is unavailable.
    - Before retrying any 1C command, make sure no `1cv8*` process is left running; kill leftovers, then fix the root cause.
 8. **Static check before loading a configuration.** Run `1c-lsp-diagnostics` over every modified `.bsl` and fix all `severity = 1` findings before `LoadConfigFromFiles`. Runtime-only defects still get through, but this catches the recurring ones (reserved names such as `Выполнить`, `Дата` used as a constructor without arguments, `НачатьТранзакцию`, non-existent types such as `СравнениеЗначений`).
+9. **No grep fallback for 1C code.** The 1C LSP MCP servers (`1c-lsp-diagnostics`, `1c-lsp-navigation`) are the only approved way to search and navigate `.bsl` code. If an MCP call fails or says the project is not ready, in every session: diagnose via `GET http://127.0.0.1:4000/api/projects` (check `status.status` and that `root_path` matches this repository), start via `POST http://127.0.0.1:4000/api/projects/1fedba48-e1c2-47c9-a8e5-9b66a57a7b50/start`, wait for `ready` (see rule 6 for the root_path pitfall). If the server still does not become ready after two start attempts, STOP the task and involve the user — silently falling back to grep/glob instead of LSP is forbidden.
 
 # Spec clarifications (confirmed by the customer)
 
