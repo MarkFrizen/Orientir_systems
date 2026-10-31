@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Пересчёт таймингов маршрутов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<Width>90</Width>
+	<Height>28</Height>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Выполнить" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Выполнить</CommandName>
+				<DefaultButton>true</DefaultButton>
+				<ExtendedTooltip name="ВыполнитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<Table name="МаршрутныеЛисты" id="3">
+			<DataPath>МаршрутныеЛисты</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список маршрутных листов (пусто — все листы)</v8:content>
+				</v8:item>
+			</Title>
+			<ChangeRowSet>true</ChangeRowSet>
+			<ChangeRowOrder>true</ChangeRowOrder>
+			<Height>5</Height>
+			<ContextMenu name="МаршрутныеЛистыКонтекстноеМеню" id="4"/>
+			<AutoCommandBar name="МаршрутныеЛистыКоманднаяПанель" id="5"/>
+			<ExtendedTooltip name="МаршрутныеЛистыРасширеннаяПодсказка" id="6"/>
+			<SearchStringAddition name="МаршрутныеЛистыСтрокаПоиска" id="7">
+				<AdditionSource>
+					<Item>МаршрутныеЛисты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="МаршрутныеЛистыСтрокаПоискаКонтекстноеМеню" id="8"/>
+				<ExtendedTooltip name="МаршрутныеЛистыСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="МаршрутныеЛистыСостояниеПросмотра" id="10">
+				<AdditionSource>
+					<Item>МаршрутныеЛисты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="МаршрутныеЛистыСостояниеПросмотраКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="МаршрутныеЛистыСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="МаршрутныеЛистыУправлениеПоиском" id="13">
+				<AdditionSource>
+					<Item>МаршрутныеЛисты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="МаршрутныеЛистыУправлениеПоискомКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="МаршрутныеЛистыУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="МаршрутныйЛист" id="16">
+					<DataPath>МаршрутныеЛисты.МаршрутныйЛист</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Маршрутный лист</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="МаршрутныйЛистКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="МаршрутныйЛистРасширеннаяПодсказка" id="18"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<CheckBoxField name="ИзменятьПроведённые" id="19">
+			<DataPath>ИзменятьПроведённые</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменять проведённые события</v8:content>
+				</v8:item>
+			</Title>
+			<CheckBoxType>Auto</CheckBoxType>
+			<TitleLocation>Right</TitleLocation>
+			<ContextMenu name="ИзменятьПроведённыеКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ИзменятьПроведённыеРасширеннаяПодсказка" id="21"/>
+		</CheckBoxField>
+		<Table name="Накладки" id="22">
+			<DataPath>Накладки</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Накладки</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<Height>10</Height>
+			<ContextMenu name="НакладкиКонтекстноеМеню" id="23"/>
+			<AutoCommandBar name="НакладкиКоманднаяПанель" id="24"/>
+			<ExtendedTooltip name="НакладкиРасширеннаяПодсказка" id="25"/>
+			<SearchStringAddition name="НакладкиСтрокаПоиска" id="26">
+				<AdditionSource>
+					<Item>Накладки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НакладкиСтрокаПоискаКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="НакладкиСтрокаПоискаРасширеннаяПодсказка" id="28"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НакладкиСостояниеПросмотра" id="29">
+				<AdditionSource>
+					<Item>Накладки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НакладкиСостояниеПросмотраКонтекстноеМеню" id="30"/>
+				<ExtendedTooltip name="НакладкиСостояниеПросмотраРасширеннаяПодсказка" id="31"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НакладкиУправлениеПоиском" id="32">
+				<AdditionSource>
+					<Item>Накладки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НакладкиУправлениеПоискомКонтекстноеМеню" id="33"/>
+				<ExtendedTooltip name="НакладкиУправлениеПоискомРасширеннаяПодсказка" id="34"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="НакладкиМаршрут" id="35">
+					<DataPath>Накладки.Маршрут</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Маршрут</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НакладкиМаршрутКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="НакладкиМаршрутРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="НакладкиСобытие" id="38">
+					<DataPath>Накладки.Событие</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Событие</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НакладкиСобытиеКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="НакладкиСобытиеРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="НакладкиПерекрытиеМинут" id="41">
+					<DataPath>Накладки.ПерекрытиеМинут</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Перекрытие, минут</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НакладкиПерекрытиеМинутКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="НакладкиПерекрытиеМинутРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Сводка" id="44">
+			<DataPath>Сводка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="СводкаКонтекстноеМеню" id="45"/>
+			<ExtendedTooltip name="СводкаРасширеннаяПодсказка" id="46"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПересчётТайминговМаршрутов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="МаршрутныеЛисты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Маршрутные листы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="МаршрутныйЛист" id="3">
+					<Type>
+						<v8:Type>cfg:DocumentRef.МаршрутныйЛист</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИзменятьПроведённые" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменять проведённые</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Накладки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Накладки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Маршрут" id="6">
+					<Type>
+						<v8:Type>cfg:DocumentRef.МаршрутныйЛист</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Событие" id="7">
+					<Type>
+						<v8:Type>cfg:DocumentRef.СобытиеМаршрута</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПерекрытиеМинут" id="8">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Сводка" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сводка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Выполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыполнитьПересчёт</Action>
+			<Shortcut>Ctrl+Enter</Shortcut>
+		</Command>
+	</Commands>
+</Form>

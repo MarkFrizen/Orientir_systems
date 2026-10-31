@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Сводка статусов</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<Width>90</Width>
+	<Height>28</Height>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Выполнить" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Выполнить</CommandName>
+				<DefaultButton>true</DefaultButton>
+				<ExtendedTooltip name="ВыполнитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<InputField name="ДатаНачала" id="3">
+			<DataPath>ДатаНачала</DataPath>
+			<ContextMenu name="ДатаНачалаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ДатаНачалаРасширеннаяПодсказка" id="5"/>
+		</InputField>
+		<InputField name="ДатаОкончания" id="6">
+			<DataPath>ДатаОкончания</DataPath>
+			<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="8"/>
+		</InputField>
+		<Table name="Сводка" id="9">
+			<DataPath>Сводка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сводка</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<Height>12</Height>
+			<ContextMenu name="СводкаКонтекстноеМеню" id="10"/>
+			<AutoCommandBar name="СводкаКоманднаяПанель" id="11"/>
+			<ExtendedTooltip name="СводкаРасширеннаяПодсказка" id="12"/>
+			<SearchStringAddition name="СводкаСтрокаПоиска" id="13">
+				<AdditionSource>
+					<Item>Сводка</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СводкаСтрокаПоискаКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="СводкаСтрокаПоискаРасширеннаяПодсказка" id="15"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СводкаСостояниеПросмотра" id="16">
+				<AdditionSource>
+					<Item>Сводка</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СводкаСостояниеПросмотраКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="СводкаСостояниеПросмотраРасширеннаяПодсказка" id="18"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СводкаУправлениеПоиском" id="19">
+				<AdditionSource>
+					<Item>Сводка</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СводкаУправлениеПоискомКонтекстноеМеню" id="20"/>
+				<ExtendedTooltip name="СводкаУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="СводкаСущность" id="22">
+					<DataPath>Сводка.Сущность</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сущность</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СводкаСущностьКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="СводкаСущностьРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<InputField name="СводкаСтатус" id="25">
+					<DataPath>Сводка.Статус</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СводкаСтатусКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="СводкаСтатусРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="СводкаКоличество" id="28">
+					<DataPath>Сводка.Количество</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СводкаКоличествоКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="СводкаКоличествоРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.СводкаСтатусов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаНачала" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОкончания" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Сводка" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сводка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Сущность" id="5">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Статус" id="6">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Количество" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Выполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СформироватьСводку</Action>
+			<Shortcut>Ctrl+Enter</Shortcut>
+		</Command>
+	</Commands>
+</Form>

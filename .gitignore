@@ -9,6 +9,7 @@ db/**/1Cv8snc.1CD
 db/**/1Cv8.cgr
 db/**/1Cv8JobScheduler/
 db/**/1Cv8Log/
+db/**/1Cv8FTxt/
 db/backup/
 .superpowers/
 *.epf
@@ -17,3 +18,6 @@ db/backup/
 .opencode
 .env
 .git_credentials_for_repo
+__pycache__/
+Ошибка_*.zip
+db/backup-*.dt

@@ -73,6 +73,17 @@ $Scenarios = @(
         CounterPattern = 'записано:\s*(\d+)'
     }
     [pscustomobject]@{
+        # Тот же файл загружается дважды: справочник не должен вырасти, а вторая
+        # загрузка обязана отклонить строки как дубли (счётчик «позиций в базе»
+        # берётся из строки ДУБЛИ-сценария после второго прохода).
+        Name           = 'import-nomenclature-double-load'
+        Fixture        = 'nomenclature-valid.csv'
+        GeneratesData  = $false
+        Verdict        = 'PASS'
+        Count          = 3
+        CounterPattern = 'позиций в базе:\s*(\d+)'
+    }
+    [pscustomobject]@{
         Name           = 'import-nomenclature-partial'
         Fixture        = 'nomenclature-partial.csv'
         Verdict        = 'ЧАСТИЧНО'
@@ -92,6 +103,19 @@ $Scenarios = @(
         Verdict        = 'ЧАСТИЧНО'
         Count          = 1
         CounterPattern = 'записано:\s*(\d+)'
+    }
+    [pscustomobject]@{
+        # Наименование длиннее реквизита: платформа молча обрезала бы его, поэтому
+        # строка обязана быть отклонена с сообщением о длине (поле + лимит + факт).
+        # Единственная строка отклонена, значит вердикт обработки — FAIL, а не
+        # ЧАСТИЧНО: частичного успеха в файле нет. Счётчик «позиций в базе»
+        # доказывает, что элемент не создан.
+        Name           = 'import-nomenclature-long-line'
+        Fixture        = 'nomenclature-long-line.csv'
+        GeneratesData  = $false
+        Verdict        = 'FAIL'
+        Count          = 0
+        CounterPattern = 'позиций в базе:\s*(\d+)'
     }
     [pscustomobject]@{
         # Заголовок битый: импорт не начинается, строки «записано:» в отчёте нет.

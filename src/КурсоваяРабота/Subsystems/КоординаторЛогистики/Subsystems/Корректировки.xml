@@ -17,6 +17,7 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.КорректировкаМаршрута</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПересчётТайминговМаршрутов</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

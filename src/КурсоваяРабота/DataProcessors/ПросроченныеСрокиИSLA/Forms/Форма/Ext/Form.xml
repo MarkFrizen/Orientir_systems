@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Просроченные сроки и SLA</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<Width>90</Width>
+	<Height>28</Height>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="Выполнить" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Выполнить</CommandName>
+				<DefaultButton>true</DefaultButton>
+				<ExtendedTooltip name="ВыполнитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<CheckBoxField name="СоздаватьЗадачи" id="3">
+			<DataPath>СоздаватьЗадачи</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создавать задачи ответственным</v8:content>
+				</v8:item>
+			</Title>
+			<CheckBoxType>Auto</CheckBoxType>
+			<TitleLocation>Right</TitleLocation>
+			<ContextMenu name="СоздаватьЗадачиКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="СоздаватьЗадачиРасширеннаяПодсказка" id="5"/>
+		</CheckBoxField>
+		<Table name="Просрочки" id="6">
+			<DataPath>Просрочки</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просрочки</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<Height>12</Height>
+			<ContextMenu name="ПросрочкиКонтекстноеМеню" id="7"/>
+			<AutoCommandBar name="ПросрочкиКоманднаяПанель" id="8"/>
+			<ExtendedTooltip name="ПросрочкиРасширеннаяПодсказка" id="9"/>
+			<SearchStringAddition name="ПросрочкиСтрокаПоиска" id="10">
+				<AdditionSource>
+					<Item>Просрочки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПросрочкиСтрокаПоискаКонтекстноеМеню" id="11"/>
+				<ExtendedTooltip name="ПросрочкиСтрокаПоискаРасширеннаяПодсказка" id="12"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПросрочкиСостояниеПросмотра" id="13">
+				<AdditionSource>
+					<Item>Просрочки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПросрочкиСостояниеПросмотраКонтекстноеМеню" id="14"/>
+				<ExtendedTooltip name="ПросрочкиСостояниеПросмотраРасширеннаяПодсказка" id="15"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПросрочкиУправлениеПоиском" id="16">
+				<AdditionSource>
+					<Item>Просрочки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПросрочкиУправлениеПоискомКонтекстноеМеню" id="17"/>
+				<ExtendedTooltip name="ПросрочкиУправлениеПоискомРасширеннаяПодсказка" id="18"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="ПросрочкиВид" id="19">
+					<DataPath>Просрочки.Вид</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПросрочкиВидКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ПросрочкиВидРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="ПросрочкиОбъект" id="22">
+					<DataPath>Просрочки.Объект</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПросрочкиОбъектКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ПросрочкиОбъектРасширеннаяПодсказка" id="24"/>
+				</InputField>
+				<InputField name="ПросрочкиОтветственный" id="25">
+					<DataPath>Просрочки.Ответственный</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПросрочкиОтветственныйКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ПросрочкиОтветственныйРасширеннаяПодсказка" id="27"/>
+				</InputField>
+				<InputField name="ПросрочкиПросроченоНа" id="28">
+					<DataPath>Просрочки.ПросроченоНа</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Просрочено на, минут</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПросрочкиПросроченоНаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ПросрочкиПросроченоНаРасширеннаяПодсказка" id="30"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Сводка" id="31">
+			<DataPath>Сводка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги</v8:content>
+				</v8:item>
+			</Title>
+			<ReadOnly>true</ReadOnly>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="СводкаКонтекстноеМеню" id="32"/>
+			<ExtendedTooltip name="СводкаРасширеннаяПодсказка" id="33"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПросроченныеСрокиИSLA</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СоздаватьЗадачи" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создавать задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Просрочки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просрочки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Вид" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Объект" id="5">
+					<Type>
+						<v8:Type>cfg:DocumentRef.ЗаявкаТуристаНаМаршруте</v8:Type>
+						<v8:Type>cfg:DocumentRef.ЗаказПоставщику</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ответственный" id="6">
+					<Type>
+						<v8:Type>cfg:CatalogRef.Сотрудники</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПросроченоНа" id="7">
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Сводка" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сводка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>200</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Выполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВыполнитьПроверку</Action>
+			<Shortcut>Ctrl+Enter</Shortcut>
+		</Command>
+	</Commands>
+</Form>
