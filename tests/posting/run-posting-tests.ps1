@@ -85,7 +85,7 @@ $WorkDir = Join-Path ([System.IO.Path]::GetTempPath()) 'posting-tests'
 
 # Упорядоченный список сценариев прогона: порядок задан здесь, а не в
 # параметре, чтобы полный набор запускался одной командой без аргументов.
-$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary', 'query-saldo', 'query-kpi', 'integrity')
+$DefaultScenarios = @('selftest', 'task-addressing', 'post-order', 'post-confirmation', 'post-route', 'post-route-correction', 'post-event', 'post-tourist-request', 'post-incident', 'post-claim', 'post-compensation-act', 'proc-requests', 'proc-timings', 'proc-overdue', 'proc-summary', 'query-saldo', 'query-kpi', 'integrity', 'errors-dates', 'errors-amounts', 'verify-snapshot')
 
 # Сервисный сценарий драйвера: уборка объектов, созданных прогонами. Он не
 # входит в список проверок и не считается в «ИТОГО: N/M».
@@ -172,6 +172,11 @@ function Invoke-TestScenario {
     # Файл данных обязателен для обёртки, даже если сценарий его не читает:
     # контракт командной строки драйвера - «<сценарий>|<данные>|<отчёт>».
     $dataFile = Join-Path $WorkDir ($Name + '.csv')
+    # Сверка со снимком читает JSON-фикстуру вместо CSV: её путь уходит
+    # драйверу в том же параметре «данные».
+    if ($Name -eq 'verify-snapshot') {
+        $dataFile = Join-Path $ProjectRoot 'tests\posting\expected-snapshot.json'
+    }
     $reportFile = Join-Path $WorkDir ($Name + '.txt')
 
     $result = Invoke-DriverScenario -Name $Name -DataFile $dataFile -ReportFile $reportFile
